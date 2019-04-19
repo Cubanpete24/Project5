@@ -3,11 +3,14 @@ import java.io.DataOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
-
+//Server will be the listening thread of the network.
+// When ever a ServerClient is available, Server will ensure to connect and save connection
 public class Server extends Thread{
-    ServerSocket ss;
-    ArrayList<ServerClient> myClient = new ArrayList<>();
+    ServerSocket ss;//empty socket
+    ArrayList<ServerClient> myClient = new ArrayList<>(); //ServerClient that stores connection
 
+    //method to initialize the ServerClient
+    // Initializes the thred
     public boolean init(int port){
         try{
             ss = new ServerSocket(port);
@@ -21,6 +24,7 @@ public class Server extends Thread{
         }
     }
 
+    //Thread that listens for ServerClients
     @Override
     public void run(){
         while(true){
