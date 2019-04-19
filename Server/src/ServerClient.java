@@ -24,7 +24,9 @@ public class ServerClient extends Thread {
 
     //ReadString method
     public String readData(){
-        return this.rxData;
+        String temp = this.rxData;
+        this.rxData = ""
+        return temp;
     }
 
     //Method that listens for incomming/outgoing string

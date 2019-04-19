@@ -19,7 +19,9 @@ public class Client extends Thread {
 
     //read string
     public String readData(){
-        return this.rxData;
+	String temp = this.rxData;
+	this.rxData = "";
+        return temp;
     }
 
     //send string

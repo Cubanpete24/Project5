@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebc47559-dd0f-4af3-a711-ed7456ba24bf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Client/src/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -161,7 +160,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="650" height="743" extended-state="4" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25662252" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -169,7 +167,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.43485343" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.43485343" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
