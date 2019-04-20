@@ -9,7 +9,6 @@ public class Server extends Thread{
     ServerSocket ss;//empty socket
     ArrayList<ServerClient> myClient = new ArrayList<>(); //ServerClient that stores connection
 
-
     //method to initialize the ServerClient
     // Initializes the thread
     public boolean init(int port){

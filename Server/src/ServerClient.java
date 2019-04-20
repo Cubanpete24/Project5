@@ -4,7 +4,9 @@ import java.net.Socket;
 
 public class ServerClient extends Thread {
     String txData = "";//receiving string
-    String rxData = "";//sending string
+    String []rxData = {""};//sending string
+
+
 
     final DataInputStream dis;//input stream
     final DataOutputStream dos;//output stream
@@ -23,9 +25,9 @@ public class ServerClient extends Thread {
     }
 
     //ReadString method
-    public String readData(){
-        String temp = this.rxData;
-        this.rxData = "";
+    public String[] readData(){
+        String []temp = this.rxData;
+        this.rxData = new String[]{""};
         return temp;
     }
 
@@ -41,7 +43,8 @@ public class ServerClient extends Thread {
                 }
                 //if there is incomming data, save it
                 if(dis.available()>0){
-                    this.rxData = dis.readUTF();
+                    String temp = dis.readUTF();
+                    this.rxData = temp.split(":");
                 }
             }
             catch(Exception E){
