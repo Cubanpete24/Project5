@@ -5,8 +5,8 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class Client extends Thread {
-    String ipAddress;
-    int port;
+    //String ipAddress;
+    //int port;
 
     //Scanner scn = new Scanner(System.in );
     InetAddress ip;
@@ -19,8 +19,8 @@ public class Client extends Thread {
 
     //read string
     public String readData(){
-	String temp = this.rxData;
-	this.rxData = "";
+	    String temp = this.rxData;
+	    this.rxData = "";
         return temp;
     }
 
@@ -31,35 +31,39 @@ public class Client extends Thread {
 
     //inin port
     //FIXME implement boolean that return true if connection is successful
-    public void init(String ipAddress,int port){
-        this.ipAddress = ipAddress;
-        this.port = port;
+    public boolean init(String ipAddress,int port){
+        try {
+            ip = InetAddress.getByName(ipAddress);
+            S = new Socket(ip, port);
+            dis = new DataInputStream(S.getInputStream());
+            dos = new DataOutputStream(S.getOutputStream());
+            start();
+            return true;
+        }
+        catch(Exception E){
+            E.printStackTrace();
+            return false;
+        }
     }
 
     //Thread for client
     public void run(){
         try{
-            ip = InetAddress.getByName(this.ipAddress);
-            S = new Socket(ip, port);
-            dis = new DataInputStream(S.getInputStream());
-            dos = new DataOutputStream(S.getOutputStream());
-
-            while(true){
-                if(!txData.isEmpty() ){
+            while(true) {
+                if (!txData.isEmpty()) {
                     dos.writeUTF(txData);
                     txData = "";
                 }
-                if(dis.available()>0){
+                if (dis.available() > 0) {
                     rxData = dis.readUTF();
                     //System.out.println("client: "+rxData);
                 }
                 //if "Exit" is string, close connection
-                if(rxData.equals("Exit")){
+                if (rxData.equals("Exit")) {
                     S.close();
                     break;
                 }
             }
-            //scn.close();
             dis.close();
             dos.close();
         }

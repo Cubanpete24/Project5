@@ -9,8 +9,9 @@ public class Server extends Thread{
     ServerSocket ss;//empty socket
     ArrayList<ServerClient> myClient = new ArrayList<>(); //ServerClient that stores connection
 
+
     //method to initialize the ServerClient
-    // Initializes the thred
+    // Initializes the thread
     public boolean init(int port){
         try{
             ss = new ServerSocket(port);
@@ -29,7 +30,6 @@ public class Server extends Thread{
     public void run(){
         while(true){
             Socket s = null;
-
             try{
                 s = ss.accept();
                 System.out.println("New client connected: "+s);

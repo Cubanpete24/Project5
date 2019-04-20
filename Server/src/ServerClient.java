@@ -25,7 +25,7 @@ public class ServerClient extends Thread {
     //ReadString method
     public String readData(){
         String temp = this.rxData;
-        this.rxData = ""
+        this.rxData = "";
         return temp;
     }
 
