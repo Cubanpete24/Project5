@@ -25,10 +25,13 @@ public class ServerClient extends Thread {
     }
 
     //ReadString method
-    public String[] readData(){
+    public String[] readData(){ //once data is read, it is lost
         String []temp = this.rxData;
         this.rxData = new String[]{""};
         return temp;
+    }
+    public String[] getData(){//data is read, and not errased
+        return this.rxData;
     }
 
     //Method that listens for incomming/outgoing string

@@ -1,5 +1,6 @@
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.lang.reflect.Array;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -8,9 +9,20 @@ import java.util.ArrayList;
 public class Server extends Thread{
     ServerSocket ss;//empty socket
     ArrayList<ServerClient> myClient = new ArrayList<>(); //ServerClient that stores connection
-
+    ArrayList<String[]> myString = new ArrayList<>();
     //method to initialize the ServerClient
     // Initializes the thread
+    public ArrayList<String[]> getClientString(){
+        myString.clear();
+
+        for(ServerClient elem: myClient){
+            String[] temp = elem.getData();
+            myString.add(temp);
+        }
+
+        return this.myString;
+    }
+
     public boolean init(int port){
         try{
             ss = new ServerSocket(port);
