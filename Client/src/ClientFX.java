@@ -262,6 +262,23 @@ public class ClientFX extends Application{
 
 		});
 
+		/**door2 will set the stage to a new scene, we can come up with more creative puzzles**/
+//		door2.setOnAction(event -> {
+//
+//			try {
+//				/**First we initialize the buttons and text/textfields that the puzzle needs**/
+//				Door2 = new Scene(createPuzzle2(), 900, 500);
+//				sceneList.add(Door2);
+//				primaryStage.setScene(Door2);
+//			}
+//			catch(Exception e) {
+//			}
+//
+//			//
+//			//System.exit(0);
+//
+//		});
+
 		/**This is where I organize the layout and design of the UI**/
 
 		/**This HBox conins the buttons for the rock, paper, scissots etc...*/
@@ -330,6 +347,39 @@ public class ClientFX extends Application{
 		return Door1Box;
 	}
 
+//	private Parent createPuzzle2() {
+//		Button question = new Button();
+//		Image myQuestion = new Image("puzzlePicture/HiddenLetter.jpg");
+//		ImageView v1 = new ImageView(myQuestion);
+//		v1.setPreserveRatio(true);
+//
+//		question.setGraphic(v1);
+//
+//		question.setOnAction(event -> {
+//
+//			try {
+//				/**First we initialize the buttons and text/textfields that the puzzle needs**/
+//				Door2 = new Scene(createPuzzle1(), 900, 500);
+//				sceneList.add(Door2);
+//				conn.score++;
+//				primaryStage.setScene(sceneList.get(0));
+//			}
+//			catch(Exception e) {
+//
+//			}
+//		});
+//
+//
+//		/**THis looks a lot liek a quiz but I think we can get more creative**/
+//		HBox choiceHBox = new HBox(10, choice1, choice2, choice3);
+//		VBox Door1Box = new VBox(puzzle, choiceHBox);
+//
+//
+//
+//		return Door1Box;
+//	}
+
+
 	/**I never used this method but it can be used in conjunction with the metod disableButtons() below**/
 
 	/**I never used this method but it disables all the buttons, functionality is identical to removeButtons() below**/
@@ -396,7 +446,7 @@ public class ClientFX extends Application{
 		}, "Paul");
 	}
 
-/**BUttonthread handles all the dynamic stuff, like scores and whether or not a client can connect to the server**/
+/**Buttonthread handles all the dynamic stuff, like scores and whether or not a client can connect to the server**/
 	class buttonThread extends Thread {
 		public void run() {
 			try {
@@ -417,10 +467,7 @@ public class ClientFX extends Application{
 			}
 			catch (Exception e) {
 				System.out.println("Oops");
-
 			}
-
 		}
 	}
-
 }
