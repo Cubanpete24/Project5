@@ -43,11 +43,6 @@ public abstract class ClientConnection {
 		connthread.out.writeObject(data);
 	}
 
-	public void sendChallenge(String data) throws Exception{
-		connthread.out.writeObject("I wish to challenge someone!"); //This sends a message to the server to execute the if branch that handles challenges
-		connthread.out.writeObject(data); //This sends the actual player the user wishes to challenge
-	}
-
 	
 	public void closeConn(){
 		try {
@@ -95,8 +90,8 @@ public abstract class ClientConnection {
 				/**When the client recieves either of these messages, the playerNumber they are assigned changes**/
 				while(true) {
 					Serializable data = (Serializable) in.readObject();
-					if(data.equals("Skidaddle Skidoodle you are in a game") ){
-						inWaitingRoom = false;
+					if(data.equals("g") ){
+						callback.accept("Server has notified client to start game");
 					}
 					else if(data.equals("Update your playerlist") ) {
 						playerList = (String) in.readObject();
