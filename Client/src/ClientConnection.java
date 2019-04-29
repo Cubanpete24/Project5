@@ -17,6 +17,7 @@ public abstract class ClientConnection {
 	boolean updatePlayerList = false;
 	String playerList = "";
 	int score;
+	boolean gameStart = false;
 
 
 
@@ -71,7 +72,7 @@ public abstract class ClientConnection {
 					Socket socket = new Socket(getIP(), getPort()); //client
 					ObjectOutputStream out = new ObjectOutputStream( socket.getOutputStream());
 					ObjectInputStream in = new ObjectInputStream(socket.getInputStream())){
-					callback.accept("You are about to enter the Puzzle Gauntlet");
+					callback.accept("You are about to enter the Puzzle Gauntlet\n\n4 players enter, and compete to see who can complete all the puzzles first\nFor now, you should have direct access to your puzzle so that you can debug it, but in the final game\nthe door buttons will be invisible, until 4 players are connected.\n\nThe button Test game is there so you can roughly see how the game will run upon pressing the\n connect button. At the moment it is set so that when 2 players are connected, the game will start");
 
 
 				this.socket = socket;
@@ -92,6 +93,7 @@ public abstract class ClientConnection {
 					Serializable data = (Serializable) in.readObject();
 					if(data.equals("g") ){
 						callback.accept("Server has notified client to start game");
+						gameStart = true;
 					}
 					else if(data.equals("Update your playerlist") ) {
 						playerList = (String) in.readObject();

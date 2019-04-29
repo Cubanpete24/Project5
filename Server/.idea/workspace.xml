@@ -3,10 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="c942ce64-2e29-421d-9b2f-84cc7ab42ab8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Proj3_Client/ClientConnection$ConnThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Proj3_Client/ClientConnection$ConnThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Proj3_Client/ClientConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Proj3_Client/ClientConnection.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Proj3_Client/ClientFX$buttonThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Proj3_Client/ClientFX$buttonThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Proj3_Client/ClientFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Proj3_Client/ClientFX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/ClientConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/ClientFX.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FXNet/ServerConnection$ClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FXNet/ServerConnection$ClientThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerConnection.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,19 +37,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ServerConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2159">
-              <caret line="135" column="81" selection-start-line="135" selection-start-column="81" selection-end-line="135" selection-end-column="81" />
+            <state relative-caret-position="179">
+              <caret line="132" column="128" selection-start-line="132" selection-start-column="128" selection-end-line="132" selection-end-column="128" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ServerFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
+            <state relative-caret-position="504">
               <caret line="149" column="44" selection-start-line="149" selection-start-column="44" selection-end-line="149" selection-end-column="44" />
             </state>
           </provider>
@@ -61,7 +66,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>2</find>
       <find>&lt; 2</find>
       <find>clients.</find>
       <find>t1.start</find>
@@ -91,6 +95,7 @@
       <find>clients</find>
       <find>equals</find>
       <find>oops</find>
+      <find>send</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -142,7 +147,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556337328212" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556514399385" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -277,17 +282,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServerConnection.java">
+    <entry file="file://$PROJECT_DIR$/src/ServerFX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2159">
-          <caret line="135" column="81" selection-start-line="135" selection-start-column="81" selection-end-line="135" selection-end-column="81" />
+        <state relative-caret-position="504">
+          <caret line="149" column="44" selection-start-line="149" selection-start-column="44" selection-end-line="149" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServerFX.java">
+    <entry file="file://$PROJECT_DIR$/src/ServerConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="149" column="44" selection-start-line="149" selection-start-column="44" selection-end-line="149" selection-end-column="44" />
+        <state relative-caret-position="179">
+          <caret line="132" column="128" selection-start-line="132" selection-start-column="128" selection-end-line="132" selection-end-column="128" />
         </state>
       </provider>
     </entry>

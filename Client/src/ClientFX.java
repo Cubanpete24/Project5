@@ -47,6 +47,14 @@ public class ClientFX extends Application{
 	private ClientConnection  conn;
 	private TextArea messages = new TextArea();
 	private TextArea playerList = new TextArea();
+	int sceneNum = 0;
+
+	void enableButtons(){
+		door1.setVisible(true);
+		door2.setVisible(true);
+		door3.setVisible(true);
+		door4.setVisible(true);
+	}
 
 
 	/**Creates the content for the UI**/
@@ -187,6 +195,10 @@ public class ClientFX extends Application{
 				buttonThread test = new buttonThread();
 				test.start();
 
+				conn.send("c");
+
+
+
 				//root.setPrefSize(600, 200);
 
 			}
@@ -231,10 +243,16 @@ public class ClientFX extends Application{
 		Doors.setAlignment(Pos.CENTER);
 
 
+		/**Unable to implement stage changing in a different thread, so for now, puzzle choosing will be event Driven**/
         testGame.setOnAction(event -> {
 
             try {
                 conn.send("c");
+				door1.setVisible(false);
+				door2.setVisible(false);
+				door3.setVisible(false);
+				door4.setVisible(false);
+				testGame.setVisible(false);
             }
             catch(Exception e) {
             }
@@ -253,6 +271,7 @@ public class ClientFX extends Application{
 		door1.setOnAction(event -> {
 
 			try {
+				//door1.setVisible(false); Comment this out once program is done
 				DoorScene1 = new Scene(createDoor1(), 900, 500); //We create the scene
 				sceneList.add(DoorScene1); //We add the scene to an arrayList of Scenes so we can access it later
 				primaryStage.setScene(DoorScene1); //We display the scene
@@ -346,7 +365,7 @@ public class ClientFX extends Application{
 		Button choice3 = new Button("Press me to do nothing");
 		Text puzzleTitleCard = new Text("Challenge 1: Lightning Sudoku!");
 
-		/**Everything for the 4x4 Puzzle**/
+		/**Everything for the 2x2 Puzzle**/
 		TextField c11 = new TextField("1");
 		TextField c12 = new TextField("2");
 		TextField c21 = new TextField();
@@ -385,6 +404,15 @@ public class ClientFX extends Application{
 		d31.setPrefWidth(30);
 		d32.setPrefWidth(30);
 		d33.setPrefWidth(30);
+		d11.setPrefHeight(30);
+		d12.setPrefHeight(30);
+		d13.setPrefHeight(30);
+		d21.setPrefHeight(30);
+		d22.setPrefHeight(30);
+		d23.setPrefHeight(30);
+		d31.setPrefHeight(30);
+		d32.setPrefHeight(30);
+		d33.setPrefHeight(30);
 		d11.setEditable(false);
 		d12.setEditable(false);
 		d13.setEditable(true);
@@ -558,9 +586,25 @@ public class ClientFX extends Application{
 		connect.setVisible(false);
 		startUpScene = new Scene(createStartup(), 900, 500);
 		sceneList.add(startUpScene);
+		Scene scene1 = new Scene(createDoor1(), 900, 500);
+		Scene scene2 = new Scene(createDoor2(), 900, 500);
+		Scene scene3 = new Scene(createDoor3(), 900, 500);
+		Scene scene4 = new Scene(createDoor4(), 900, 500);
+		Scene finalScene = startUpScene;
+		sceneList.add(scene1);
+		sceneList.add(scene2);
+		sceneList.add(scene3);
+		sceneList.add(scene4);
+		sceneList.add(finalScene);
+
+
+
+
 		primaryStage.setScene(startUpScene);
 		this.primaryStage = primaryStage;
 		primaryStage.show();
+
+
 
 	}
 	
@@ -588,30 +632,39 @@ public class ClientFX extends Application{
 		}, "Paul");
 	}
 
+
 /**Buttonthread handles all the dynamic stuff, like scores and whether or not a client can connect to the server**/
 	class buttonThread extends Thread {
 		public void run() {
 			try {
 				int numCheck = 0;
 				while(true){
-					if(conn.updatePlayerList = true){
+					if(conn.updatePlayerList == true){
 						playerList.setText(conn.playerList);
 						conn.updatePlayerList = false;
 					}
-					else if(numCheck != conn.score){
+					if(numCheck != conn.score){
 						numCheck = conn.score;
 						Score.setText("Score: " + conn.score);
 
 					}
+					if(conn.gameStart == true){
+						//sceneNum++;
+						System.out.println("Sync");
+						//primaryStage.setScene(sceneList.get(0));
+						enableButtons();
+						conn.gameStart = false;
+					}
 					//else if(){
 
                     //}
+					//System.out.println("Test");
 					this.sleep(1000);
 
 				}
 			}
 			catch (Exception e) {
-				System.out.println("Oops");
+				System.out.println("Oops in buttonThread");
 
 			}
 

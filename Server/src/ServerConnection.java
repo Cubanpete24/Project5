@@ -130,14 +130,17 @@ public abstract class ServerConnection {
 					else if((data.equals("w"))){
 						callback.accept(clientName + " won the puzzle");
 					}
+					/**c will be sent when a player connects, but for now, it is only sent when we press the test game button**/
 					else if((data.equals("c"))){
-						callback.accept(clientName + " has entered the test realm");
+						callback.accept(clientName + " has entered the test realm");//Edit later
 						if(clients.size() < 2) {
-							callback.accept("Server awaiting 3 more players...");
-							send("g", clients); //Delete this later
+							callback.accept("Server awaiting 3 more players...But to test a build closer to the final game, have another person connect and press Test Game");
 						}
-						else if(clients.size() < 3)
-							callback.accept("Server awaiting 2 more players...");
+						else if(clients.size() < 3) {
+							callback.accept("Server awaiting 2 more players...But for now");
+							send("g", clients); //Delete this later
+
+						}
 						else if(clients.size() < 4)
 							callback.accept("Server awaiting 1 more player...");
 						else if(clients.size() == 4) {
