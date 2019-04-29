@@ -344,7 +344,86 @@ public class ClientFX extends Application{
 		Button choice1 = new Button("Press me to win the puzzle");
 		Button choice2 = new Button("Press me to do nothing");
 		Button choice3 = new Button("Press me to do nothing");
-		Text puzzle = new Text("what is the airspeed of an unladen swallow");
+		Text puzzleTitleCard = new Text("Challenge 1: Lightning Sudoku!");
+
+		/**Everything for the 4x4 Puzzle**/
+		TextField c11 = new TextField("1");
+		TextField c12 = new TextField("2");
+		TextField c21 = new TextField();
+		TextField c22 = new TextField("4");
+		c11.setPrefWidth(30);//setting width of cells
+		c12.setPrefWidth(30);
+		c21.setPrefWidth(30);
+		c22.setPrefWidth(30);
+		c11.setPrefHeight(30);
+		c12.setPrefHeight(30);
+		c21.setPrefHeight(30);
+		c22.setPrefHeight(30);
+		c11.setEditable(false); //making sure some cells aren't editable
+		c12.setEditable(false);
+		c21.setEditable(true);
+		c22.setEditable(false);
+		//c11.setBorder()
+
+
+		/**Everything for the 3x3 puzzle**/
+		TextField d11 = new TextField("1");
+		TextField d12 = new TextField("2");
+		TextField d13 = new TextField("");
+		TextField d21 = new TextField("4");
+		TextField d22 = new TextField("5");
+		TextField d23 = new TextField("6");
+		TextField d31 = new TextField("7");
+		TextField d32 = new TextField("8");
+		TextField d33 = new TextField("9");
+		d11.setPrefWidth(30);
+		d12.setPrefWidth(30);
+		d13.setPrefWidth(30);
+		d21.setPrefWidth(30);
+		d22.setPrefWidth(30);
+		d23.setPrefWidth(30);
+		d31.setPrefWidth(30);
+		d32.setPrefWidth(30);
+		d33.setPrefWidth(30);
+		d11.setEditable(false);
+		d12.setEditable(false);
+		d13.setEditable(true);
+		d21.setEditable(false);
+		d22.setEditable(false);
+		d23.setEditable(false);
+		d31.setEditable(false);
+		d32.setEditable(false);
+		d33.setEditable(false);
+
+
+		Button solve = new Button("Solve");
+
+
+
+
+
+
+
+
+
+		HBox puzzle1row1 = new HBox(c11, c12);
+		HBox puzzle1row2 = new HBox(c21, c22);
+
+		HBox puzzle2row1 = new HBox(d11, d12, d13);
+		HBox puzzle2row2 = new HBox(d21, d22, d23);
+		HBox puzzle2row3 = new HBox(d31, d32, d33);
+
+
+
+		VBox puzzle1 = new VBox( puzzle1row1, puzzle1row2);
+		VBox puzzle2 = new VBox( puzzle2row1, puzzle2row2, puzzle2row3);
+		HBox puzzleHolder = new HBox(50, puzzle1, puzzle2);
+		VBox everything = new VBox(puzzleTitleCard, puzzleHolder, solve);
+
+
+
+
+
 
 		/**ESSENTIALLY, IT DOESN'T MATTER WHAT YOUR PUZZLE LOOKS LIKE, SO AS LONG AS THERE IS SOME MECHANISM THAT DOES THE FOLLOWING**/
 		choice1.setOnAction(event -> {
@@ -362,10 +441,28 @@ public class ClientFX extends Application{
 
 		});
 
-		HBox choiceHBox = new HBox(10, choice1, choice2, choice3);
-		VBox Door1Box = new VBox(puzzle, choiceHBox);
+		solve.setOnAction(event -> {
 
-		return Door1Box;
+			try {
+				/**IMPORTANT THING #1: INCREASE YOUR SCORE**/
+				if(c21.getText().equals("3") && d13.getText().equals("3")){
+					conn.score++;
+					Score.setText("Score: " + conn.score); //Updates Score Text on UI
+					primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
+					conn.send("w"); //Sends a w to the server to let it know that someone WON
+				}
+				else
+					solve.setText("Something is missing...Try again!");
+			}
+			catch(Exception e) {
+			}
+
+		});
+
+		HBox choiceHBox = new HBox(10, choice1, choice2, choice3);
+		//VBox Door1Box = new VBox(puzzle, choiceHBox);
+
+		return everything;
 	}
 
 	/**ADRIAN'S PUZZLE HERE**/
