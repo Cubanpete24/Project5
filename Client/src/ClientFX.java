@@ -12,10 +12,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Border;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -589,7 +586,7 @@ public class ClientFX extends Application{
 		Image i = new Image(s);
 		ImageView v = new ImageView(i);
 		v.setFitHeight(200);
-		v.setFitWidth(200);
+		v.setFitWidth(210);
 		v.setPreserveRatio(true);
 		b.setGraphic(v);
 		//b.setDisable(true);
@@ -599,6 +596,7 @@ public class ClientFX extends Application{
 
 	private Parent createDoor2() {
 		BorderPane background = new BorderPane();
+		background.setStyle("-fx-background-color: #654321;");
 
 		//Create four pictures to display
 		Button clue1 = createImage("pictures/road.jpg");
@@ -607,27 +605,36 @@ public class ClientFX extends Application{
 		Button clue4 = createImage("pictures/stock.jpeg");
 
 
-		Text puzzle = new Text("what is the airspeed of an unladen swallow");
-		//Testing
+		Text instructions = new Text("Guess the song by the pictures!");
+		instructions.setScaleX(3);
+		instructions.setScaleY(3);
 
-//		clue1.setOnAction(event -> {
-//
-//			try {
-//				conn.score++;
-//				Score.setText("Score: " + conn.score);
-//				primaryStage.setScene(sceneList.get(0));
-//			}
-//			catch(Exception e) {
-//			}
-//
-//		});
+		TextField answerField = new TextField();
 
-		HBox choiceHBox = new HBox(10, clue1, clue2, clue3, clue4);
-		VBox Door2Box = new VBox(puzzle, choiceHBox);
+		answerField.setOnAction(event -> {
 
-		background.setCenter(Door2Box);
-		Door2Box.setAlignment(Pos.CENTER);
-		//background.setBottom();
+			try {
+				conn.score++;
+				Score.setText("Score: " + conn.score);
+				primaryStage.setScene(sceneList.get(0));
+			}
+			catch(Exception e) {
+			}
+
+		});
+
+
+		HBox choiceHBox = new HBox(5, clue1, clue2, clue3, clue4);
+		VBox top = new VBox(5, instructions);
+
+		choiceHBox.setAlignment(Pos.CENTER);
+		background.setCenter(choiceHBox);
+
+		top.setAlignment(Pos.BASELINE_CENTER);
+		background.setTop(top);
+
+		background.setBottom(answerField);
+		answerField.setAlignment(Pos.BASELINE_CENTER);
 
 		return background;
 	}
