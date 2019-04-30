@@ -393,7 +393,7 @@ public class ClientFX extends Application{
 		TextField d22 = new TextField("5");
 		TextField d23 = new TextField("6");
 		TextField d31 = new TextField("7");
-		TextField d32 = new TextField("8");
+		TextField d32 = new TextField("");
 		TextField d33 = new TextField("9");
 		d11.setPrefWidth(30);
 		d12.setPrefWidth(30);
@@ -420,20 +420,95 @@ public class ClientFX extends Application{
 		d22.setEditable(false);
 		d23.setEditable(false);
 		d31.setEditable(false);
-		d32.setEditable(false);
+		d32.setEditable(true);
 		d33.setEditable(false);
+
+		/**Everything for Upper Left 2x2 puzzle**/
+		TextField e11 = new TextField("1");
+		TextField e12 = new TextField("2");
+		TextField e21 = new TextField("3");
+		TextField e22 = new TextField("4");
+		e11.setPrefWidth(30);//setting width of cells
+		e12.setPrefWidth(30);
+		e21.setPrefWidth(30);
+		e22.setPrefWidth(30);
+		e11.setPrefHeight(30);
+		e12.setPrefHeight(30);
+		e21.setPrefHeight(30);
+		e22.setPrefHeight(30);
+		e11.setEditable(false); //making sure some cells aren't editable
+		e12.setEditable(false);
+		e21.setEditable(true);
+		e22.setEditable(false);
+		HBox puzzle3row1UpperLeft = new HBox(e11, e12);
+		HBox puzzle3row2UpperLeft = new HBox(e21, e22);
+
+		/**Everything for Upper Right 2x2 puzzle**/
+		TextField f11 = new TextField("1");
+		TextField f12 = new TextField("2");
+		TextField f21 = new TextField("3");
+		TextField f22 = new TextField("4");
+		f11.setPrefWidth(30);//setting width of cells
+		f12.setPrefWidth(30);
+		f21.setPrefWidth(30);
+		f22.setPrefWidth(30);
+		f11.setPrefHeight(30);
+		f12.setPrefHeight(30);
+		f21.setPrefHeight(30);
+		f22.setPrefHeight(30);
+		f11.setEditable(false); //making sure some cells aren't editable
+		f12.setEditable(false);
+		f21.setEditable(false);
+		f22.setEditable(false);
+		HBox puzzle3row1UpperRight = new HBox(f11, f12);
+		HBox puzzle3row2UpperRight = new HBox(f21, f22);
+
+		/**Everything for Lower Left 2x2 puzzle**/
+		TextField g11 = new TextField("1");
+		TextField g12 = new TextField("2");
+		TextField g21 = new TextField("3");
+		TextField g22 = new TextField("4");
+		g11.setPrefWidth(30);//setting width of cells
+		g12.setPrefWidth(30);
+		g21.setPrefWidth(30);
+		g22.setPrefWidth(30);
+		g11.setPrefHeight(30);
+		g12.setPrefHeight(30);
+		g21.setPrefHeight(30);
+		g22.setPrefHeight(30);
+		g11.setEditable(false); //making sure some cells aren't editable
+		g12.setEditable(false);
+		g21.setEditable(true);
+		g22.setEditable(false);
+		HBox puzzle3row1LowerLeft = new HBox(g11, g12);
+		HBox puzzle3row2LowerLeft = new HBox(g21, g22);
+
+		/**Everything for Lower Left 2x2 puzzle**/
+		TextField h11 = new TextField("1");
+		TextField h12 = new TextField("2");
+		TextField h21 = new TextField();
+		TextField h22 = new TextField("4");
+		h11.setPrefWidth(30);//setting width of cells
+		h12.setPrefWidth(30);
+		h21.setPrefWidth(30);
+		h22.setPrefWidth(30);
+		h11.setPrefHeight(30);
+		h12.setPrefHeight(30);
+		h21.setPrefHeight(30);
+		h22.setPrefHeight(30);
+		h11.setEditable(false); //making sure some cells aren't editable
+		h12.setEditable(false);
+		h21.setEditable(true);
+		h22.setEditable(false);
+		HBox puzzle3row1LowerRight = new HBox(h11, h12);
+		HBox puzzle3row2LowerRight = new HBox(h21, h22);
+
+
 
 
 		Button solve = new Button("Solve");
 
-
-
-
-
-
-
-
-
+		/**Where we compile everything for the puzzles**/
 		HBox puzzle1row1 = new HBox(c11, c12);
 		HBox puzzle1row2 = new HBox(c21, c22);
 
@@ -441,11 +516,22 @@ public class ClientFX extends Application{
 		HBox puzzle2row2 = new HBox(d21, d22, d23);
 		HBox puzzle2row3 = new HBox(d31, d32, d33);
 
+		VBox puzzle3UpperLeft= new VBox(puzzle3row1UpperLeft, puzzle3row2UpperLeft);
+		VBox puzzle3UpperRight = new VBox(puzzle3row1UpperRight, puzzle3row2UpperRight);
+		VBox puzzle3LowerLeft = new VBox(puzzle3row1LowerLeft, puzzle3row2LowerLeft);
+		VBox puzzle3LowerRight = new VBox(puzzle3row1LowerRight, puzzle3row2LowerRight);
+
+		HBox puzzle3row1 = new HBox(5, puzzle3UpperLeft, puzzle3UpperRight);
+		HBox puzzle3row2 = new HBox(5, puzzle3LowerLeft, puzzle3LowerRight);
+
+		VBox puzzle3 = new VBox(5,puzzle3row1, puzzle3row2);
+
+
 
 
 		VBox puzzle1 = new VBox( puzzle1row1, puzzle1row2);
 		VBox puzzle2 = new VBox( puzzle2row1, puzzle2row2, puzzle2row3);
-		HBox puzzleHolder = new HBox(50, puzzle1, puzzle2);
+		HBox puzzleHolder = new HBox(50, puzzle1, puzzle2, puzzle3);
 		VBox everything = new VBox(puzzleTitleCard, puzzleHolder, solve);
 
 
@@ -473,7 +559,7 @@ public class ClientFX extends Application{
 
 			try {
 				/**IMPORTANT THING #1: INCREASE YOUR SCORE**/
-				if(c21.getText().equals("3") && d13.getText().equals("3")){
+				if(c21.getText().equals("3") && d13.getText().equals("3") && d32.getText().equals("8")){
 					conn.score++;
 					Score.setText("Score: " + conn.score); //Updates Score Text on UI
 					primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
