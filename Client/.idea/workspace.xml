@@ -8,15 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f75eff52-058d-429a-9738-e5afd8dbc2a1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientConnection$ConnThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientConnection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Main$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientFX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/out/production/FXNet/ServerConnection$ClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/out/production/FXNet/ServerConnection$ClientThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proj3_Client/ClientFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proj3_Client/ClientFX.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="428" column="40" selection-start-line="428" selection-start-column="40" selection-end-line="428" selection-end-column="40" />
+            <state relative-caret-position="198">
+              <caret line="425" column="34" selection-end-line="760" />
               <folding>
                 <element signature="e#1484#1491#0" expanded="true" />
                 <element signature="e#11797#12259#0" />
@@ -130,7 +122,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556588054285" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556600895194" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -289,8 +281,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="428" column="40" selection-start-line="428" selection-start-column="40" selection-end-line="428" selection-end-column="40" />
+        <state relative-caret-position="198">
+          <caret line="425" column="34" selection-end-line="760" />
           <folding>
             <element signature="e#1484#1491#0" expanded="true" />
             <element signature="e#11797#12259#0" />
