@@ -18,6 +18,8 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
 
 public class ClientFX extends Application{
@@ -360,6 +362,7 @@ public class ClientFX extends Application{
 	/** TO DO**/
 
 	private Parent createDoor1() {
+		ArrayList<VBox> sudokuList = new ArrayList<VBox>();
 		Button choice1 = new Button("Press me to win the puzzle");
 		Button choice2 = new Button("Press me to do nothing");
 		Button choice3 = new Button("Press me to do nothing");
@@ -507,37 +510,45 @@ public class ClientFX extends Application{
 
 
 		Button solve = new Button("Solve");
+		solve.setAlignment(Pos.CENTER);
 
 		/**Where we compile everything for the puzzles**/
 		HBox puzzle1row1 = new HBox(c11, c12);
 		HBox puzzle1row2 = new HBox(c21, c22);
+		VBox puzzle1 = new VBox( puzzle1row1, puzzle1row2);
+
 
 		HBox puzzle2row1 = new HBox(d11, d12, d13);
 		HBox puzzle2row2 = new HBox(d21, d22, d23);
 		HBox puzzle2row3 = new HBox(d31, d32, d33);
+		VBox puzzle2 = new VBox( puzzle2row1, puzzle2row2, puzzle2row3);
+
 
 		VBox puzzle3UpperLeft= new VBox(puzzle3row1UpperLeft, puzzle3row2UpperLeft);
 		VBox puzzle3UpperRight = new VBox(puzzle3row1UpperRight, puzzle3row2UpperRight);
 		VBox puzzle3LowerLeft = new VBox(puzzle3row1LowerLeft, puzzle3row2LowerLeft);
 		VBox puzzle3LowerRight = new VBox(puzzle3row1LowerRight, puzzle3row2LowerRight);
-
 		HBox puzzle3row1 = new HBox(5, puzzle3UpperLeft, puzzle3UpperRight);
 		HBox puzzle3row2 = new HBox(5, puzzle3LowerLeft, puzzle3LowerRight);
-
 		VBox puzzle3 = new VBox(5,puzzle3row1, puzzle3row2);
 
 
 
 
-		VBox puzzle1 = new VBox( puzzle1row1, puzzle1row2);
-		VBox puzzle2 = new VBox( puzzle2row1, puzzle2row2, puzzle2row3);
 		HBox puzzleHolder = new HBox(50, puzzle1, puzzle2, puzzle3);
 		VBox everything = new VBox(puzzleTitleCard, puzzleHolder, solve);
 
+		//To give the illusion that there are randomized puzzles
 
+		puzzle1.setVisible(false);
+		puzzle2.setVisible(false);
+		puzzle3.setVisible(false);
 
-
-
+		sudokuList.add(puzzle1); //Add all possible puzzles to a list of puzzles
+		sudokuList.add(puzzle2);
+		sudokuList.add(puzzle3);
+		Collections.shuffle(sudokuList, new Random()); //shuffle the list
+		sudokuList.get(0).setVisible(true); //get first puzzle in list and make it visible
 
 		/**ESSENTIALLY, IT DOESN'T MATTER WHAT YOUR PUZZLE LOOKS LIKE, SO AS LONG AS THERE IS SOME MECHANISM THAT DOES THE FOLLOWING**/
 		choice1.setOnAction(event -> {
@@ -559,7 +570,7 @@ public class ClientFX extends Application{
 
 			try {
 				/**IMPORTANT THING #1: INCREASE YOUR SCORE**/
-				if(c21.getText().equals("3") && d13.getText().equals("3") && d32.getText().equals("8")){
+				if(c21.getText().equals("3") || (d13.getText().equals("3") && d32.getText().equals("8")) || h21.getText().equals("3")){
 					conn.score++;
 					Score.setText("Score: " + conn.score); //Updates Score Text on UI
 					primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage

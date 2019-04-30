@@ -8,7 +8,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f75eff52-058d-429a-9738-e5afd8dbc2a1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proj3_Client/ClientFX$buttonThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proj3_Client/ClientFX$buttonThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Proj3_Client/ClientFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proj3_Client/ClientFX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,7 +25,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
+            <state relative-caret-position="731">
               <caret line="46" selection-start-line="46" selection-end-line="46" />
             </state>
           </provider>
@@ -31,16 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="425" column="34" selection-end-line="760" />
-              <folding>
-                <element signature="e#1484#1491#0" expanded="true" />
-                <element signature="e#11797#12259#0" />
-                <element signature="e#11816#12225#0" />
-                <element signature="e#12283#12782#0" />
-                <element signature="e#12302#12748#0" />
-                <element signature="e#12416#12677#1" />
-              </folding>
+            <state relative-caret-position="33">
+              <caret line="570" column="17" lean-forward="true" selection-start-line="570" selection-start-column="17" selection-end-line="570" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -122,7 +117,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556600895194" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556631276810" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -262,13 +257,6 @@
     <entry file="file://$PROJECT_DIR$/src/NetworkConnection.java" />
     <entry file="file://$PROJECT_DIR$/src/Server.java" />
     <entry file="file://$PROJECT_DIR$/src/Puzzle.java" />
-    <entry file="file://$PROJECT_DIR$/src/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FXNet.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -279,25 +267,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="425" column="34" selection-end-line="760" />
-          <folding>
-            <element signature="e#1484#1491#0" expanded="true" />
-            <element signature="e#11797#12259#0" />
-            <element signature="e#11816#12225#0" />
-            <element signature="e#12283#12782#0" />
-            <element signature="e#12302#12748#0" />
-            <element signature="e#12416#12677#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientConnection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="74" column="443" selection-start-line="74" selection-start-column="443" selection-end-line="74" selection-end-column="443" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="570" column="17" lean-forward="true" selection-start-line="570" selection-start-column="17" selection-end-line="570" selection-end-column="17" />
         </state>
       </provider>
     </entry>
