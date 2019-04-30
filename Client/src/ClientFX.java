@@ -46,6 +46,8 @@ public class ClientFX extends Application{
 	Text Score = new Text("Score: 0");
 
 
+
+
 	private ClientConnection  conn;
 	private TextArea messages = new TextArea();
 	private TextArea playerList = new TextArea();
@@ -582,41 +584,52 @@ public class ClientFX extends Application{
 	}
 
 	/**ADRIAN'S PUZZLE HERE**/
+	Button createImage(String s){
+		Button b = new Button();
+		Image i = new Image(s);
+		ImageView v = new ImageView(i);
+		v.setFitHeight(200);
+		v.setFitWidth(200);
+		v.setPreserveRatio(true);
+		b.setGraphic(v);
+		//b.setDisable(true);
+
+		return b;
+	}
+
 	private Parent createDoor2() {
 		BorderPane background = new BorderPane();
 
-		//Four pictures
-		Button b = new Button();
-		Image i = new Image("sample/CardImages/Gray_back.jpg");
-		ImageView v = new ImageView(i);
-		v.setFitHeight(200);
-		v.setFitWidth(80);
-		v.setPreserveRatio(true);
-		b.setGraphic(v);
-		b.setDisable(true);
+		//Create four pictures to display
+		Button clue1 = createImage("pictures/road.jpg");
+		Button clue2 = createImage("pictures/horses.jpg");
+		Button clue3 = createImage("pictures/backyard.jpg");
+		Button clue4 = createImage("pictures/stock.jpeg");
 
-		Button choice1 = new Button("Press me to win the puzzle");
-		Button choice2 = new Button("Press me to do nothing");
-		Button choice3 = new Button("Press me to do nothing");
+
 		Text puzzle = new Text("what is the airspeed of an unladen swallow");
 		//Testing
 
-		choice1.setOnAction(event -> {
+//		clue1.setOnAction(event -> {
+//
+//			try {
+//				conn.score++;
+//				Score.setText("Score: " + conn.score);
+//				primaryStage.setScene(sceneList.get(0));
+//			}
+//			catch(Exception e) {
+//			}
+//
+//		});
 
-			try {
-				conn.score++;
-				Score.setText("Score: " + conn.score);
-				primaryStage.setScene(sceneList.get(0));
-			}
-			catch(Exception e) {
-			}
-
-		});
-
-		HBox choiceHBox = new HBox(10, choice1, choice2, choice3);
+		HBox choiceHBox = new HBox(10, clue1, clue2, clue3, clue4);
 		VBox Door2Box = new VBox(puzzle, choiceHBox);
 
-		return Door2Box;
+		background.setCenter(Door2Box);
+		Door2Box.setAlignment(Pos.CENTER);
+		//background.setBottom();
+
+		return background;
 	}
 
 	/**CHARLY'S PUZZLE HERE**/
@@ -702,6 +715,7 @@ public class ClientFX extends Application{
 
 
 		primaryStage.setScene(startUpScene);
+		primaryStage.setTitle("Puzzle Gauntlet");
 		this.primaryStage = primaryStage;
 		primaryStage.show();
 
