@@ -2,16 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d8b429b-387b-4b0a-8584-832aa732c341" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ant.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JavaFXApp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/ClientFX.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -30,11 +20,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/src/ClientFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="587" column="16" selection-start-line="587" selection-start-column="16" selection-end-line="587" selection-end-column="16" />
+            <state relative-caret-position="491">
+              <caret line="595" column="27" selection-start-line="595" selection-start-column="27" selection-end-line="595" selection-end-column="27" />
               <folding>
+                <element signature="e#1484#1491#0" expanded="true" />
                 <element signature="e#1872#9163#0" />
                 <element signature="e#9206#16180#0" />
+                <element signature="e#16815#17444#0" />
+                <element signature="e#17447#18078#0" />
+                <element signature="e#18181#19056#0" />
               </folding>
             </state>
           </provider>
@@ -53,9 +47,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="536" />
+    <option name="x" value="346" />
     <option name="y" value="23" />
-    <option name="width" value="1144" />
+    <option name="width" value="1114" />
     <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -75,10 +69,6 @@
               <item name="Project5" type="b2602c69:ProjectViewProjectNode" />
               <item name="Client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -118,8 +108,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="536" y="23" width="1144" height="1027" extended-state="0" />
-    <editor active="true" />
+    <frame x="346" y="23" width="1114" height="1027" extended-state="0" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Image Layers" />
@@ -127,7 +116,7 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24954627" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22947761" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
@@ -157,13 +146,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/ClientFX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="587" column="16" selection-start-line="587" selection-start-column="16" selection-end-line="587" selection-end-column="16" />
+        <state relative-caret-position="491">
+          <caret line="595" column="27" selection-start-line="595" selection-start-column="27" selection-end-line="595" selection-end-column="27" />
           <folding>
+            <element signature="e#1484#1491#0" expanded="true" />
             <element signature="e#1872#9163#0" />
             <element signature="e#9206#16180#0" />
+            <element signature="e#16815#17444#0" />
+            <element signature="e#17447#18078#0" />
+            <element signature="e#18181#19056#0" />
           </folding>
         </state>
       </provider>

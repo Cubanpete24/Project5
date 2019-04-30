@@ -12,6 +12,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -581,6 +583,18 @@ public class ClientFX extends Application{
 
 	/**ADRIAN'S PUZZLE HERE**/
 	private Parent createDoor2() {
+		BorderPane background = new BorderPane();
+
+		//Four pictures
+		Button b = new Button();
+		Image i = new Image("sample/CardImages/Gray_back.jpg");
+		ImageView v = new ImageView(i);
+		v.setFitHeight(200);
+		v.setFitWidth(80);
+		v.setPreserveRatio(true);
+		b.setGraphic(v);
+		b.setDisable(true);
+
 		Button choice1 = new Button("Press me to win the puzzle");
 		Button choice2 = new Button("Press me to do nothing");
 		Button choice3 = new Button("Press me to do nothing");
