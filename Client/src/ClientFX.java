@@ -585,6 +585,7 @@ public class ClientFX extends Application{
 		Button choice2 = new Button("Press me to do nothing");
 		Button choice3 = new Button("Press me to do nothing");
 		Text puzzle = new Text("what is the airspeed of an unladen swallow");
+		//Testing
 
 		choice1.setOnAction(event -> {
 
