@@ -597,8 +597,8 @@ public class ClientFX extends Application{
 		//Create four pictures to display
 		Button clue1 = createImage("pictures/road.jpg");
 		Button clue2 = createImage("pictures/horses.jpg");
-		Button clue3 = createImage("pictures/backyard.jpg");
-		Button clue4 = createImage("pictures/stock.jpeg");
+		Button clue3 = createImage("pictures/horseintheback.jpg");
+		Button clue4 = createImage("pictures/billyray.png");
 		Button adrianQuit = new Button("Quit Puzzle");
 
 

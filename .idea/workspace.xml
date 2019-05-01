@@ -4,6 +4,7 @@
     <list default="true" id="2d8b429b-387b-4b0a-8584-832aa732c341" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/ClientFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,23 +21,26 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/src/ClientFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="350" column="33" selection-start-line="350" selection-start-column="33" selection-end-line="350" selection-end-column="33" />
+            <state relative-caret-position="257">
+              <caret line="600" column="56" selection-start-line="600" selection-start-column="56" selection-end-line="600" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5387#5663#0" />
-                <element signature="e#5687#5810#0" />
-                <element signature="e#6217#6499#0" />
-                <element signature="e#6867#7235#0" />
-                <element signature="e#7286#7469#0" />
-                <element signature="e#7520#7703#0" />
-                <element signature="e#7756#7939#0" />
-                <element signature="e#9172#16146#0" />
-                <element signature="e#17022#17681#0" />
-                <element signature="e#17898#17956#0" />
+                <element signature="e#17105#17930#0" />
+                <element signature="e#18477#19106#0" />
+                <element signature="e#19109#19740#0" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/src/pictures/horseintheback.jpg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/src/pictures/billyray.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -66,7 +70,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="429" />
+    <option name="x" value="326" />
     <option name="y" value="23" />
     <option name="width" value="1247" />
     <option name="height" value="1027" />
@@ -79,7 +83,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -94,6 +98,12 @@
             </path>
             <path>
               <item name="Project5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pictures" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project5" type="b2602c69:ProjectViewProjectNode" />
               <item name="Server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -105,7 +115,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -114,6 +124,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Client/src/pictures" />
       <recent name="$PROJECT_DIR$/Client/src" />
       <recent name="$PROJECT_DIR$/Client/pictures" />
     </key>
@@ -170,10 +181,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="429" y="23" width="1247" height="1027" extended-state="0" />
+    <frame x="326" y="23" width="1247" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20746888" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21742739" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -183,7 +194,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32894737" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32894737" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -222,26 +233,6 @@
     <entry file="file://$PROJECT_DIR$/Client/src/pictures/stock.jpeg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/ClientFX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="350" column="33" selection-start-line="350" selection-start-column="33" selection-end-line="350" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5387#5663#0" />
-            <element signature="e#5687#5810#0" />
-            <element signature="e#6217#6499#0" />
-            <element signature="e#6867#7235#0" />
-            <element signature="e#7286#7469#0" />
-            <element signature="e#7520#7703#0" />
-            <element signature="e#7756#7939#0" />
-            <element signature="e#9172#16146#0" />
-            <element signature="e#17022#17681#0" />
-            <element signature="e#17898#17956#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Server/src/ServerFX.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -251,6 +242,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/pictures/backyard.jpg">
       <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/pictures/horseintheback.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/pictures/billyray.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/ClientFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="600" column="56" selection-start-line="600" selection-start-column="56" selection-end-line="600" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#17105#17930#0" />
+            <element signature="e#18477#19106#0" />
+            <element signature="e#19109#19740#0" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
