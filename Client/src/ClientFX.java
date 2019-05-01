@@ -97,10 +97,6 @@ public class ClientFX extends Application{
 		door4.setVisible(false);
         testGame.setVisible(false);
 
-
-
-
-
         //Generic handler for the client choices
 		EventHandler<ActionEvent> buttonSendRPSLS = event -> {
 			Button b = (Button) event.getSource();
@@ -603,38 +599,73 @@ public class ClientFX extends Application{
 		Button clue2 = createImage("pictures/horses.jpg");
 		Button clue3 = createImage("pictures/backyard.jpg");
 		Button clue4 = createImage("pictures/stock.jpeg");
+		Button adrianQuit = new Button("Quit Puzzle");
 
 
 		Text instructions = new Text("Guess the song by the pictures!");
 		instructions.setScaleX(3);
 		instructions.setScaleY(3);
 
-		TextField answerField = new TextField();
+
+		TextField answerField = new TextField("Enter Answer Here");
+		answerField.setPrefWidth(200);
 
 		answerField.setOnAction(event -> {
-
 			try {
-				conn.score++;
-				Score.setText("Score: " + conn.score);
-				primaryStage.setScene(sceneList.get(0));
+				//get input for the textfield
+				String adrianPuzzle = answerField.getText();
+				answerField.clear();
+
+				//make input lowercase to check for correctness
+				adrianPuzzle = adrianPuzzle.toLowerCase();
+
+				//Check if input is correct
+				if( adrianPuzzle.equals("old town road")){
+					answerField.clear();
+					answerField.setText("YOU ARE CORRECT!!");
+
+					//Try to display a "youre correct" message but the textfield
+					//will not update before the thread sleep
+//					try{
+//						Thread.sleep(2000);
+//					}
+//					catch (Exception e){
+//
+//					}
+					conn.score++;
+					Score.setText("Score: " + conn.score);
+					primaryStage.setScene(sceneList.get(0));
+					door2.setDisable(true);
+				}
+				else{
+					answerField.setText("Wrong Answer");
+				}
 			}
 			catch(Exception e) {
+
 			}
 
+		});
+
+		adrianQuit.setOnAction(event -> {
+			primaryStage.setScene(sceneList.get(0));
+			door2.setDisable(true);
 		});
 
 
 		HBox choiceHBox = new HBox(5, clue1, clue2, clue3, clue4);
 		VBox top = new VBox(5, instructions);
+		HBox bottom = new HBox(5, answerField, adrianQuit);
 
 		choiceHBox.setAlignment(Pos.CENTER);
 		background.setCenter(choiceHBox);
 
 		top.setAlignment(Pos.BASELINE_CENTER);
+		top.setTranslateY(10);
 		background.setTop(top);
 
-		background.setBottom(answerField);
-		answerField.setAlignment(Pos.BASELINE_CENTER);
+		background.setBottom(bottom);
+		bottom.setAlignment(Pos.BASELINE_CENTER);
 
 		return background;
 	}
