@@ -7,9 +7,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -36,7 +34,7 @@ public class ClientFX extends Application{
 	Scene DoorScene1, DoorScene2, DoorScene3, DoorScene4;
 	/**STEP 2: DECLARE A BUTTON FOR YOUR PUZZLE, THIS WILL NOT BE USED IN THE FINAL IMPLEMENTATION BUT WILL GIVE YOU DIRECT ACCESS TO IT SO YOU CAN DEBUG IT**/
 	/**ALREADY DONE**/
-	Button door1, door2, door3, door4, testGame;
+	MenuItem door1, door2, door3, door4, testGame;
 	Stage primaryStage ; //THIS IS THE STAGE THAT DETERMINES WHAT THE USE IS CURRENTLY LOOKING AT
 	Scene startUpScene; //THIS IS THE SCENE THAT YOU SEE ON STARTUP
 	ArrayList<Scene> sceneList = new ArrayList<Scene>(); //Might be better as a hashmap but for now, its an arrayList
@@ -83,11 +81,11 @@ public class ClientFX extends Application{
 
 		/**STEP 3: INITIALIZE YOUR DOOR BUTTONS**/
 		/**ALREADY DONE**/
-		door1 = new Button("Door #1");
-		door2 = new Button("Door #2");
-		door3 = new Button("Door #3");
-		door4 = new Button("Door #4");
-        testGame = new Button("Test Game");
+		door1 = new MenuItem("Door #1");
+		door2 = new MenuItem("Door #2");
+		door3 = new MenuItem("Door #3");
+		door4 = new MenuItem("Door #4");
+        testGame = new MenuItem("Test Game");
 
 
         /**THEY ARE INVISIBLE ON STARTUP, AND BECOME VISIBLE ONCE THE USER CONNECTS...THIS DOESN'T REALLY MATTER, BUT IS THERE ANYWAY**/
@@ -236,7 +234,12 @@ public class ClientFX extends Application{
 		/**This HBox contains the buttons for the rock, paper, scissors etc...*/
 		/**STEP 3.5: ADD BUTTON TO HBOX OF DOOR BUTTONS**/
 		/**ALREADY DONE**/
-		HBox Doors = new HBox(10, Score, door1, door2, door3, door4, testGame);
+		//create a drop down menu
+
+		MenuButton dropMenu = new MenuButton("Puzzles");
+		dropMenu.getItems().addAll(door1, door2, door3, door4, testGame);
+
+		HBox Doors = new HBox(10, Score, dropMenu);
 		Doors.setAlignment(Pos.CENTER);
 
 
@@ -621,20 +624,10 @@ public class ClientFX extends Application{
 
 				//Check if input is correct
 				if( adrianPuzzle.equals("old town road")){
-					answerField.clear();
-					answerField.setText("YOU ARE CORRECT!!");
-
-					//Try to display a "youre correct" message but the textfield
-					//will not update before the thread sleep
-//					try{
-//						Thread.sleep(2000);
-//					}
-//					catch (Exception e){
-//
-//					}
 					conn.score++;
 					Score.setText("Score: " + conn.score);
 					primaryStage.setScene(sceneList.get(0));
+					conn.send("w"); // not updating the clients scoreboard
 					door2.setDisable(true);
 				}
 				else{
@@ -748,9 +741,6 @@ public class ClientFX extends Application{
 		sceneList.add(scene3);
 		sceneList.add(scene4);
 		sceneList.add(finalScene);
-
-
-
 
 		primaryStage.setScene(startUpScene);
 		primaryStage.setTitle("Puzzle Gauntlet");

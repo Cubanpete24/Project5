@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d8b429b-387b-4b0a-8584-832aa732c341" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/ClientFX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,26 +19,39 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/src/ClientFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="600" column="56" selection-start-line="600" selection-start-column="56" selection-end-line="600" selection-end-column="56" />
+            <state relative-caret-position="505">
+              <caret line="240" selection-start-line="240" selection-end-line="240" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#17105#17930#0" />
+                <element signature="e#3212#3369#0" />
+                <element signature="e#3445#3598#0" />
+                <element signature="e#3647#3800#0" />
+                <element signature="e#3854#3981#0" />
+                <element signature="e#4007#4134#0" />
+                <element signature="e#4162#4538#0" />
+                <element signature="e#4591#5359#0" />
+                <element signature="e#5383#5659#0" />
+                <element signature="e#5683#5806#0" />
+                <element signature="e#6213#6495#0" />
+                <element signature="e#6863#7231#0" />
+                <element signature="e#7282#7465#0" />
+                <element signature="e#7516#7699#0" />
+                <element signature="e#7752#7935#0" />
+                <element signature="e#9168#16142#0" />
+                <element signature="e#14989#15451#0" />
+                <element signature="e#15475#16003#0" />
+                <element signature="e#16145#16421#0" />
+                <element signature="e#16424#18474#0" />
                 <element signature="e#18477#19106#0" />
                 <element signature="e#19109#19740#0" />
+                <element signature="e#19743#19839#0" />
+                <element signature="e#20766#20838#0" />
+                <element signature="e#20842#21001#0" />
+                <element signature="e#21006#21177#0" />
+                <element signature="e#21180#22040#0" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Client/src/pictures/horseintheback.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Client/src/pictures/billyray.png">
-          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -50,11 +61,6 @@
               <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Client/src/pictures/backyard.jpg">
-          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -72,7 +78,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="326" />
     <option name="y" value="23" />
-    <option name="width" value="1247" />
+    <option name="width" value="1354" />
     <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -95,12 +101,6 @@
               <item name="Project5" type="b2602c69:ProjectViewProjectNode" />
               <item name="Client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pictures" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Project5" type="b2602c69:ProjectViewProjectNode" />
@@ -181,10 +181,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="326" y="23" width="1247" height="1027" extended-state="0" />
-    <editor active="true" />
+    <frame x="326" y="23" width="1354" height="1027" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21742739" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15091464" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -194,7 +193,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32894737" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.071271926" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -243,21 +242,44 @@
     <entry file="file://$PROJECT_DIR$/Client/src/pictures/backyard.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/pictures/horseintheback.jpg">
+    <entry file="file://$PROJECT_DIR$/Client/src/pictures/billyray.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/pictures/billyray.png">
+    <entry file="file://$PROJECT_DIR$/Client/src/pictures/horseintheback.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/ClientFX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="600" column="56" selection-start-line="600" selection-start-column="56" selection-end-line="600" selection-end-column="56" />
+        <state relative-caret-position="505">
+          <caret line="240" selection-start-line="240" selection-end-line="240" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#17105#17930#0" />
+            <element signature="e#3212#3369#0" />
+            <element signature="e#3445#3598#0" />
+            <element signature="e#3647#3800#0" />
+            <element signature="e#3854#3981#0" />
+            <element signature="e#4007#4134#0" />
+            <element signature="e#4162#4538#0" />
+            <element signature="e#4591#5359#0" />
+            <element signature="e#5383#5659#0" />
+            <element signature="e#5683#5806#0" />
+            <element signature="e#6213#6495#0" />
+            <element signature="e#6863#7231#0" />
+            <element signature="e#7282#7465#0" />
+            <element signature="e#7516#7699#0" />
+            <element signature="e#7752#7935#0" />
+            <element signature="e#9168#16142#0" />
+            <element signature="e#14989#15451#0" />
+            <element signature="e#15475#16003#0" />
+            <element signature="e#16145#16421#0" />
+            <element signature="e#16424#18474#0" />
             <element signature="e#18477#19106#0" />
             <element signature="e#19109#19740#0" />
+            <element signature="e#19743#19839#0" />
+            <element signature="e#20766#20838#0" />
+            <element signature="e#20842#21001#0" />
+            <element signature="e#21006#21177#0" />
+            <element signature="e#21180#22040#0" />
           </folding>
         </state>
       </provider>
