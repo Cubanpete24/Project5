@@ -12,6 +12,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -97,10 +98,6 @@ public class ClientFX extends Application{
 		door3.setVisible(false);
 		door4.setVisible(false);
         testGame.setVisible(false);
-
-
-
-
 
         //Generic handler for the client choices
 		EventHandler<ActionEvent> buttonSendRPSLS = event -> {
@@ -506,9 +503,6 @@ public class ClientFX extends Application{
 		HBox puzzle3row1LowerRight = new HBox(h11, h12);
 		HBox puzzle3row2LowerRight = new HBox(h21, h22);
 
-
-
-
 		Button solve = new Button("Solve");
 		solve.setAlignment(Pos.CENTER);
 
@@ -531,9 +525,6 @@ public class ClientFX extends Application{
 		HBox puzzle3row1 = new HBox(5, puzzle3UpperLeft, puzzle3UpperRight);
 		HBox puzzle3row2 = new HBox(5, puzzle3LowerLeft, puzzle3LowerRight);
 		VBox puzzle3 = new VBox(5,puzzle3row1, puzzle3row2);
-
-
-
 
 		HBox puzzleHolder = new HBox(50, puzzle1, puzzle2, puzzle3);
 		VBox everything = new VBox(puzzleTitleCard, puzzleHolder, solve);
@@ -640,29 +631,63 @@ public class ClientFX extends Application{
 		return Door3Box;
 	}
 
+	public ImageView createPictureOnButton(String dir) {
+		Image image = new Image(dir);
+		ImageView view = new ImageView(image);
+		view.setFitHeight(75);
+		view.setFitWidth(75);
+		view.setPreserveRatio(true);
+		return view;
+	}
+
 	/**KAVEESHA'S PUZZLE HERE**/
 	private Parent createDoor4() {
-		Button choice1 = new Button("Press me to win the puzzle");
-		Button choice2 = new Button("Press me to do nothing");
-		Button choice3 = new Button("Press me to do nothing");
-		Text puzzle = new Text("what is the airspeed of an unladen swallow");
+		ArrayList<VBox> gamePlayScene = new ArrayList<VBox>();
 
-		choice1.setOnAction(event -> {
+		Text morseCode = new Text("... ..- .--. . .-. / ... -- .- ... .... / -... .-. --- ... .-.-.- / .. ... / -. .. -. - . -. -.. --- .----. ... / -... . ... - / ...- .. -.. . --- / --. .- -- . / ..-. .-. .- -. -.-. .... .. ... . .-.-.-");
+		Text binary = new Text("1000 0001 0010");
+		Button mathQuestion = new Button();
+
+		mathQuestion.setGraphic(createPictureOnButton("mathPuzzle.jpg"));
+
+		TextField answer = new TextField();
+		answer.setPrefHeight(50);
+		answer.setPrefWidth(50);
+		Button solveButton = new Button("Solve");
+
+		solveButton.setOnAction(event -> {
 
 			try {
-				conn.score++;
-				Score.setText("Score: " + conn.score);
-				primaryStage.setScene(sceneList.get(0));
+				String theirAnswer = answer.getText().toUpperCase();
+				if(theirAnswer.equals("SUPER SMASH BROS. IS NINTENDO'S BEST VIDEO GAME FRANCHISE.") || theirAnswer.equals("DAB")|| theirAnswer.equals("51")) {
+					conn.score++;
+					Score.setText("Score: " + conn.score);
+					primaryStage.setScene(sceneList.get(0));
+					conn.send("w");
+				}
 			}
 			catch(Exception e) {
 			}
 
 		});
 
-		HBox choiceHBox = new HBox(10, choice1, choice2, choice3);
-		VBox Door4Box = new VBox(puzzle, choiceHBox);
+		VBox morseGameplay = new VBox(5, morseCode, answer, solveButton);
+		VBox binaryToHex = new VBox(5, binary, answer, solveButton);
+		VBox mathPuzzle = new VBox(5, mathQuestion, answer, solveButton);
 
-		return Door4Box;
+		morseGameplay.setVisible(false);
+		binaryToHex.setVisible(false);
+		mathPuzzle.setVisible(false);
+
+		VBox everything = new VBox(morseGameplay, binaryToHex, mathPuzzle, answer, solveButton);
+
+		gamePlayScene.add(morseGameplay); //Add all possible puzzles to a list of puzzles
+		gamePlayScene.add(binaryToHex);
+		gamePlayScene.add(mathPuzzle);
+		Collections.shuffle(gamePlayScene, new Random()); //shuffle the list
+		gamePlayScene.get(0).setVisible(true); //get first puzzle in list and make it visible
+
+		return everything;
 	}
 
 	public static void main(String[] args) {
