@@ -20,8 +20,8 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Random;
-
 
 public class ClientFX extends Application{
 
@@ -634,18 +634,40 @@ public class ClientFX extends Application{
 	public ImageView createPictureOnButton(String dir) {
 		Image image = new Image(dir);
 		ImageView view = new ImageView(image);
-		view.setFitHeight(75);
-		view.setFitWidth(75);
+		view.setFitHeight(300);
+		view.setFitWidth(300);
 		view.setPreserveRatio(true);
 		return view;
 	}
 
+	public class Puzzle {
+		private VBox puzzle;
+		private boolean wasUsed;
+		public Puzzle(VBox puzzle) {
+			this.puzzle = puzzle;
+			this.wasUsed = false;
+		}
+		public VBox getPuzzle() {
+			return this.puzzle;
+		}
+		public void setPuzzle(VBox puzzle) {
+			this.puzzle = puzzle;
+		}
+		public boolean getWasUsed() {
+			return this.wasUsed;
+		}
+		public void setWasUsed(boolean wasUsed) {
+			this.wasUsed = wasUsed;
+		}
+	}
+
 	/**KAVEESHA'S PUZZLE HERE**/
 	private Parent createDoor4() {
+		HashMap<String, Puzzle> gamePlayScenes = new HashMap<>();
 		ArrayList<VBox> gamePlayScene = new ArrayList<VBox>();
 
-		Text morseCode = new Text("... ..- .--. . .-. / ... -- .- ... .... / -... .-. --- ... .-.-.- / .. ... / -. .. -. - . -. -.. --- .----. ... / -... . ... - / ...- .. -.. . --- / --. .- -- . / ..-. .-. .- -. -.-. .... .. ... . .-.-.-");
-		Text binary = new Text("1000 0001 0010");
+		Text morseCode = new Text("... -- .- ... .... / -... .-. --- ...");
+		Text binary = new Text("1101 1010 1011");
 		Button mathQuestion = new Button();
 
 		mathQuestion.setGraphic(createPictureOnButton("mathPuzzle.jpg"));
@@ -653,13 +675,18 @@ public class ClientFX extends Application{
 		TextField answer = new TextField();
 		answer.setPrefHeight(50);
 		answer.setPrefWidth(50);
-		Button solveButton = new Button("Solve");
+		Button submitAnswerButton = new Button("Submit Answer");
+		Button giveUpButton = new Button("Give up");
 
-		solveButton.setOnAction(event -> {
+		giveUpButton.setOnAction(event -> {
+			primaryStage.setScene(sceneList.get(0));
+		});
+
+		submitAnswerButton.setOnAction(event -> {
 
 			try {
 				String theirAnswer = answer.getText().toUpperCase();
-				if(theirAnswer.equals("SUPER SMASH BROS. IS NINTENDO'S BEST VIDEO GAME FRANCHISE.") || theirAnswer.equals("DAB")|| theirAnswer.equals("51")) {
+				if(theirAnswer.equals("SMASH BROS") || theirAnswer.equals("DAB")|| theirAnswer.equals("51")) {
 					conn.score++;
 					Score.setText("Score: " + conn.score);
 					primaryStage.setScene(sceneList.get(0));
@@ -670,17 +697,19 @@ public class ClientFX extends Application{
 			}
 
 		});
-
-		VBox morseGameplay = new VBox(5, morseCode, answer, solveButton);
-		VBox binaryToHex = new VBox(5, binary, answer, solveButton);
-		VBox mathPuzzle = new VBox(5, mathQuestion, answer, solveButton);
+		HBox playerAction = new HBox(submitAnswerButton, giveUpButton);
+		VBox morseGameplay = new VBox(5, morseCode, answer, playerAction);
+		VBox binaryToHex = new VBox(5, binary, answer, playerAction);
+		VBox mathPuzzle = new VBox(5, mathQuestion, answer, playerAction);
 
 		morseGameplay.setVisible(false);
 		binaryToHex.setVisible(false);
 		mathPuzzle.setVisible(false);
 
-		VBox everything = new VBox(morseGameplay, binaryToHex, mathPuzzle, answer, solveButton);
-
+		VBox everything = new VBox(morseGameplay, binaryToHex, mathPuzzle, answer, playerAction);
+		Puzzle morseScene = new Puzzle(morseGameplay);
+		Puzzle binaryToHexScene = new Puzzle(binaryToHex);
+		Puzzle mathPuzzleScene = new Puzzle(mathPuzzle);
 		gamePlayScene.add(morseGameplay); //Add all possible puzzles to a list of puzzles
 		gamePlayScene.add(binaryToHex);
 		gamePlayScene.add(mathPuzzle);

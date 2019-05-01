@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14ada50d-c349-4483-a974-cdfe3468ecb8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/mathPuzzle.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Client.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Client.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$buttonThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$buttonThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientFX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/.idea/Server.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/.idea/dictionaries/Eugenio.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/ServerConnection$ClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/out/production/Server/ServerConnection$ClientThread.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,11 +19,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="691" lean-forward="true" selection-start-line="691" selection-end-line="691" />
+            <state relative-caret-position="297">
+              <caret line="711" column="55" selection-start-line="711" selection-start-column="55" selection-end-line="711" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#18410#18416#0" expanded="true" />
+                <element signature="e#18486#18487#0" expanded="true" />
+                <element signature="e#18512#18513#0" expanded="true" />
+                <element signature="e#18552#18553#0" expanded="true" />
+                <element signature="e#18581#18582#0" expanded="true" />
+                <element signature="e#18609#18610#0" expanded="true" />
+                <element signature="e#18636#18637#0" expanded="true" />
+                <element signature="e#18675#18676#0" expanded="true" />
+                <element signature="e#18704#18705#0" expanded="true" />
+                <element signature="e#18908#18914#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,7 +89,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556717899197" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556737842438" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib/javafx.web.jar!/" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -151,7 +149,7 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Learn" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28514588" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.0397878" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
@@ -177,11 +175,19 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="691" lean-forward="true" selection-start-line="691" selection-end-line="691" />
+        <state relative-caret-position="297">
+          <caret line="711" column="55" selection-start-line="711" selection-start-column="55" selection-end-line="711" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#18410#18416#0" expanded="true" />
+            <element signature="e#18486#18487#0" expanded="true" />
+            <element signature="e#18512#18513#0" expanded="true" />
+            <element signature="e#18552#18553#0" expanded="true" />
+            <element signature="e#18581#18582#0" expanded="true" />
+            <element signature="e#18609#18610#0" expanded="true" />
+            <element signature="e#18636#18637#0" expanded="true" />
+            <element signature="e#18675#18676#0" expanded="true" />
+            <element signature="e#18704#18705#0" expanded="true" />
+            <element signature="e#18908#18914#0" expanded="true" />
           </folding>
         </state>
       </provider>

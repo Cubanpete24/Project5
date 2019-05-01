@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00cec935-15c3-475a-9d82-ce753cf7abb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Client/src/mathPuzzle.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/.idea/Client.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/.idea/artifacts/Client.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$buttonThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$buttonThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/ClientFX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Server.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Eugenio.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server/ServerConnection$ClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/ServerConnection$ClientThread.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,7 +40,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
     <option name="width" value="814" />
     <option name="height" value="867" />
@@ -81,7 +72,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556717899133" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556737842265" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib/javafx.web.jar!/" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
