@@ -627,6 +627,10 @@ public class ClientFX extends Application{
 		ArrayList<HBox> rowButton = new ArrayList<>();
 		//ArrayList<Button> myButton = new ArrayList<>();
 		ArrayList<ArrayList<Button>> myButton = new ArrayList<>();
+		//ImageView redBox = new ImageView("red.png");
+		//redBox.set
+
+
 		for(ArrayList<Button> elem : myButton){
 			elem = new ArrayList<Button>();
 		}
@@ -636,6 +640,11 @@ public class ClientFX extends Application{
 			rowButton.add(new HBox() );
 			for(int j=0;j<5;j++){
 				Button temp = new Button("red");//Integer.toString((i*5)+j) );
+				Image myImage = new Image("red.jpg");
+				ImageView myView = new ImageView(myImage);
+				myView.setPreserveRatio(true);
+				myView.setFitWidth(50);
+				temp.setGraphic(myView);
 				temp.setPrefSize(50,50);
 
 				myButton.get(i).add(temp);
@@ -651,6 +660,11 @@ public class ClientFX extends Application{
 				for(ArrayList<Button> elem: myButton){
 					for(Button ele : elem){
 						ele.setText("green");
+						Image myImage = new Image("green.jpg");
+						ImageView myView = new ImageView(myImage);
+						myView.setPreserveRatio(true);
+						myView.setFitWidth(50);
+						ele.setGraphic(myView);
 					}
 				}
 			}
