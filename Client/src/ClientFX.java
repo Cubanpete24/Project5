@@ -12,7 +12,9 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -617,27 +619,78 @@ public class ClientFX extends Application{
 
 	/**CHARLY'S PUZZLE HERE**/
 	private Parent createDoor3() {
-		Button choice1 = new Button("Press me to win the puzzle");
-		Button choice2 = new Button("Press me to do nothing");
-		Button choice3 = new Button("Press me to do nothing");
-		Text puzzle = new Text("what is the airspeed of an unladen swallow");
+//		Button choice1 = new Button("Press me to win the puzzle");
+//		Button choice2 = new Button("Press me to do nothing");
+//		Button choice3 = new Button("Press me to do nothing");
+		Text puzzle = new Text("Click the buttons until they are all green, \nwhen done go to checkWinner to confirm");
 
-		choice1.setOnAction(event -> {
+		VBox centerScene = new VBox();
+		ArrayList<HBox> rowButton = new ArrayList<>();
+		//ArrayList<Button> myButton = new ArrayList<>();
+		ArrayList<ArrayList<Button>> myButton = new ArrayList<>();
+		for(ArrayList<Button> elem : myButton){
+			elem = new ArrayList<Button>();
+		}
 
-			try {
-				conn.score++;
-				Score.setText("Score: " + conn.score);
-				primaryStage.setScene(sceneList.get(0));
+		for(int i=0;i<5;i++){//this whole block creates a 5X5 array of buttons and adds them to the scene
+			myButton.add(new ArrayList<Button>() );
+			rowButton.add(new HBox() );
+			for(int j=0;j<5;j++){
+				Button temp = new Button("red");//Integer.toString((i*5)+j) );
+				temp.setPrefSize(50,50);
+
+				myButton.get(i).add(temp);
+				rowButton.get(i).getChildren().addAll(myButton.get(i).get(j) );
+				//rowButton.get(myButton.get(i).get(j) );
 			}
-			catch(Exception e) {
-			}
+			centerScene.getChildren().addAll(rowButton.get(i) );
+		}
 
+		myButton.get(0).get(0).setOnAction(new EventHandler<ActionEvent>() {//button that changes them to green
+			@Override
+			public void handle(ActionEvent event) {
+				for(ArrayList<Button> elem: myButton){
+					for(Button ele : elem){
+						ele.setText("green");
+					}
+				}
+			}
 		});
 
-		HBox choiceHBox = new HBox(10, choice1, choice2, choice3);
-		VBox Door3Box = new VBox(puzzle, choiceHBox);
+		Button checkWinner = new Button("Check Winner");
+		checkWinner.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				for(ArrayList<Button> elem : myButton){
+					for(Button ele : elem){
+						if(!ele.getText().equals("green") ){
+							return;
+						}
+					}
 
-		return Door3Box;
+					conn.score++;
+					Score.setText("Score: "+conn.score );
+					primaryStage.setScene(sceneList.get(0) );
+				}
+			}
+		});
+
+//		choice1.setOnAction(event -> {
+//
+//			try {
+//				conn.score++;//increments score
+//				Score.setText("Score: " + conn.score);//set text
+//				primaryStage.setScene(sceneList.get(0));//call scene
+//			}
+//			catch(Exception e) {
+//			}
+//
+//		});
+
+		HBox choiceHBox = new HBox(centerScene, checkWinner);
+		VBox Door3Box = new VBox(puzzle, choiceHBox);
+		BorderPane mainScene = new BorderPane(Door3Box);
+		return mainScene;
 	}
 
 	/**KAVEESHA'S PUZZLE HERE**/
