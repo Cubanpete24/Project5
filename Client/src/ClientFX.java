@@ -434,7 +434,7 @@ public class ClientFX extends Application{
 		d32.setEditable(true);
 		d33.setEditable(false);
 
-		Sudoku s1 = new Sudoku();
+		sudoku s1 = new sudoku();
 
 		/**Everything for Upper Left 2x2 puzzle**/
 		TextField e11 = new TextField("1");
@@ -516,7 +516,7 @@ public class ClientFX extends Application{
 		HBox puzzle3row1LowerRight = new HBox(h11, h12);
 		HBox puzzle3row2LowerRight = new HBox(h21, h22);
 
-		Sudoku puzzle = new Sudoku();
+		sudoku puzzle = new sudoku();
 		puzzle.setUpperLeft(4,2,3,4);
 		puzzle.setUpperRight(4,2,3,4);
 		puzzle.setLowerLeft(4,2,3,4);
@@ -524,7 +524,7 @@ public class ClientFX extends Application{
 		VBox Sudoku1 = puzzle.makePuzzle();
 
 		//Puzzle 4 with Sudoku object
-		Sudoku puzzle2 = new Sudoku();
+		sudoku puzzle2 = new sudoku();
 		puzzle2.setUpperLeft(1,2,3,4);
 		puzzle2.setUpperRight(1,2,3,4);
 		puzzle2.setLowerLeft(1,2,3,4);
