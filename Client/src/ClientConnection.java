@@ -104,7 +104,7 @@ public abstract class ClientConnection {
 				}
 			}
 			catch(Exception e) {
-					callback.accept("connection to server lost, please restart client");
+					callback.accept("connection to server lost, please restart client.");
 			}
 		}
 
