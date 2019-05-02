@@ -691,14 +691,27 @@ public class ClientFX extends Application{
 		return mainScene;
 	}
 
+	public ImageView createPictureOnButton(String dir) {
+		Image image = new Image(dir);
+		ImageView view = new ImageView(image);
+		view.setFitHeight(300);
+		view.setFitWidth(300);
+		view.setPreserveRatio(true);
+		return view;
+	}
 
+	private VBox setUpButton(String realAnswer) {
 
-	/**KAVEESHA'S PUZZLE HERE**/
-	private Parent createDoor4() {
-		Button choice1 = new Button("Press me to win the puzzle");
-		Button choice2 = new Button("Press me to do nothing");
-		Button choice3 = new Button("Press me to do nothing");
-		Text puzzle = new Text("what is the airspeed of an unladen swallow");
+		TextField answer = new TextField();
+		answer.setPrefHeight(5);
+		answer.setPrefWidth(5);
+
+		Button submitAnswerButton = new Button("Submit Answer");
+		Button giveUpButton = new Button("Give up");
+
+		giveUpButton.setOnAction(event -> {
+			primaryStage.setScene(sceneList.get(0));
+		});
 
 
 		submitAnswerButton.setOnAction(event -> {
