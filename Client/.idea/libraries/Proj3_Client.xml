@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Proj3_Client">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/Client/Proj3_Client.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

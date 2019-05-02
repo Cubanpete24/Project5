@@ -11,6 +11,10 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
@@ -22,6 +26,7 @@ import java.io.File;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Random;
 
 
@@ -44,10 +49,11 @@ public class ClientFX extends Application{
 
 	/**STEP 1: DECLARE A SCENE FOR YOUR PUZZLE, EACH SCENE IS IT'S OWN PUZZLE**/
 	/**ALREADY DONE**/
-	Scene DoorScene1, DoorScene2, DoorScene3, DoorScene4;
+	Scene DoorScene1, DoorScene2, DoorScene3, DoorScene4, DoorScene5, DoorScene6;
 	/**STEP 2: DECLARE A BUTTON FOR YOUR PUZZLE, THIS WILL NOT BE USED IN THE FINAL IMPLEMENTATION BUT WILL GIVE YOU DIRECT ACCESS TO IT SO YOU CAN DEBUG IT**/
 	/**ALREADY DONE**/
 	MenuItem door1, door2, door3, door4, testGame;
+	Button door1, door2, door3, door4, door5, door6, testGame;
 	Stage primaryStage ; //THIS IS THE STAGE THAT DETERMINES WHAT THE USE IS CURRENTLY LOOKING AT
 	Scene startUpScene; //THIS IS THE SCENE THAT YOU SEE ON STARTUP
 	ArrayList<Scene> sceneList = new ArrayList<Scene>(); //Might be better as a hashmap but for now, its an arrayList
@@ -66,6 +72,8 @@ public class ClientFX extends Application{
 		door2.setVisible(true);
 		door3.setVisible(true);
 		door4.setVisible(true);
+		door5.setVisible(true);
+		door6.setVisible(true);
 	}
 
 
@@ -99,6 +107,13 @@ public class ClientFX extends Application{
 		door3 = new MenuItem("Door #3");
 		door4 = new MenuItem("Door #4");
         testGame = new MenuItem("Test Game");
+		door1 = new Button("Door #1");
+		door2 = new Button("Door #2");
+		door3 = new Button("Door #3");
+		door4 = new Button("Door #4");
+		door5 = new Button("Door #5");
+		door6 = new Button("Door #6");
+        testGame = new Button("Test Game");
 
 
         /**THEY ARE INVISIBLE ON STARTUP, AND BECOME VISIBLE ONCE THE USER CONNECTS...THIS DOESN'T REALLY MATTER, BUT IS THERE ANYWAY**/
@@ -106,6 +121,8 @@ public class ClientFX extends Application{
 		door2.setVisible(false);
 		door3.setVisible(false);
 		door4.setVisible(false);
+		door5.setVisible(false);
+		door6.setVisible(false);
         testGame.setVisible(false);
 
         //Generic handler for the client choices
@@ -196,6 +213,8 @@ public class ClientFX extends Application{
 				door2.setVisible(true);
 				door3.setVisible(true);
 				door4.setVisible(true);
+				door5.setVisible(true);
+				door6.setVisible(true);
 				testGame.setVisible(true);
 
 				conn.startConn(this.clientName);
@@ -254,6 +273,7 @@ public class ClientFX extends Application{
 		dropMenu.getItems().addAll(door1, door2, door3, door4, testGame);
 
 		HBox Doors = new HBox(10, Score, dropMenu);
+		HBox Doors = new HBox(10, Score, door1, door2, door3, door4, door5, door6, testGame);
 		Doors.setAlignment(Pos.CENTER);
 
 
@@ -266,6 +286,8 @@ public class ClientFX extends Application{
 				door2.setVisible(false);
 				door3.setVisible(false);
 				door4.setVisible(false);
+				door5.setVisible(false);
+				door6.setVisible(false);
 				testGame.setVisible(false);
             }
             catch(Exception e) {
@@ -294,8 +316,6 @@ public class ClientFX extends Application{
 			}
 			catch(Exception e) {
 			}
-
-
 		});
 
 		/**ADRIAN'S DOOR HERE**/
@@ -308,8 +328,6 @@ public class ClientFX extends Application{
 			}
 			catch(Exception e) {
 			}
-
-
 		});
 
 		/**CHARLY'S DOOR HERE**/
@@ -340,17 +358,34 @@ public class ClientFX extends Application{
 
 		});
 
+		door5.setOnAction(event -> {
+			try {
+				DoorScene5 = new Scene(createDoor5(), 900, 500);
+				sceneList.add(DoorScene5);
+				primaryStage.setScene(DoorScene5);
+			}
+			catch(Exception e) {
+			}
+		});
+
+		door6.setOnAction(event -> {
+
+			try {
+				DoorScene6 = new Scene(createDoor6(), 900, 500);
+				sceneList.add(DoorScene6);
+				primaryStage.setScene(DoorScene6);
+			}
+			catch(Exception e) {
+			}
+		});
+
 		/**This is where I organize the layout and design of the UI**/
-
-
 
 		/**This HBox contains the the button and textfield for the port, this was done so the two could be close together**/
 		HBox Port = new HBox(2, portInput, portButton);
 		/**This HBox contains the button and textifeld for IP address, done so the two could be close together, and to make it look better**/
 		HBox IP = new HBox(2,ipInput,ipButton);
 		HBox Name = new HBox(2, nameInput);
-
-
 
 		/**HBox contains two other HBoxes, as well as the buttons to connect, play, and quit the game**/
 		HBox middleRow = new HBox(5, Port, IP, Name, connect, play, quit);
@@ -600,29 +635,98 @@ public class ClientFX extends Application{
 		return Door3Box;
 	}
 
-	/**KAVEESHA'S PUZZLE HERE**/
-	private Parent createDoor4() {
-		Button choice1 = new Button("Press me to win the puzzle");
-		Button choice2 = new Button("Press me to do nothing");
-		Button choice3 = new Button("Press me to do nothing");
-		Text puzzle = new Text("what is the airspeed of an unladen swallow");
+	public ImageView createPictureOnButton(String dir) {
+		Image image = new Image(dir);
+		ImageView view = new ImageView(image);
+		view.setFitHeight(300);
+		view.setFitWidth(300);
+		view.setPreserveRatio(true);
+		return view;
+	}
 
-		choice1.setOnAction(event -> {
+	private VBox setUpButton(String realAnswer) {
 
+		TextField answer = new TextField();
+		answer.setPrefHeight(5);
+		answer.setPrefWidth(5);
+
+		Button submitAnswerButton = new Button("Submit Answer");
+		Button giveUpButton = new Button("Give up");
+
+		giveUpButton.setOnAction(event -> {
+			primaryStage.setScene(sceneList.get(0));
+		});
+
+
+		submitAnswerButton.setOnAction(event -> {
 			try {
-				conn.score++;
-				Score.setText("Score: " + conn.score);
-				primaryStage.setScene(sceneList.get(0));
+				String theirAnswer = answer.getText().toUpperCase();
+				answer.clear();
+				if(theirAnswer.equals(realAnswer)) {
+					conn.score++;
+					Score.setText("Score: " + conn.score);
+					primaryStage.setScene(sceneList.get(0));
+					conn.send("w");
+				}
+				else {
+					answer.appendText("Try again. Delete this text to do so");
+				}
 			}
 			catch(Exception e) {
 			}
-
 		});
 
-		HBox choiceHBox = new HBox(10, choice1, choice2, choice3);
-		VBox Door4Box = new VBox(puzzle, choiceHBox);
+		HBox playerButtonAction = new HBox(submitAnswerButton, giveUpButton);
+		VBox playerTotalAction = new VBox(answer, playerButtonAction);
+		return playerTotalAction;
+	}
 
-		return Door4Box;
+	/**KAVEESHA'S PUZZLE HERE**/
+	private Parent createDoor4() {
+		BorderPane morseGameplay = new BorderPane();
+		Text morseCode = new Text("... -- .- ... .... / -... .-. --- ...");
+		morseCode.setFill(Color.DEEPPINK);
+		morseCode.setScaleX(3);
+		morseCode.setScaleY(3);
+		morseCode.setTranslateX(370);
+		morseCode.setTranslateY(30);
+
+		VBox playerAction = setUpButton("SMASH BROS");
+		morseGameplay.setTop(morseCode);
+		morseGameplay.setBottom(playerAction);
+		morseGameplay.setStyle("-fx-background-color: lightskyblue");
+
+		return morseGameplay;
+	}
+
+	private Parent createDoor5() {
+		BorderPane binaryGameplay = new BorderPane();
+		Text binary = new Text("1101 1010 1011");
+		binary.setFill(Color.CRIMSON);
+		binary.setScaleX(3);
+		binary.setScaleY(3);
+		binary.setTranslateX(350);
+		binary.setTranslateY(30);
+		VBox playerAction = setUpButton("DAB");
+		binaryGameplay.setTop(binary);
+		binaryGameplay.setBottom(playerAction);
+		binaryGameplay.setStyle("-fx-background-color: steelblue");
+
+		return binaryGameplay;
+	}
+
+	private Parent createDoor6() {
+		Button mathQuestion = new Button();
+		mathQuestion.setGraphic(createPictureOnButton("mathPuzzle.jpg"));
+
+		BorderPane mathGameplay = new BorderPane();
+
+		VBox playerAction = setUpButton("51");
+		mathGameplay.setTop(mathQuestion);
+		mathGameplay.setBottom(playerAction);
+		mathGameplay.setStyle("-fx-background-color: palegreen");
+
+		return mathGameplay;
 	}
 
 	public static void main(String[] args) {
@@ -647,20 +751,21 @@ public class ClientFX extends Application{
 		Scene scene2 = new Scene(createDoor2(), 900, 500);
 		Scene scene3 = new Scene(createDoor3(), 900, 500);
 		Scene scene4 = new Scene(createDoor4(), 900, 500);
+		Scene scene5 = new Scene(createDoor5(), 900, 500);
+		Scene scene6 = new Scene(createDoor6(), 900, 500);
 		Scene finalScene = startUpScene;
 		sceneList.add(scene1);
 		sceneList.add(scene2);
 		sceneList.add(scene3);
 		sceneList.add(scene4);
+		sceneList.add(scene5);
+		sceneList.add(scene6);
 		sceneList.add(finalScene);
 
 		primaryStage.setScene(startUpScene);
 		primaryStage.setTitle("Puzzle Gauntlet");
 		this.primaryStage = primaryStage;
 		primaryStage.show();
-
-
-
 	}
 	
 	@Override
