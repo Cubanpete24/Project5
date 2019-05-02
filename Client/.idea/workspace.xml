@@ -7,11 +7,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f75eff52-058d-429a-9738-e5afd8dbc2a1" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/sudoku.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proj3_Client/ClientFX$buttonThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proj3_Client/ClientFX$buttonThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proj3_Client/ClientFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proj3_Client/ClientFX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientConnection.java" afterDir="false" />
+>>>>>>> 0161bf80141141e3e200ba30fdca5dca0cd63cc9
       <change beforePath="$PROJECT_DIR$/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientFX.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/ServerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/ServerConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/ServerFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/ServerFX.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,11 +41,41 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="-196">
               <caret line="656" column="13" lean-forward="true" selection-start-line="656" selection-start-column="13" selection-end-line="656" selection-end-column="13" />
+=======
+            <state relative-caret-position="150">
+              <caret line="831" column="21" selection-start-line="831" selection-start-column="21" selection-end-line="831" selection-end-column="21" />
+              <folding>
+                <element signature="e#1539#1546#0" expanded="true" />
+                <element signature="e#9351#9357#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ClientConnection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="100" column="21" lean-forward="true" selection-start-line="100" selection-start-column="21" selection-end-line="100" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Sudoku.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="155" column="47" selection-start-line="155" selection-start-column="47" selection-end-line="155" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> 0161bf80141141e3e200ba30fdca5dca0cd63cc9
             </state>
           </provider>
         </entry>
@@ -51,36 +91,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>doorscene1</find>
-      <find>STEP</find>
-      <find>DOORSCENE1</find>
-      <find>createdoor</find>
-      <find>send</find>
-      <find>button</find>
-      <find>door2</find>
-      <find>door1.setona</find>
-      <find>step</find>
-      <find>g</find>
-      <find>buttonthr</find>
-      <find>oop</find>
-      <find>&quot;g&quot;</find>
-      <find>scenelist</find>
-      <find>primarystage</find>
-      <find>sceneList.get</find>
-      <find>buttonThread</find>
-      <find>runlater</find>
       <find>later</find>
       <find>changescene</find>
       <find>updater</find>
       <find>buttonthread</find>
-      <find>start</find>
       <find>enableButtons()</find>
       <find>testgame</find>
-      <find>connect</find>
       <find>you are</find>
       <find>test</find>
       <find>test butt</find>
       <find>door1</find>
+      <find>class</find>
+      <find>step</find>
+      <find>sudok</find>
+      <find>sudoku</find>
+      <find>s su</find>
+      <find>setedit</find>
+      <find>solve</find>
+      <find>lower left</find>
+      <find>setlower</find>
+      <find>new ra</find>
+      <find>update</find>
+      <find>updatepl</find>
+      <find>update</find>
+      <find>connect</find>
+      <find>connect.set</find>
+      <find>quit</find>
+      <find>&quot;c&quot;</find>
+      <find>start</find>
+      <find>change name</find>
+      <find>oops</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -94,8 +134,10 @@
         <option value="$PROJECT_DIR$/src/Client.java" />
         <option value="$PROJECT_DIR$/src/Server.java" />
         <option value="$PROJECT_DIR$/src/Puzzle.java" />
-        <option value="$PROJECT_DIR$/src/ClientConnection.java" />
+        <option value="$PROJECT_DIR$/src/sudoku.java" />
+        <option value="$PROJECT_DIR$/src/Sudoku.java" />
         <option value="$PROJECT_DIR$/src/ClientFX.java" />
+        <option value="$PROJECT_DIR$/src/ClientConnection.java" />
       </list>
     </option>
   </component>
@@ -111,16 +153,37 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556631276810" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
+=======
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556760563575" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Project2" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+>>>>>>> 0161bf80141141e3e200ba30fdca5dca0cd63cc9
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
@@ -180,7 +243,7 @@
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2639676" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2639676" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -261,25 +324,60 @@
     <entry file="file://$PROJECT_DIR$/FXNet.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+<<<<<<< HEAD
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Thread.java" />
     <entry file="file://$PROJECT_DIR$/src/ClientConnection.java">
+=======
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="74" column="443" selection-start-line="74" selection-start-column="443" selection-end-line="74" selection-end-column="443" />
+        <state relative-caret-position="200">
+          <caret line="747" selection-start-line="747" selection-end-line="747" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Client.java">
+>>>>>>> 0161bf80141141e3e200ba30fdca5dca0cd63cc9
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sudoku.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="645">
           <caret line="46" selection-start-line="46" selection-end-line="46" />
+=======
+        <state relative-caret-position="17">
+          <caret line="155" column="47" selection-start-line="155" selection-start-column="47" selection-end-line="155" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+>>>>>>> 0161bf80141141e3e200ba30fdca5dca0cd63cc9
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="-196">
           <caret line="656" column="13" lean-forward="true" selection-start-line="656" selection-start-column="13" selection-end-line="656" selection-end-column="13" />
+=======
+        <state relative-caret-position="150">
+          <caret line="831" column="21" selection-start-line="831" selection-start-column="21" selection-end-line="831" selection-end-column="21" />
+          <folding>
+            <element signature="e#1539#1546#0" expanded="true" />
+            <element signature="e#9351#9357#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="100" column="21" lean-forward="true" selection-start-line="100" selection-start-column="21" selection-end-line="100" selection-end-column="21" />
+>>>>>>> 0161bf80141141e3e200ba30fdca5dca0cd63cc9
         </state>
       </provider>
     </entry>

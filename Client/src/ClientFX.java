@@ -24,7 +24,11 @@ import java.util.Collections;
 import java.util.Random;
 
 
+
+
 public class ClientFX extends Application{
+
+
 
 	/**Do find out how to add your own puzzles, crtl+f STEP**/
 
@@ -271,6 +275,8 @@ public class ClientFX extends Application{
 		/**ALREADY DONE**/
 
 
+
+
 		/**door1 will set the stage to a new scene, we can come up with more creative puzzles**/
 		door1.setOnAction(event -> {
 
@@ -371,10 +377,12 @@ public class ClientFX extends Application{
 		Text puzzleTitleCard = new Text("Challenge 1: Lightning Sudoku!");
 
 		/**Everything for the 2x2 Puzzle**/
-		TextField c11 = new TextField("1");
-		TextField c12 = new TextField("2");
+
+
+		TextField c11 = new TextField("4");
+		TextField c12 = new TextField();
 		TextField c21 = new TextField();
-		TextField c22 = new TextField("4");
+		TextField c22 = new TextField("1");
 		c11.setPrefWidth(30);//setting width of cells
 		c12.setPrefWidth(30);
 		c21.setPrefWidth(30);
@@ -384,7 +392,7 @@ public class ClientFX extends Application{
 		c21.setPrefHeight(30);
 		c22.setPrefHeight(30);
 		c11.setEditable(false); //making sure some cells aren't editable
-		c12.setEditable(false);
+		c12.setEditable(true);
 		c21.setEditable(true);
 		c22.setEditable(false);
 		//c11.setBorder()
@@ -428,6 +436,8 @@ public class ClientFX extends Application{
 		d32.setEditable(true);
 		d33.setEditable(false);
 
+		Sudoku s1 = new Sudoku();
+
 		/**Everything for Upper Left 2x2 puzzle**/
 		TextField e11 = new TextField("1");
 		TextField e12 = new TextField("2");
@@ -449,10 +459,10 @@ public class ClientFX extends Application{
 		HBox puzzle3row2UpperLeft = new HBox(e21, e22);
 
 		/**Everything for Upper Right 2x2 puzzle**/
-		TextField f11 = new TextField("1");
-		TextField f12 = new TextField("2");
+		TextField f11 = new TextField();
+		TextField f12 = new TextField();
 		TextField f21 = new TextField("3");
-		TextField f22 = new TextField("4");
+		TextField f22 = new TextField();
 		f11.setPrefWidth(30);//setting width of cells
 		f12.setPrefWidth(30);
 		f21.setPrefWidth(30);
@@ -461,18 +471,18 @@ public class ClientFX extends Application{
 		f12.setPrefHeight(30);
 		f21.setPrefHeight(30);
 		f22.setPrefHeight(30);
-		f11.setEditable(false); //making sure some cells aren't editable
-		f12.setEditable(false);
+		f11.setEditable(true); //making sure some cells aren't editable
+		f12.setEditable(true);
 		f21.setEditable(false);
-		f22.setEditable(false);
+		f22.setEditable(true);
 		HBox puzzle3row1UpperRight = new HBox(f11, f12);
 		HBox puzzle3row2UpperRight = new HBox(f21, f22);
 
 		/**Everything for Lower Left 2x2 puzzle**/
-		TextField g11 = new TextField("1");
-		TextField g12 = new TextField("2");
-		TextField g21 = new TextField("3");
-		TextField g22 = new TextField("4");
+		TextField g11 = new TextField();
+		TextField g12 = new TextField();
+		TextField g21 = new TextField("2");
+		TextField g22 = new TextField("1");
 		g11.setPrefWidth(30);//setting width of cells
 		g12.setPrefWidth(30);
 		g21.setPrefWidth(30);
@@ -481,18 +491,18 @@ public class ClientFX extends Application{
 		g12.setPrefHeight(30);
 		g21.setPrefHeight(30);
 		g22.setPrefHeight(30);
-		g11.setEditable(false); //making sure some cells aren't editable
-		g12.setEditable(false);
-		g21.setEditable(true);
+		g11.setEditable(true); //making sure some cells aren't editable
+		g12.setEditable(true);
+		g21.setEditable(false);
 		g22.setEditable(false);
 		HBox puzzle3row1LowerLeft = new HBox(g11, g12);
 		HBox puzzle3row2LowerLeft = new HBox(g21, g22);
 
-		/**Everything for Lower Left 2x2 puzzle**/
-		TextField h11 = new TextField("1");
-		TextField h12 = new TextField("2");
+		/**Everything for Lower Right 2x2 puzzle**/
+		TextField h11 = new TextField("2");
+		TextField h12 = new TextField();
 		TextField h21 = new TextField();
-		TextField h22 = new TextField("4");
+		TextField h22 = new TextField();
 		h11.setPrefWidth(30);//setting width of cells
 		h12.setPrefWidth(30);
 		h21.setPrefWidth(30);
@@ -502,19 +512,54 @@ public class ClientFX extends Application{
 		h21.setPrefHeight(30);
 		h22.setPrefHeight(30);
 		h11.setEditable(false); //making sure some cells aren't editable
-		h12.setEditable(false);
+		h12.setEditable(true);
 		h21.setEditable(true);
-		h22.setEditable(false);
+		h22.setEditable(true);
 		HBox puzzle3row1LowerRight = new HBox(h11, h12);
 		HBox puzzle3row2LowerRight = new HBox(h21, h22);
 
+		Sudoku puzzle = new Sudoku();
+		puzzle.setUpperLeft(4,2,3,4);
+		puzzle.setUpperRight(4,2,3,4);
+		puzzle.setLowerLeft(4,2,3,4);
+		puzzle.setLowerRight(4,2,3,4);
+		VBox Sudoku1 = puzzle.makePuzzle();
 
+		//Puzzle 4 with Sudoku object
+		Sudoku puzzle2 = new Sudoku();
+		puzzle2.setUpperLeft(1,2,3,4);
+		puzzle2.setUpperRight(1,2,3,4);
+		puzzle2.setLowerLeft(1,2,3,4);
+		puzzle2.setLowerRight(1,2,3,4);
+		VBox Sudoku2 = puzzle2.makePuzzle();
+
+/*
+		HBox puzzleRow1UpperLeft = new HBox(puzzle4.e11, puzzle4.e12);
+		HBox puzzleRow2UpperLeft = new HBox(puzzle4.e21, puzzle4.e22);
+		HBox puzzleRow1UpperRight = new HBox(puzzle4.f11, puzzle4.f12);
+		HBox puzzleRow2UpperRight = new HBox(puzzle4.f21, puzzle4.f22);
+		HBox puzzleRow1Lowerleft = new HBox(puzzle4.g11, puzzle4.g12);
+		HBox puzzleRow2LowerLeft = new HBox(puzzle4.g21, puzzle4.g22);
+		HBox puzzleRow1LowerRight = new HBox(puzzle4.h11, puzzle4.h12);
+		HBox puzzleRow2LowerRight = new HBox(puzzle4.h21, puzzle4.h22);
+
+		VBox puzzleUpperLeft = new VBox(puzzleRow1UpperLeft, puzzleRow2UpperLeft);
+		VBox puzzleUpperRight = new VBox(puzzleRow1UpperRight, puzzleRow2UpperRight);
+		VBox puzzleLowerLeft = new VBox(puzzleRow1Lowerleft, puzzleRow2LowerLeft);
+		VBox puzzleLowerRight = new VBox(puzzleRow1LowerRight, puzzleRow2LowerRight);
+
+		HBox puzzleRow1 = new HBox(5, puzzleUpperLeft, puzzleUpperRight);
+		HBox puzzleRow2 = new HBox(5, puzzleLowerLeft, puzzleLowerRight);
+
+		VBox puzzle = new VBox(5,puzzleRow1, puzzleRow2);
+		*/
 
 
 		Button solve = new Button("Solve");
 		solve.setAlignment(Pos.CENTER);
 
-		/**Where we compile everything for the puzzles**/
+		/**Where we compile everything for the puzzles*
+
 		HBox puzzle1row1 = new HBox(c11, c12);
 		HBox puzzle1row2 = new HBox(c21, c22);
 		VBox puzzle1 = new VBox( puzzle1row1, puzzle1row2);
@@ -524,6 +569,7 @@ public class ClientFX extends Application{
 		HBox puzzle2row2 = new HBox(d21, d22, d23);
 		HBox puzzle2row3 = new HBox(d31, d32, d33);
 		VBox puzzle2 = new VBox( puzzle2row1, puzzle2row2, puzzle2row3);
+		 **/
 
 
 		VBox puzzle3UpperLeft= new VBox(puzzle3row1UpperLeft, puzzle3row2UpperLeft);
@@ -537,19 +583,20 @@ public class ClientFX extends Application{
 
 
 
-		HBox puzzleHolder = new HBox(50, puzzle1, puzzle2, puzzle3);
-		VBox everything = new VBox(puzzleTitleCard, puzzleHolder, solve);
+
 
 		//To give the illusion that there are randomized puzzles
 
-		puzzle1.setVisible(false);
-		puzzle2.setVisible(false);
-		puzzle3.setVisible(false);
+		//puzzle1.setVisible(false);
+		//puzzle2.setVisible(false);
+		//puzzle3.setVisible(false);
 
-		sudokuList.add(puzzle1); //Add all possible puzzles to a list of puzzles
-		sudokuList.add(puzzle2);
+		sudokuList.add(Sudoku1); //Add all possible puzzles to a list of puzzles
+		sudokuList.add(Sudoku2);
 		sudokuList.add(puzzle3);
 		Collections.shuffle(sudokuList, new Random()); //shuffle the list
+		HBox puzzleHolder = new HBox(50, sudokuList.get(0), sudokuList.get(1), sudokuList.get(2));
+		VBox everything = new VBox(puzzleTitleCard, puzzleHolder, solve);
 		sudokuList.get(0).setVisible(true); //get first puzzle in list and make it visible
 
 		/**ESSENTIALLY, IT DOESN'T MATTER WHAT YOUR PUZZLE LOOKS LIKE, SO AS LONG AS THERE IS SOME MECHANISM THAT DOES THE FOLLOWING**/
@@ -572,7 +619,7 @@ public class ClientFX extends Application{
 
 			try {
 				/**IMPORTANT THING #1: INCREASE YOUR SCORE**/
-				if(c21.getText().equals("3") || (d13.getText().equals("3") && d32.getText().equals("8")) || h21.getText().equals("3")){
+				if((c21.getText().equals("3") && c12.getText().equals("2")) || (c21.getText().equals("2") && c12.getText().equals("3")) || (d13.getText().equals("3") && d32.getText().equals("8")) || (f11.getText().equals("1") && f12.getText().equals("2") && f22.getText().equals("4") && g11.getText().equals("3") && g12.getText().equals("4") && h12.getText().equals("1")) && h21.getText().equals("4") && h22.getText().equals("3")){
 					conn.score++;
 					Score.setText("Score: " + conn.score); //Updates Score Text on UI
 					primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
@@ -580,6 +627,37 @@ public class ClientFX extends Application{
 				}
 				else
 					solve.setText("Something is missing...Try again!");
+			}
+			catch(Exception e) {
+			}
+
+		});
+
+		f12.setOnAction(event -> {
+
+			try {
+				/**IMPORTANT THING #1: INCREASE YOUR SCORE**/
+				if(f12.getText().equals("s")){
+					/**if(((f11.getText().equals("1") &&
+					 * f12.getText().equals("2") &&
+					 * f22.getText().equals("4") &&
+					 * g11.getText().equals("3") &&
+					 * g12.getText().equals("4") &&
+					 * h12.getText().equals("1")) &&
+					 * h21.getText().equals("4") &&
+					 * h22.getText().equals("3")){
+
+					 **/
+					f11.setText("1");
+					f12.setText("2");
+					f22.setText("4");
+					g11.setText("3");
+					g12.setText("4");
+					h12.setText("1");
+					h21.setText("4");
+					h22.setText("3");
+
+				}
 			}
 			catch(Exception e) {
 			}
@@ -798,17 +876,13 @@ public class ClientFX extends Application{
 						Score.setText("Score: " + conn.score);
 
 					}
-					if(conn.gameStart == true){
+					if(conn.gameStart == true) {
 						//sceneNum++;
 						System.out.println("Sync");
 						//primaryStage.setScene(sceneList.get(0));
 						enableButtons();
 						conn.gameStart = false;
 					}
-					//else if(){
-
-                    //}
-					//System.out.println("Test");
 					this.sleep(1000);
 
 				}

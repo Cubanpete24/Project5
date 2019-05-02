@@ -2,13 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c942ce64-2e29-421d-9b2f-84cc7ab42ab8" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/../Client/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/misc.xml" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/../Client/src/sudoku.java" afterDir="false" />
+>>>>>>> 0161bf80141141e3e200ba30fdca5dca0cd63cc9
       <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Proj3_Client/ClientFX$buttonThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Proj3_Client/ClientFX$buttonThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Proj3_Client/ClientFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Proj3_Client/ClientFX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/ClientConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/ClientFX.java" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/ServerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServerFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerFX.java" afterDir="false" />
+>>>>>>> 0161bf80141141e3e200ba30fdca5dca0cd63cc9
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,8 +47,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ServerConnection.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="1980">
               <caret line="140" column="67" selection-start-line="140" selection-start-column="67" selection-end-line="140" selection-end-column="67" />
+=======
+            <state relative-caret-position="-3">
+              <caret line="135" column="40" selection-start-line="135" selection-start-column="24" selection-end-line="135" selection-end-column="40" />
+>>>>>>> 0161bf80141141e3e200ba30fdca5dca0cd63cc9
             </state>
           </provider>
         </entry>
@@ -46,8 +61,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ServerFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="128" column="13" selection-start-line="128" selection-start-column="13" selection-end-line="128" selection-end-column="13" />
+            <state relative-caret-position="167">
+              <caret line="164" column="40" selection-start-line="164" selection-start-column="32" selection-end-line="164" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -63,11 +78,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&lt; 2</find>
-      <find>clients.</find>
-      <find>t1.start</find>
-      <find>&gt; clients</find>
-      <find>ingame</find>
       <find>ingame.</find>
       <find>clients.add</find>
       <find>button</find>
@@ -93,6 +103,11 @@
       <find>equals</find>
       <find>oops</find>
       <find>send</find>
+      <find>update</find>
+      <find>&quot;w&quot;</find>
+      <find>&quot;c&quot;</find>
+      <find>updatescore</find>
+      <find>updateplayerlist</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -110,8 +125,8 @@
         <option value="$PROJECT_DIR$/src/FXNet.java" />
         <option value="$PROJECT_DIR$/src/Server.java" />
         <option value="$PROJECT_DIR$/src/NetworkConnection.java" />
-        <option value="$PROJECT_DIR$/src/ServerFX.java" />
         <option value="$PROJECT_DIR$/src/ServerConnection.java" />
+        <option value="$PROJECT_DIR$/src/ServerFX.java" />
       </list>
     </option>
   </component>
@@ -127,6 +142,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
+      <pane id="PackagesPane" />
+>>>>>>> 0161bf80141141e3e200ba30fdca5dca0cd63cc9
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -143,13 +162,20 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="PackagesPane" />
+=======
+>>>>>>> 0161bf80141141e3e200ba30fdca5dca0cd63cc9
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556514399385" />
+=======
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556760563783" />
+>>>>>>> 0161bf80141141e3e200ba30fdca5dca0cd63cc9
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -213,7 +239,11 @@
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17877094" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17894737" />
+>>>>>>> 0161bf80141141e3e200ba30fdca5dca0cd63cc9
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -269,6 +299,18 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout-to-restore>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ServerConnection.java</url>
+          <line>141</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/FXNet.iml">
       <provider selected="true" editor-type-id="text-editor">
@@ -289,15 +331,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ServerConnection.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="1980">
           <caret line="140" column="67" selection-start-line="140" selection-start-column="67" selection-end-line="140" selection-end-column="67" />
+=======
+        <state relative-caret-position="-3">
+          <caret line="135" column="40" selection-start-line="135" selection-start-column="24" selection-end-line="135" selection-end-column="40" />
+>>>>>>> 0161bf80141141e3e200ba30fdca5dca0cd63cc9
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ServerFX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="128" column="13" selection-start-line="128" selection-start-column="13" selection-end-line="128" selection-end-column="13" />
+        <state relative-caret-position="167">
+          <caret line="164" column="40" selection-start-line="164" selection-start-column="32" selection-end-line="164" selection-end-column="40" />
         </state>
       </provider>
     </entry>
