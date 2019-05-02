@@ -114,7 +114,7 @@ public abstract class ServerConnection {
 
 			try (ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
 				 ObjectInputStream in = new ObjectInputStream(socket.getInputStream())) {
-
+				updatePlayerList = true;
 				callback.accept("Connection has been established: Current number of players " + clients.size());
 				this.out = out;
 				socket.setTcpNoDelay(true);

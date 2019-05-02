@@ -199,9 +199,10 @@ public class ClientFX extends Application{
 				conn.startConn(this.clientName);
 				/**COMMENTING OUT THIS THREAD FOR NOW UNTIL IT IS BETTER OPTIMIZED, FOR NOW NO DYNAMIC UI ELEMENTS ON THE CLIENT SIDE**/
 				buttonThread test = new buttonThread();
+
 				test.start();
 
-				conn.send("c");
+				conn.send("Why isn't this working");
 
 
 
