@@ -40,12 +40,16 @@ public abstract class ServerConnection {
 	}
 
 	/**This method sends the same message to everyone in an instance of a game**/
-	public void send(Serializable data, ArrayList<ClientThread> clients) throws Exception{
+	public void send(Serializable data, ArrayList<ClientThread> clients) {
 		synchronized(this) {
 
 			for (int i = 0; i < clients.size(); i++) {
-
-				clients.get(i).out.writeObject(data);
+				try {
+					clients.get(i).out.writeObject(data);
+				}
+				catch(Exception E){
+					//do nothing
+				}
 			}
 		}
 

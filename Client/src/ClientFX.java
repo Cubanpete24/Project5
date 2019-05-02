@@ -617,11 +617,10 @@ public class ClientFX extends Application{
 		return Door2Box;
 	}
 
+
 	/**CHARLY'S PUZZLE HERE**/
+	//FIXME: need to apply gui to the buttons, make them red and green
 	private Parent createDoor3() {
-//		Button choice1 = new Button("Press me to win the puzzle");
-//		Button choice2 = new Button("Press me to do nothing");
-//		Button choice3 = new Button("Press me to do nothing");
 		Text puzzle = new Text("Click the buttons until they are all green, \nwhen done go to checkWinner to confirm");
 
 		VBox centerScene = new VBox();
@@ -675,23 +674,14 @@ public class ClientFX extends Application{
 			}
 		});
 
-//		choice1.setOnAction(event -> {
-//
-//			try {
-//				conn.score++;//increments score
-//				Score.setText("Score: " + conn.score);//set text
-//				primaryStage.setScene(sceneList.get(0));//call scene
-//			}
-//			catch(Exception e) {
-//			}
-//
-//		});
 
 		HBox choiceHBox = new HBox(centerScene, checkWinner);
 		VBox Door3Box = new VBox(puzzle, choiceHBox);
 		BorderPane mainScene = new BorderPane(Door3Box);
 		return mainScene;
 	}
+
+
 
 	/**KAVEESHA'S PUZZLE HERE**/
 	private Parent createDoor4() {
