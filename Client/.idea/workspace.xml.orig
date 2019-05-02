@@ -7,13 +7,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f75eff52-058d-429a-9738-e5afd8dbc2a1" name="Default Changelist" comment="">
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/sudoku.java" afterDir="false" />
+||||||| merged common ancestors
+      <change afterPath="$PROJECT_DIR$/src/sudoku.java" afterDir="false" />
+=======
+>>>>>>> willDeleteThisBranchter
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Proj3_Client/ClientFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proj3_Client/ClientFX.class" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/src/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientConnection.java" afterDir="false" />
+>>>>>>> 0161bf80141141e3e200ba30fdca5dca0cd63cc9
+||||||| merged common ancestors
+      <change beforePath="$PROJECT_DIR$/src/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientConnection.java" afterDir="false" />
+=======
+>>>>>>> willDeleteThisBranchter
       <change beforePath="$PROJECT_DIR$/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientFX.java" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/../Server/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/misc.xml" afterDir="false" />
+||||||| merged common ancestors
+=======
       <change beforePath="$PROJECT_DIR$/src/sudoku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sudoku.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/workspace.xml" afterDir="false" />
-    </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+>>>>>>> willDeleteThisBranchter
       <change beforePath="$PROJECT_DIR$/../Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,7 +47,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Client.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="645">
+||||||| merged common ancestors
+            <state relative-caret-position="731">
+=======
             <state relative-caret-position="298">
+>>>>>>> willDeleteThisBranchter
               <caret line="46" selection-start-line="46" selection-end-line="46" />
             </state>
           </provider>
@@ -37,8 +62,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <state relative-caret-position="-196">
+              <caret line="656" column="13" lean-forward="true" selection-start-line="656" selection-start-column="13" selection-end-line="656" selection-end-column="13" />
+=======
+            <state relative-caret-position="150">
+              <caret line="831" column="21" selection-start-line="831" selection-start-column="21" selection-end-line="831" selection-end-column="21" />
+||||||| merged common ancestors
+            <state relative-caret-position="150">
+              <caret line="831" column="21" selection-start-line="831" selection-start-column="21" selection-end-line="831" selection-end-column="21" />
+=======
             <state relative-caret-position="101">
               <caret line="447" column="321" selection-start-line="447" selection-start-column="318" selection-end-line="447" selection-end-column="321" />
+>>>>>>> willDeleteThisBranchter
               <folding>
                 <element signature="e#1543#1550#0" expanded="true" />
                 <element signature="e#9379#9385#0" expanded="true" />
@@ -174,9 +211,22 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556631276810" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+=======
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556760563575" />
+||||||| merged common ancestors
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556760563575" />
+=======
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556829402225" />
+>>>>>>> willDeleteThisBranchter
     <property name="last_opened_file_path" value="$USER_HOME$/Project2" />
     <property name="project.structure.last.edited" value="Artifacts" />
+>>>>>>> 0161bf80141141e3e200ba30fdca5dca0cd63cc9
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
@@ -317,6 +367,10 @@
     <entry file="file://$PROJECT_DIR$/FXNet.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+<<<<<<< HEAD
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Thread.java" />
+    <entry file="file://$PROJECT_DIR$/src/ClientConnection.java">
+=======
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -334,8 +388,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientConnection.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <state relative-caret-position="645">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+=======
+        <state relative-caret-position="17">
+          <caret line="155" column="47" selection-start-line="155" selection-start-column="47" selection-end-line="155" selection-end-column="47" />
+||||||| merged common ancestors
+        <state relative-caret-position="17">
+          <caret line="155" column="47" selection-start-line="155" selection-start-column="47" selection-end-line="155" selection-end-column="47" />
+=======
         <state relative-caret-position="267">
           <caret line="75" selection-start-line="75" selection-end-line="75" />
+>>>>>>> willDeleteThisBranchter
           <folding>
             <element signature="e#907#908#0" expanded="true" />
             <element signature="e#935#936#0" expanded="true" />
@@ -349,8 +415,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <state relative-caret-position="-196">
+          <caret line="656" column="13" lean-forward="true" selection-start-line="656" selection-start-column="13" selection-end-line="656" selection-end-column="13" />
+=======
+        <state relative-caret-position="150">
+          <caret line="831" column="21" selection-start-line="831" selection-start-column="21" selection-end-line="831" selection-end-column="21" />
+||||||| merged common ancestors
+        <state relative-caret-position="150">
+          <caret line="831" column="21" selection-start-line="831" selection-start-column="21" selection-end-line="831" selection-end-column="21" />
+=======
         <state relative-caret-position="101">
           <caret line="447" column="321" selection-start-line="447" selection-start-column="318" selection-end-line="447" selection-end-column="321" />
+>>>>>>> willDeleteThisBranchter
           <folding>
             <element signature="e#1543#1550#0" expanded="true" />
             <element signature="e#9379#9385#0" expanded="true" />
@@ -361,12 +439,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sudoku.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="136">
+          <caret line="100" column="21" lean-forward="true" selection-start-line="100" selection-start-column="21" selection-end-line="100" selection-end-column="21" />
+>>>>>>> 0161bf80141141e3e200ba30fdca5dca0cd63cc9
+||||||| merged common ancestors
+        <state relative-caret-position="136">
+          <caret line="100" column="21" lean-forward="true" selection-start-line="100" selection-start-column="21" selection-end-line="100" selection-end-column="21" />
+=======
         <state relative-caret-position="135">
           <caret line="177" column="24" selection-start-line="177" selection-start-column="24" selection-end-line="177" selection-end-column="24" />
           <folding>
             <element signature="e#9776#9777#0" expanded="true" />
             <element signature="e#9802#9803#0" expanded="true" />
           </folding>
+>>>>>>> willDeleteThisBranchter
         </state>
       </provider>
     </entry>
