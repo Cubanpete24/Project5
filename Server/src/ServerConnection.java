@@ -18,7 +18,7 @@ public abstract class ServerConnection {
 
 	/**The ClientThread Object contains lots of info, like player number, score, name (in this case name of thread), etc**/
 	boolean gameOver; //lets us know when tell the UI to ask the user to play again or start a new round
-
+	boolean updatePlayerList = false;
 
 	/**  Every time the client wants to send something to the server, it must be in order of (STRING, INT, INT)  **/
 	/**  and this method also sends the end of round message to both players  **/
@@ -129,9 +129,11 @@ public abstract class ServerConnection {
 					}
 					else if((data.equals("w"))){
 						callback.accept(clientName + " won the puzzle");
+						this.score++;
+						updatePlayerList = true;
 					}
-					/**c will be sent when a player connects, but for now, it is only sent when we press the test game button**/
 					else if((data.equals("c"))){
+						updatePlayerList = true;
 						callback.accept(clientName + " has entered the test realm");//Edit later
 						if(clients.size() < 2) {
 							callback.accept("Server awaiting 3 more players...But to test a build closer to the final game, have another person connect and press Test Game");
@@ -146,6 +148,7 @@ public abstract class ServerConnection {
 						else if(clients.size() == 4) {
 							send("g", clients);
 						}
+
 					}
 					//this appends what happened during the game to the server gui
 					else {
