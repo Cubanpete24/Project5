@@ -19,10 +19,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/src/ClientFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="240" selection-start-line="240" selection-end-line="240" />
+            <state relative-caret-position="475">
+              <caret line="662" column="11" lean-forward="true" selection-start-line="662" selection-start-column="11" selection-end-line="662" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1838#9125#0" />
                 <element signature="e#3212#3369#0" />
                 <element signature="e#3445#3598#0" />
                 <element signature="e#3647#3800#0" />
@@ -41,7 +42,8 @@
                 <element signature="e#14989#15451#0" />
                 <element signature="e#15475#16003#0" />
                 <element signature="e#16145#16421#0" />
-                <element signature="e#16424#18474#0" />
+                <element signature="e#17105#17930#0" />
+                <element signature="e#17959#18044#0" />
                 <element signature="e#18477#19106#0" />
                 <element signature="e#19109#19740#0" />
                 <element signature="e#19743#19839#0" />
@@ -76,7 +78,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="326" />
+    <option name="x" value="269" />
     <option name="y" value="23" />
     <option name="width" value="1354" />
     <option name="height" value="1027" />
@@ -104,6 +106,12 @@
             </path>
             <path>
               <item name="Project5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sounds" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project5" type="b2602c69:ProjectViewProjectNode" />
               <item name="Server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -124,6 +132,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Client/src/sounds" />
       <recent name="$PROJECT_DIR$/Client/src/pictures" />
       <recent name="$PROJECT_DIR$/Client/src" />
       <recent name="$PROJECT_DIR$/Client/pictures" />
@@ -181,9 +190,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="326" y="23" width="1354" height="1027" extended-state="0" />
+    <frame x="174" y="23" width="1354" height="1027" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15091464" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16539635" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -193,7 +202,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.071271926" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27960527" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -248,12 +257,20 @@
     <entry file="file://$PROJECT_DIR$/Client/src/pictures/horseintheback.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home/lib/src.zip!/javafx.media/javafx/scene/media/Media.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="406" selection-start-line="406" selection-end-line="406" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/ClientFX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="240" selection-start-line="240" selection-end-line="240" />
+        <state relative-caret-position="475">
+          <caret line="662" column="11" lean-forward="true" selection-start-line="662" selection-start-column="11" selection-end-line="662" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1838#9125#0" />
             <element signature="e#3212#3369#0" />
             <element signature="e#3445#3598#0" />
             <element signature="e#3647#3800#0" />
@@ -272,7 +289,8 @@
             <element signature="e#14989#15451#0" />
             <element signature="e#15475#16003#0" />
             <element signature="e#16145#16421#0" />
-            <element signature="e#16424#18474#0" />
+            <element signature="e#17105#17930#0" />
+            <element signature="e#17959#18044#0" />
             <element signature="e#18477#19106#0" />
             <element signature="e#19109#19740#0" />
             <element signature="e#19743#19839#0" />

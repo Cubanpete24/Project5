@@ -13,6 +13,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
+import java.io.File;
+
+
 
 import java.util.ArrayList;
 
@@ -602,7 +608,10 @@ public class ClientFX extends Application{
 		Button clue2 = createImage("pictures/horses.jpg");
 		Button clue3 = createImage("pictures/horseintheback.jpg");
 		Button clue4 = createImage("pictures/billyray.png");
+		Button adrianCheck = new Button("Check Answer");
+		Button playMusic = new Button("Play Music");
 		Button adrianQuit = new Button("Quit Puzzle");
+
 
 
 		Text instructions = new Text("Guess the song by the pictures!");
@@ -613,7 +622,15 @@ public class ClientFX extends Application{
 		TextField answerField = new TextField("Enter Answer Here");
 		answerField.setPrefWidth(200);
 
-		answerField.setOnAction(event -> {
+		playMusic.setOnAction(event -> {
+			String path = "sounds/OldTownRoad.mp3";
+
+			Media media = new Media(new File(path).toURI().toString());
+			MediaPlayer mediaPlayer = new MediaPlayer(media);
+			mediaPlayer.setAutoPlay(true);
+		});
+
+		adrianCheck.setOnAction(event -> {
 			try {
 				//get input for the textfield
 				String adrianPuzzle = answerField.getText();
@@ -648,7 +665,7 @@ public class ClientFX extends Application{
 
 		HBox choiceHBox = new HBox(5, clue1, clue2, clue3, clue4);
 		VBox top = new VBox(5, instructions);
-		HBox bottom = new HBox(5, answerField, adrianQuit);
+		HBox bottom = new HBox(5, answerField, playMusic, adrianCheck, adrianQuit);
 
 		choiceHBox.setAlignment(Pos.CENTER);
 		background.setCenter(choiceHBox);
