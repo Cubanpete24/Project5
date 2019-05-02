@@ -13,6 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
@@ -612,52 +613,92 @@ public class ClientFX extends Application{
 		return background;
 	}
 
+
 	/**CHARLY'S PUZZLE HERE**/
+	//FIXME: need to apply gui to the buttons, make them red and green
 	private Parent createDoor3() {
+		Text puzzle = new Text("Click the buttons until they are all green, \nwhen done go to checkWinner to confirm");
+
+		VBox centerScene = new VBox();
+		ArrayList<HBox> rowButton = new ArrayList<>();
+		//ArrayList<Button> myButton = new ArrayList<>();
+		ArrayList<ArrayList<Button>> myButton = new ArrayList<>();
+		//ImageView redBox = new ImageView("red.png");
+		//redBox.set
+
+
+		for(ArrayList<Button> elem : myButton){
+			elem = new ArrayList<Button>();
+		}
+
+		for(int i=0;i<5;i++){//this whole block creates a 5X5 array of buttons and adds them to the scene
+			myButton.add(new ArrayList<Button>() );
+			rowButton.add(new HBox() );
+			for(int j=0;j<5;j++){
+				Button temp = new Button("red");//Integer.toString((i*5)+j) );
+				Image myImage = new Image("red.jpg");
+				ImageView myView = new ImageView(myImage);
+				myView.setPreserveRatio(true);
+				myView.setFitWidth(50);
+				temp.setGraphic(myView);
+				temp.setPrefSize(50,50);
+
+				myButton.get(i).add(temp);
+				rowButton.get(i).getChildren().addAll(myButton.get(i).get(j) );
+				//rowButton.get(myButton.get(i).get(j) );
+			}
+			centerScene.getChildren().addAll(rowButton.get(i) );
+		}
+
+		myButton.get(0).get(0).setOnAction(new EventHandler<ActionEvent>() {//button that changes them to green
+			@Override
+			public void handle(ActionEvent event) {
+				for(ArrayList<Button> elem: myButton){
+					for(Button ele : elem){
+						ele.setText("green");
+						Image myImage = new Image("green.jpg");
+						ImageView myView = new ImageView(myImage);
+						myView.setPreserveRatio(true);
+						myView.setFitWidth(50);
+						ele.setGraphic(myView);
+					}
+				}
+			}
+		});
+
+		Button checkWinner = new Button("Check Winner");
+		checkWinner.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				for(ArrayList<Button> elem : myButton){
+					for(Button ele : elem){
+						if(!ele.getText().equals("green") ){
+							return;
+						}
+					}
+
+					conn.score++;
+					Score.setText("Score: "+conn.score );
+					primaryStage.setScene(sceneList.get(0) );
+				}
+			}
+		});
+
+
+		HBox choiceHBox = new HBox(centerScene, checkWinner);
+		VBox Door3Box = new VBox(puzzle, choiceHBox);
+		BorderPane mainScene = new BorderPane(Door3Box);
+		return mainScene;
+	}
+
+
+
+	/**KAVEESHA'S PUZZLE HERE**/
+	private Parent createDoor4() {
 		Button choice1 = new Button("Press me to win the puzzle");
 		Button choice2 = new Button("Press me to do nothing");
 		Button choice3 = new Button("Press me to do nothing");
 		Text puzzle = new Text("what is the airspeed of an unladen swallow");
-
-		choice1.setOnAction(event -> {
-
-			try {
-				conn.score++;
-				Score.setText("Score: " + conn.score);
-				primaryStage.setScene(sceneList.get(0));
-			}
-			catch(Exception e) {
-			}
-
-		});
-
-		HBox choiceHBox = new HBox(10, choice1, choice2, choice3);
-		VBox Door3Box = new VBox(puzzle, choiceHBox);
-
-		return Door3Box;
-	}
-
-	public ImageView createPictureOnButton(String dir) {
-		Image image = new Image(dir);
-		ImageView view = new ImageView(image);
-		view.setFitHeight(300);
-		view.setFitWidth(300);
-		view.setPreserveRatio(true);
-		return view;
-	}
-
-	private VBox setUpButton(String realAnswer) {
-
-		TextField answer = new TextField();
-		answer.setPrefHeight(5);
-		answer.setPrefWidth(5);
-
-		Button submitAnswerButton = new Button("Submit Answer");
-		Button giveUpButton = new Button("Give up");
-
-		giveUpButton.setOnAction(event -> {
-			primaryStage.setScene(sceneList.get(0));
-		});
 
 
 		submitAnswerButton.setOnAction(event -> {
