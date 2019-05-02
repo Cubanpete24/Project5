@@ -7,15 +7,18 @@ import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+import java.io.File;
+
+
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,6 +36,7 @@ public class ClientFX extends Application{
 	/**Declare all my buttons and textfields**/
 	Button portButton, ipButton, play, connect, quit;
 	TextField portInput, ipInput, nameInput;
+	MediaPlayer mediaPlayer;
 	int port = 5555;
 	String ip = "127.0.0.1";
 	String clientName = "";
@@ -43,11 +47,13 @@ public class ClientFX extends Application{
 	Scene DoorScene1, DoorScene2, DoorScene3, DoorScene4;
 	/**STEP 2: DECLARE A BUTTON FOR YOUR PUZZLE, THIS WILL NOT BE USED IN THE FINAL IMPLEMENTATION BUT WILL GIVE YOU DIRECT ACCESS TO IT SO YOU CAN DEBUG IT**/
 	/**ALREADY DONE**/
-	Button door1, door2, door3, door4, testGame;
+	MenuItem door1, door2, door3, door4, testGame;
 	Stage primaryStage ; //THIS IS THE STAGE THAT DETERMINES WHAT THE USE IS CURRENTLY LOOKING AT
 	Scene startUpScene; //THIS IS THE SCENE THAT YOU SEE ON STARTUP
 	ArrayList<Scene> sceneList = new ArrayList<Scene>(); //Might be better as a hashmap but for now, its an arrayList
 	Text Score = new Text("Score: 0");
+
+
 
 
 	private ClientConnection  conn;
@@ -88,11 +94,11 @@ public class ClientFX extends Application{
 
 		/**STEP 3: INITIALIZE YOUR DOOR BUTTONS**/
 		/**ALREADY DONE**/
-		door1 = new Button("Door #1");
-		door2 = new Button("Door #2");
-		door3 = new Button("Door #3");
-		door4 = new Button("Door #4");
-        testGame = new Button("Test Game");
+		door1 = new MenuItem("Door #1");
+		door2 = new MenuItem("Door #2");
+		door3 = new MenuItem("Door #3");
+		door4 = new MenuItem("Door #4");
+        testGame = new MenuItem("Test Game");
 
 
         /**THEY ARE INVISIBLE ON STARTUP, AND BECOME VISIBLE ONCE THE USER CONNECTS...THIS DOESN'T REALLY MATTER, BUT IS THERE ANYWAY**/
@@ -101,10 +107,6 @@ public class ClientFX extends Application{
 		door3.setVisible(false);
 		door4.setVisible(false);
         testGame.setVisible(false);
-
-
-
-
 
         //Generic handler for the client choices
 		EventHandler<ActionEvent> buttonSendRPSLS = event -> {
@@ -246,7 +248,12 @@ public class ClientFX extends Application{
 		/**This HBox contains the buttons for the rock, paper, scissors etc...*/
 		/**STEP 3.5: ADD BUTTON TO HBOX OF DOOR BUTTONS**/
 		/**ALREADY DONE**/
-		HBox Doors = new HBox(10, Score, door1, door2, door3, door4, testGame);
+		//create a drop down menu
+
+		MenuButton dropMenu = new MenuButton("Puzzles");
+		dropMenu.getItems().addAll(door1, door2, door3, door4, testGame);
+
+		HBox Doors = new HBox(10, Score, dropMenu);
 		Doors.setAlignment(Pos.CENTER);
 
 
@@ -475,28 +482,97 @@ public class ClientFX extends Application{
 	}
 
 	/**ADRIAN'S PUZZLE HERE**/
+	Button createImage(String s){
+		Button b = new Button();
+		Image i = new Image(s);
+		ImageView v = new ImageView(i);
+		v.setFitHeight(200);
+		v.setFitWidth(210);
+		v.setPreserveRatio(true);
+		b.setGraphic(v);
+		//b.setDisable(true);
+
+		return b;
+	}
+
 	private Parent createDoor2() {
-		Button choice1 = new Button("Press me to win the puzzle");
-		Button choice2 = new Button("Press me to do nothing");
-		Button choice3 = new Button("Press me to do nothing");
-		Text puzzle = new Text("what is the airspeed of an unladen swallow");
+		BorderPane background = new BorderPane();
+		background.setStyle("-fx-background-color: #654321;");
 
-		choice1.setOnAction(event -> {
+		//Create four pictures to display
+		Button clue1 = createImage("pictures/road.jpg");
+		Button clue2 = createImage("pictures/horses.jpg");
+		Button clue3 = createImage("pictures/horseintheback.jpg");
+		Button clue4 = createImage("pictures/billyray.png");
+		Button adrianCheck = new Button("Check Answer");
+		Button playMusic = new Button("Play Music");
+		Button adrianQuit = new Button("Quit Puzzle");
 
+
+
+		Text instructions = new Text("Guess the song by the pictures!");
+		instructions.setScaleX(3);
+		instructions.setScaleY(3);
+
+
+		TextField answerField = new TextField("Enter Answer Here");
+		answerField.setPrefWidth(200);
+
+		playMusic.setOnAction(event -> {
+			String path = "/Users/adrianzavala/Desktop/Project5/Client/src/sounds/OldTownRoad.mp3";
+			Media media = new Media(new File(path).toURI().toString());
+			mediaPlayer = new MediaPlayer(media);
+			mediaPlayer.play();
+		});
+
+		adrianCheck.setOnAction(event -> {
 			try {
-				conn.score++;
-				Score.setText("Score: " + conn.score);
-				primaryStage.setScene(sceneList.get(0));
+				//get input for the textfield
+				String adrianPuzzle = answerField.getText();
+				answerField.clear();
+
+				//make input lowercase to check for correctness
+				adrianPuzzle = adrianPuzzle.toLowerCase();
+
+				//Check if input is correct
+				if( adrianPuzzle.equals("old town road")){
+					conn.score++;
+					Score.setText("Score: " + conn.score);
+					primaryStage.setScene(sceneList.get(0));
+					conn.send("w"); // not updating the clients scoreboard
+					door2.setDisable(true);
+				}
+				else{
+					answerField.setText("Wrong Answer");
+				}
 			}
 			catch(Exception e) {
+
 			}
 
 		});
 
-		HBox choiceHBox = new HBox(10, choice1, choice2, choice3);
-		VBox Door2Box = new VBox(puzzle, choiceHBox);
+		adrianQuit.setOnAction(event -> {
+			primaryStage.setScene(sceneList.get(0));
+			door2.setDisable(true);
+		});
 
-		return Door2Box;
+
+		HBox choiceHBox = new HBox(5, clue1, clue2, clue3, clue4);
+		VBox top = new VBox(5, instructions);
+		HBox bottom = new HBox(5, answerField, playMusic, adrianCheck, adrianQuit);
+
+		choiceHBox.setAlignment(Pos.CENTER);
+		background.setCenter(choiceHBox);
+
+		top.setAlignment(Pos.BASELINE_CENTER);
+		top.setTranslateY(10);
+		background.setTop(top);
+
+		background.setBottom(bottom);
+		bottom.setAlignment(Pos.BASELINE_CENTER);
+
+		return background;
 	}
 
 	/**CHARLY'S PUZZLE HERE**/
@@ -578,10 +654,8 @@ public class ClientFX extends Application{
 		sceneList.add(scene4);
 		sceneList.add(finalScene);
 
-
-
-
 		primaryStage.setScene(startUpScene);
+		primaryStage.setTitle("Puzzle Gauntlet");
 		this.primaryStage = primaryStage;
 		primaryStage.show();
 
