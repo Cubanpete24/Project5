@@ -15,7 +15,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
+
 import java.io.File;
 
 
@@ -30,6 +30,7 @@ public class ClientFX extends Application{
 	/**Declare all my buttons and textfields**/
 	Button portButton, ipButton, play, connect, quit;
 	TextField portInput, ipInput, nameInput;
+	MediaPlayer mediaPlayer;
 	int port = 5555;
 	String ip = "127.0.0.1";
 	String clientName = "";
@@ -623,11 +624,10 @@ public class ClientFX extends Application{
 		answerField.setPrefWidth(200);
 
 		playMusic.setOnAction(event -> {
-			String path = "sounds/OldTownRoad.mp3";
-
+			String path = "/Users/adrianzavala/Desktop/Project5/Client/src/sounds/OldTownRoad.mp3";
 			Media media = new Media(new File(path).toURI().toString());
-			MediaPlayer mediaPlayer = new MediaPlayer(media);
-			mediaPlayer.setAutoPlay(true);
+			mediaPlayer = new MediaPlayer(media);
+			mediaPlayer.play();
 		});
 
 		adrianCheck.setOnAction(event -> {
