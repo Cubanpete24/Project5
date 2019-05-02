@@ -3,7 +3,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 //made a sudoku class for more organization
-public class Sudoku {
+public class sudoku {
     //Upper left cells
     TextField e11;
     TextField e12;
@@ -30,7 +30,7 @@ public class Sudoku {
 
 
 
-    Sudoku(){
+    sudoku(){
         //Upper Left
         e11 = new TextField();
         e12 = new TextField();
