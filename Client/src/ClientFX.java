@@ -52,8 +52,8 @@ public class ClientFX extends Application{
 	Scene DoorScene1, DoorScene2, DoorScene3, DoorScene4, DoorScene5, DoorScene6;
 	/**STEP 2: DECLARE A BUTTON FOR YOUR PUZZLE, THIS WILL NOT BE USED IN THE FINAL IMPLEMENTATION BUT WILL GIVE YOU DIRECT ACCESS TO IT SO YOU CAN DEBUG IT**/
 	/**ALREADY DONE**/
-	MenuItem door1, door2, door3, door4, testGame;
-	Button door1, door2, door3, door4, door5, door6, testGame;
+	MenuItem door1, door2, door3, door4,door5, door6, testGame;
+	//Button door1, door2, door3, door4, door5, door6, testGame;
 	Stage primaryStage ; //THIS IS THE STAGE THAT DETERMINES WHAT THE USE IS CURRENTLY LOOKING AT
 	Scene startUpScene; //THIS IS THE SCENE THAT YOU SEE ON STARTUP
 	ArrayList<Scene> sceneList = new ArrayList<Scene>(); //Might be better as a hashmap but for now, its an arrayList
@@ -106,14 +106,16 @@ public class ClientFX extends Application{
 		door2 = new MenuItem("Door #2");
 		door3 = new MenuItem("Door #3");
 		door4 = new MenuItem("Door #4");
+		door5 = new MenuItem("Door #5");
+		door6 = new MenuItem("Door #6");
         testGame = new MenuItem("Test Game");
-		door1 = new Button("Door #1");
-		door2 = new Button("Door #2");
-		door3 = new Button("Door #3");
-		door4 = new Button("Door #4");
-		door5 = new Button("Door #5");
-		door6 = new Button("Door #6");
-        testGame = new Button("Test Game");
+		//door1 = new Button("Door #1");
+		//door2 = new Button("Door #2");
+		//door3 = new Button("Door #3");
+		//door4 = new Button("Door #4");
+		//door5 = new Button("Door #5");
+		//door6 = new Button("Door #6");
+        //testGame = new Button("Test Game");
 
 
         /**THEY ARE INVISIBLE ON STARTUP, AND BECOME VISIBLE ONCE THE USER CONNECTS...THIS DOESN'T REALLY MATTER, BUT IS THERE ANYWAY**/
@@ -270,10 +272,10 @@ public class ClientFX extends Application{
 		//create a drop down menu
 
 		MenuButton dropMenu = new MenuButton("Puzzles");
-		dropMenu.getItems().addAll(door1, door2, door3, door4, testGame);
+		dropMenu.getItems().addAll(door1, door2, door3, door4, door5, door6, testGame);
 
 		HBox Doors = new HBox(10, Score, dropMenu);
-		HBox Doors = new HBox(10, Score, door1, door2, door3, door4, door5, door6, testGame);
+		//HBox Doors = new HBox(10, Score, door1, door2, door3, door4, door5, door6, testGame);
 		Doors.setAlignment(Pos.CENTER);
 
 
