@@ -197,18 +197,6 @@ public class ServerFX extends Application{
 								conn.send("u", conn.superClients);
 								conn.send(inServer, conn.superClients);
 							}
-
-							//if(size != conn.clients.size()){
-							inServer = ""; //Clears string so that we can reuse it
-							for(int i = 0; i < conn.superClients.size(); i++){ //For loop iterates through entire list of people who are connected
-								inServer += conn.superClients.get(i).clientName + ": " + conn.superClients.get(i).score; //concatenates that name followed by a new line
-								inServer += "\n";
-							}
-							//size = conn.clients.size();
-							playerScores.setText(inServer);
-							conn.send("Update your playerlist", conn.superClients);
-							conn.send(inServer, conn.superClients);
-							//}
 							this.sleep(1000); //sleep done to give the program a little break, without the sleep there is a nullpointer exception
 
 						}
