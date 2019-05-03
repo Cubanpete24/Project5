@@ -394,6 +394,7 @@ public class ClientFX extends Application{
 				DoorScene7 = new Scene(createDoor7(), 900, 500);
 				sceneList.add(DoorScene7);
 				primaryStage.setScene(DoorScene7);
+				primaryStage.setTitle("Pitch: The Game");
 			}
 			catch(Exception e) {
 			}
@@ -888,11 +889,42 @@ public class ClientFX extends Application{
 
 
 	private Parent createDoor7() {
-		ArrayList<sudoku> sudokuList = new ArrayList<sudoku>();
-		ArrayList<VBox> sudokuListVBox = new ArrayList<VBox>();
-		Button choice1 = new Button("Press me to win the puzzle");
-		Button choice2 = new Button("Press me to do nothing");
-		Button choice3 = new Button("Press me to do nothing");
+
+		//Scoreboard for added legitimacy
+		Text yourScore = new Text("You: 4");
+		Text opponent1Score = new Text("Opponent 1: 4");
+        Text opponent2Score = new Text("Opponent 2: 4");
+        Text opponent3Score = new Text("Opponent 3: 4");
+
+		Image cardField1 = new Image("pitch/7D.jpg");
+		Image cardField2 = new Image("pitch/JD.jpg");
+		Image cardField3 = new Image("pitch/2H.jpg");
+
+		Image cardHand1 = new Image("pitch/3C.jpg");
+		Image cardHand2 = new Image("pitch/1C.jpg");
+		Image cardHand3 = new Image("pitch/QD.jpg");
+
+		Button cf1 = new Button();
+		Button cf2 = new Button();
+		Button cf3 = new Button();
+
+		Button ch1 = new Button();
+		Button ch2 = new Button();
+		Button ch3 = new Button();
+
+
+		HBox yourHand = new HBox(10, cf1, cf2, cf3);
+
+		Text instructions = new Text("It's the last trick of the game...Everyone is tied...The Trump this round is Diamonds...It is your turn");
+
+        VBox scoreHolder = new VBox(yourScore, opponent1Score);
+
+		//Background image stuff
+        BorderPane gamePane = new BorderPane();
+        Image bg = new Image("pictures/green.jpg");
+        BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
+        BackgroundImage bgImg = new BackgroundImage(bg, null, null, null, backgroundSize);
+        Background background = new Background(bgImg);
 
 		Text puzzleTitleCard = new Text("Under Construction!!");
 		TextField cheatField;
@@ -903,11 +935,7 @@ public class ClientFX extends Application{
 		Button giveUp = new Button("Give up");
 		Button sabotage = new Button("Sabotage");
 
-		BorderPane gamePane = new BorderPane();
-		Image bg = new Image("pictures/green.jpg");
-		BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
-		BackgroundImage bgImg = new BackgroundImage(bg, null, null, null, backgroundSize);
-		Background background = new Background(bgImg);
+
 
 
 
@@ -915,13 +943,10 @@ public class ClientFX extends Application{
 		gamePane.setBackground(background);
 
 
-		//HBox puzzleHolder = new HBox(50, sudokuListVBox.get(0), sudokuListVBox.get(1), sudokuListVBox.get(2), sudokuListVBox.get(3), sudokuListVBox.get(4));
-		//HBox puzzleHolder = new HBox(50, sudokuListVBox.get(0));
-		//HBox buttonHolder = new HBox(50, solve, giveUp);
-		VBox everything = new VBox(30, puzzleTitleCard);
+		//HBox cardField = new HBox(50);
+		//HBox cardHand = new HBox(50, sudokuListVBox.get(0));
+		VBox everything = new VBox(30, puzzleTitleCard, giveUp);
 		everything.setAlignment(CENTER);
-		//puzzleHolder.setAlignment(CENTER);
-		//buttonHolder.setAlignment(CENTER);
 
 
 		solve.setOnAction(event -> {
