@@ -5,10 +5,10 @@ import javafx.scene.layout.VBox;
 //made a sudoku class for more organization
 public class sudoku {
     //Upper left cells
-    TextField e11;
-    TextField e12;
-    TextField e21;
-    TextField e22;
+    TextField e11; //upper left textfield
+    TextField e12; //upper right textfield
+    TextField e21; //lower left textfield
+    TextField e22; //lower right textfield
     int e11Ans, e12Ans, e21Ans, e22Ans;
 
     //UpperRight cells
@@ -26,10 +26,10 @@ public class sudoku {
     int g11Ans, g12Ans, g21Ans, g22Ans;
 
     //Lower right cells
-    TextField h11 = new TextField();
-    TextField h12 = new TextField();
-    TextField h21 = new TextField();
-    TextField h22 = new TextField();
+    TextField h11;
+    TextField h12;
+    TextField h21;
+    TextField h22;
     int h11Ans, h12Ans, h21Ans, h22Ans;
 
 
@@ -273,7 +273,7 @@ public class sudoku {
             h21Ans = _21;
         }
         if(_22 != 99) {
-            h22.setEditable(false);
+            h22.setEditable(true);
             h22Ans = _22;
 
         }
@@ -335,11 +335,13 @@ public class sudoku {
         HBox puzzleRow1LowerRight = new HBox(h11, h12);
         HBox puzzleRow2LowerRight = new HBox(h21, h22);
 
+        //compiles the rows into 2x2 boxes
         VBox puzzleUpperLeft = new VBox(puzzleRow1UpperLeft, puzzleRow2UpperLeft);
         VBox puzzleUpperRight = new VBox(puzzleRow1UpperRight, puzzleRow2UpperRight);
         VBox puzzleLowerLeft = new VBox(puzzleRow1Lowerleft, puzzleRow2LowerLeft);
         VBox puzzleLowerRight = new VBox(puzzleRow1LowerRight, puzzleRow2LowerRight);
 
+        //Brings it all together
         HBox puzzleRow1 = new HBox(5, puzzleUpperLeft, puzzleUpperRight);
         HBox puzzleRow2 = new HBox(5, puzzleLowerLeft, puzzleLowerRight);
 

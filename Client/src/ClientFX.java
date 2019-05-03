@@ -17,6 +17,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -30,7 +31,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Random;
 
-
+import static javafx.geometry.Pos.CENTER;
 
 
 public class ClientFX extends Application{
@@ -50,10 +51,10 @@ public class ClientFX extends Application{
 
 	/**STEP 1: DECLARE A SCENE FOR YOUR PUZZLE, EACH SCENE IS IT'S OWN PUZZLE**/
 	/**ALREADY DONE**/
-	Scene DoorScene1, DoorScene2, DoorScene3, DoorScene4, DoorScene5, DoorScene6;
+	Scene DoorScene1, DoorScene2, DoorScene3, DoorScene4, DoorScene5, DoorScene6, DoorScene7, DoorScene8;
 	/**STEP 2: DECLARE A BUTTON FOR YOUR PUZZLE, THIS WILL NOT BE USED IN THE FINAL IMPLEMENTATION BUT WILL GIVE YOU DIRECT ACCESS TO IT SO YOU CAN DEBUG IT**/
 	/**ALREADY DONE**/
-	MenuItem door1, door2, door3, door4,door5, door6, testGame;
+	MenuItem door1, door2, door3, door4,door5, door6, door7, door8, testGame;
 	//Button door1, door2, door3, door4, door5, door6, testGame;
 	Stage primaryStage ; //THIS IS THE STAGE THAT DETERMINES WHAT THE USE IS CURRENTLY LOOKING AT
 	Scene startUpScene; //THIS IS THE SCENE THAT YOU SEE ON STARTUP
@@ -109,7 +110,10 @@ public class ClientFX extends Application{
 		door4 = new MenuItem("Door #4");
 		door5 = new MenuItem("Door #5");
 		door6 = new MenuItem("Door #6");
-        testGame = new MenuItem("Test Game");
+		door7 = new MenuItem("Door #7");
+		door8 = new MenuItem("Door #8");
+
+		testGame = new MenuItem("Test Game");
 		//door1 = new Button("Door #1");
 		//door2 = new Button("Door #2");
 		//door3 = new Button("Door #3");
@@ -273,11 +277,11 @@ public class ClientFX extends Application{
 		//create a drop down menu
 
 		MenuButton dropMenu = new MenuButton("Puzzles");
-		dropMenu.getItems().addAll(door1, door2, door3, door4, door5, door6, testGame);
+		dropMenu.getItems().addAll(door1, door2, door3, door4, door5, door6, door7, door8, testGame);
 
 		HBox Doors = new HBox(10, Score, dropMenu);
 		//HBox Doors = new HBox(10, Score, door1, door2, door3, door4, door5, door6, testGame);
-		Doors.setAlignment(Pos.CENTER);
+		Doors.setAlignment(CENTER);
 
 
 		/**Unable to implement stage changing in a different thread, so for now, puzzle choosing will be event Driven**/
@@ -316,6 +320,8 @@ public class ClientFX extends Application{
 				DoorScene1 = new Scene(createDoor1(), 900, 500); //We create the scene
 				sceneList.add(DoorScene1); //We add the scene to an arrayList of Scenes so we can access it later
 				primaryStage.setScene(DoorScene1); //We display the scene
+				primaryStage.setTitle("Sudoku!");
+
 			}
 			catch(Exception e) {
 			}
@@ -382,6 +388,30 @@ public class ClientFX extends Application{
 			}
 		});
 
+		door7.setOnAction(event -> {
+
+			try {
+				DoorScene7 = new Scene(createDoor7(), 900, 500);
+				sceneList.add(DoorScene7);
+				primaryStage.setScene(DoorScene7);
+			}
+			catch(Exception e) {
+			}
+		});
+
+		door8.setOnAction(event -> {
+
+			try {
+				DoorScene8 = new Scene(createDoor8(), 900, 500);
+				sceneList.add(DoorScene8);
+				primaryStage.setScene(DoorScene8);
+				primaryStage.setTitle("¡nʞopnS");
+
+			}
+			catch(Exception e) {
+			}
+		});
+
 		/**This is where I organize the layout and design of the UI**/
 
 		/**This HBox contains the the button and textfield for the port, this was done so the two could be close together**/
@@ -392,7 +422,7 @@ public class ClientFX extends Application{
 
 		/**HBox contains two other HBoxes, as well as the buttons to connect, play, and quit the game**/
 		HBox middleRow = new HBox(5, Port, IP, Name, connect, play, quit);
-		middleRow.setAlignment(Pos.CENTER);
+		middleRow.setAlignment(CENTER);
 
 		/**HBox contains the scores of each player**/
 
@@ -419,8 +449,28 @@ public class ClientFX extends Application{
 		Button choice1 = new Button("Press me to win the puzzle");
 		Button choice2 = new Button("Press me to do nothing");
 		Button choice3 = new Button("Press me to do nothing");
-		Text puzzleTitleCard = new Text("Challenge 1: Lightning Sudoku!");
+
+		Text puzzleTitleCard = new Text("Welcome to Regular Sudoku!!");
 		TextField cheatField;
+
+		Button solve = new Button("Solve");
+		solve.setAlignment(CENTER);
+
+		Button giveUp = new Button("Give up");
+		Button sabotage = new Button("Sabotage");
+
+		BorderPane gamePane = new BorderPane();
+		Image bg = new Image("pictures/giphy.gif");
+		BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
+		BackgroundImage bgImg = new BackgroundImage(bg, null, null, null, backgroundSize);
+		Background background = new Background(bgImg);
+
+
+
+		//background.set
+		gamePane.setBackground(background);
+
+
 
 
 		sudoku s1 = new sudoku();
@@ -448,19 +498,38 @@ public class ClientFX extends Application{
 
 		//Puzzle 4 with Sudoku object
 		sudoku s3 = new sudoku();
-		s3.setUpperLeft(1,2,3,4);
-		s3.setUpperRight(1,2,3,4);
-		s3.setLowerLeft(1,2,3,4);
-		s3.setLowerRight(1,2,3,4);
-        s3.setUpperLeftAnswers(1,2,3,4);
-        s3.setUpperRightAnswers(1,2,3,4);
-        s3.setLowerLeftAnswers(1,2,3,4);
-        s3.setLowerRightAnswers(1,2,3,4);
+		s3.setUpperLeft(2,4,99,99);
+		s3.setUpperRight(99,99,2,99);
+		s3.setLowerLeft(99,99,1,99);
+		s3.setLowerRight(99,99,4,2);
+        s3.setUpperLeftAnswers(99,99,3,1);
+        s3.setUpperRightAnswers(3,1,99,4);
+        s3.setLowerLeftAnswers(4,2,99,3);
+        s3.setLowerRightAnswers(1,3,99,99);
+
+		sudoku s4 = new sudoku();
+		s4.setUpperLeft(99,99,99,99);
+		s4.setUpperRight(99,99,1,4);
+		s4.setLowerLeft(2,1,99,99);
+		s4.setLowerRight(99,99,99,99);
+		s4.setUpperLeftAnswers(1,4,3,2);
+		s4.setUpperRightAnswers(3,2,99,99);
+		s4.setLowerLeftAnswers(99,99,4,3);
+		s4.setLowerRightAnswers(4,3,2,1);
+
+		sudoku s5 = new sudoku();
+		s5.setUpperLeft(99,99,99,99);
+		s5.setUpperRight(3,99,2,1);
+		s5.setLowerLeft(99,4,2,1);
+		s5.setLowerRight(99,99,99,99);
+		s5.setUpperLeftAnswers(1,2,4,3);
+		s5.setUpperRightAnswers(99,4,99,99);
+		s5.setLowerLeftAnswers(3,99,99,99);
+		s5.setLowerRightAnswers(1,2,4,3);
 
 
 
-		Button solve = new Button("Solve");
-		solve.setAlignment(Pos.CENTER);
+
 
 		//To give the illusion that there are randomized puzzles
 
@@ -471,6 +540,10 @@ public class ClientFX extends Application{
 		sudokuList.add(s1); //Add all possible puzzles to a list of puzzles
 		sudokuList.add(s2);
 		sudokuList.add(s3);
+		sudokuList.add(s4);
+		sudokuList.add(s5);
+
+
 		Collections.shuffle(sudokuList, new Random()); //shuffle the list
 
         //populates arrayList of VBox's with all the sudoku puzzles, so we can make it visible/invisible. They are all invisible by default
@@ -480,8 +553,15 @@ public class ClientFX extends Application{
         }
 
 
-		HBox puzzleHolder = new HBox(50, sudokuListVBox.get(0), sudokuListVBox.get(1));
-		VBox everything = new VBox(puzzleTitleCard, puzzleHolder, solve);
+		//HBox puzzleHolder = new HBox(50, sudokuListVBox.get(0), sudokuListVBox.get(1), sudokuListVBox.get(2), sudokuListVBox.get(3), sudokuListVBox.get(4));
+		HBox puzzleHolder = new HBox(50, sudokuListVBox.get(0));
+		HBox buttonHolder = new HBox(50, solve, giveUp);
+        VBox everything = new VBox(30, puzzleTitleCard, puzzleHolder, buttonHolder);
+        everything.setAlignment(CENTER);
+		puzzleHolder.setAlignment(CENTER);
+		buttonHolder.setAlignment(CENTER);
+
+
 		sudokuListVBox.get(0).setVisible(true); //get first puzzle in list and make it visible
         cheatField = sudokuList.get(0).getCheat();
 
@@ -494,13 +574,33 @@ public class ClientFX extends Application{
                 if (sudokuList.get(0).checkAnswers() == true) {
                     conn.score++;
                     Score.setText("Score: " + conn.score); //Updates Score Text on UI
-                    primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
+					primaryStage.setTitle("Puzzle Gauntlet");
+					//door1.setDisable(true);
+					primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
                     conn.send("w"); //Sends a w to the server to let it know that someone WON
-                } else
+					//primaryStage.setTitle("Puzzle Gauntlet");
+					//door1.setDisable(true);
+
+
+				} else
                     solve.setText("WRONG!!!...Try again!");
             }
 			catch(Exception e){
                 }
+
+		});
+
+		giveUp.setOnAction(event -> {
+
+			try {
+				/**IMPORTANT THING #1: INCREASE YOUR SCORE**/
+					primaryStage.setTitle("Puzzle Gauntlet");
+					door1.setDisable(true);
+					primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
+					door1.setDisable(true);
+			}
+			catch(Exception e){
+			}
 
 		});
 
@@ -515,8 +615,8 @@ public class ClientFX extends Application{
 
         });
 
-
-		return everything;
+		gamePane.setCenter(everything);
+		return gamePane;
 	}
 
 	/**ADRIAN'S PUZZLE HERE**/
@@ -600,7 +700,7 @@ public class ClientFX extends Application{
 		VBox top = new VBox(5, instructions);
 		HBox bottom = new HBox(5, answerField, playMusic, adrianCheck, adrianQuit);
 
-		choiceHBox.setAlignment(Pos.CENTER);
+		choiceHBox.setAlignment(CENTER);
 		background.setCenter(choiceHBox);
 
 		top.setAlignment(Pos.BASELINE_CENTER);
@@ -755,6 +855,7 @@ public class ClientFX extends Application{
 		return morseGameplay;
 	}
 
+
 	private Parent createDoor5() {
 		BorderPane binaryGameplay = new BorderPane();
 		Text binary = new Text("1101 1010 1011");
@@ -785,6 +886,257 @@ public class ClientFX extends Application{
 		return mathGameplay;
 	}
 
+
+	private Parent createDoor7() {
+		ArrayList<sudoku> sudokuList = new ArrayList<sudoku>();
+		ArrayList<VBox> sudokuListVBox = new ArrayList<VBox>();
+		Button choice1 = new Button("Press me to win the puzzle");
+		Button choice2 = new Button("Press me to do nothing");
+		Button choice3 = new Button("Press me to do nothing");
+
+		Text puzzleTitleCard = new Text("Under Construction!!");
+		TextField cheatField;
+
+		Button solve = new Button("Solve");
+		solve.setAlignment(CENTER);
+
+		Button giveUp = new Button("Give up");
+		Button sabotage = new Button("Sabotage");
+
+		BorderPane gamePane = new BorderPane();
+		Image bg = new Image("pictures/green.jpg");
+		BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
+		BackgroundImage bgImg = new BackgroundImage(bg, null, null, null, backgroundSize);
+		Background background = new Background(bgImg);
+
+
+
+		//background.set
+		gamePane.setBackground(background);
+
+
+		//HBox puzzleHolder = new HBox(50, sudokuListVBox.get(0), sudokuListVBox.get(1), sudokuListVBox.get(2), sudokuListVBox.get(3), sudokuListVBox.get(4));
+		//HBox puzzleHolder = new HBox(50, sudokuListVBox.get(0));
+		//HBox buttonHolder = new HBox(50, solve, giveUp);
+		VBox everything = new VBox(30, puzzleTitleCard);
+		everything.setAlignment(CENTER);
+		//puzzleHolder.setAlignment(CENTER);
+		//buttonHolder.setAlignment(CENTER);
+
+
+		solve.setOnAction(event -> {
+
+			try {
+				/**IMPORTANT THING #1: INCREASE YOUR SCORE**/
+					conn.score++;
+					Score.setText("Score: " + conn.score); //Updates Score Text on UI
+					primaryStage.setTitle("Puzzle Gauntlet");
+					primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
+					conn.send("w"); //Sends a w to the server to let it know that someone WON
+
+			}
+			catch(Exception e){
+			}
+
+		});
+
+		giveUp.setOnAction(event -> {
+
+			try {
+				/**IMPORTANT THING #1: INCREASE YOUR SCORE**/
+				primaryStage.setTitle("Puzzle Gauntlet");
+				door1.setDisable(true);
+				primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
+				door1.setDisable(true);
+			}
+			catch(Exception e){
+			}
+
+		});
+
+		gamePane.setCenter(everything);
+		return gamePane;
+	}
+
+	/**Mean Sudoku**/
+	private Parent createDoor8() {
+		ArrayList<sudoku> sudokuList = new ArrayList<sudoku>();
+		ArrayList<VBox> sudokuListVBox = new ArrayList<VBox>();
+
+		Text puzzleTitleCard = new Text("Welcome to Upside Down Sudoku!!");
+		TextField cheatField;
+
+		Button solve = new Button("Solve");
+		solve.setAlignment(CENTER);
+
+		Button giveUp = new Button("Give up");
+		Button sabotage = new Button("Sabotage");
+
+		BorderPane gamePane = new BorderPane();
+		Image bg = new Image("pictures/giphy.gif");
+		gamePane.setRotate(180);
+		BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
+		BackgroundImage bgImg = new BackgroundImage(bg, null, null, null, backgroundSize);
+		Background background = new Background(bgImg);
+
+
+
+		//background.set
+		gamePane.setBackground(background);
+
+
+
+
+		sudoku s1 = new sudoku();
+		s1.setUpperLeft(4,3,1,2);
+		s1.setUpperRight(99,99,3,99);
+		s1.setLowerLeft(99,99,2,1);
+		s1.setLowerRight(2, 99,99,99);
+		s1.setUpperLeftAnswers(4,3,1,2);
+		s1.setUpperRightAnswers(1,2,99,4);
+		s1.setLowerLeftAnswers(3,4,99,99);
+		s1.setLowerRightAnswers(99, 1,4,3);
+
+
+
+		sudoku s2 = new sudoku();
+		s2.setUpperLeft(99,3,4,99);
+		s2.setUpperRight(4,99,99,2);
+		s2.setLowerLeft(1,99,99,2);
+		s2.setLowerRight(99,3,1,99);
+		s2.setUpperLeftAnswers(2,99,99,1);
+		s2.setUpperRightAnswers(99,1,3,99);
+		s2.setLowerLeftAnswers(99,4,3,99);
+		s2.setLowerRightAnswers(2, 99,99,4);
+
+
+		//Puzzle 4 with Sudoku object
+		sudoku s3 = new sudoku();
+		s3.setUpperLeft(2,4,99,99);
+		s3.setUpperRight(99,99,2,99);
+		s3.setLowerLeft(99,99,1,99);
+		s3.setLowerRight(99,99,4,2);
+		s3.setUpperLeftAnswers(99,99,3,1);
+		s3.setUpperRightAnswers(3,1,99,4);
+		s3.setLowerLeftAnswers(4,2,99,3);
+		s3.setLowerRightAnswers(1,3,99,99);
+
+		sudoku s4 = new sudoku();
+		s4.setUpperLeft(99,99,99,99);
+		s4.setUpperRight(99,99,1,4);
+		s4.setLowerLeft(2,1,99,99);
+		s4.setLowerRight(99,99,99,99);
+		s4.setUpperLeftAnswers(1,4,3,2);
+		s4.setUpperRightAnswers(3,2,99,99);
+		s4.setLowerLeftAnswers(99,99,4,3);
+		s4.setLowerRightAnswers(4,3,2,1);
+
+		sudoku s5 = new sudoku();
+		s5.setUpperLeft(99,99,99,99);
+		s5.setUpperRight(3,99,2,1);
+		s5.setLowerLeft(99,4,2,1);
+		s5.setLowerRight(99,99,99,99);
+		s5.setUpperLeftAnswers(1,2,4,3);
+		s5.setUpperRightAnswers(99,4,99,99);
+		s5.setLowerLeftAnswers(3,99,99,99);
+		s5.setLowerRightAnswers(1,2,4,3);
+
+
+
+
+
+		//To give the illusion that there are randomized puzzles
+
+		//puzzle1.setVisible(false);
+		//puzzle2.setVisible(false);
+		//puzzle3.setVisible(false);
+
+		sudokuList.add(s1); //Add all possible puzzles to a list of puzzles
+		sudokuList.add(s2);
+		sudokuList.add(s3);
+		sudokuList.add(s4);
+		sudokuList.add(s5);
+
+
+		Collections.shuffle(sudokuList, new Random()); //shuffle the list
+
+		//populates arrayList of VBox's with all the sudoku puzzles, so we can make it visible/invisible. They are all invisible by default
+		for(int i = 0; i < sudokuList.size(); i++) {
+			sudokuListVBox.add(sudokuList.get(i).makePuzzle());
+			sudokuListVBox.get(i).setVisible(false);
+		}
+
+
+		//HBox puzzleHolder = new HBox(50, sudokuListVBox.get(0), sudokuListVBox.get(1), sudokuListVBox.get(2), sudokuListVBox.get(3), sudokuListVBox.get(4));
+		HBox puzzleHolder = new HBox(50, sudokuListVBox.get(0));
+		puzzleHolder.setRotate(15);
+		HBox buttonHolder = new HBox(50, solve, giveUp);
+		buttonHolder.setRotate(180);
+		VBox everything = new VBox(30, buttonHolder, puzzleTitleCard, puzzleHolder);
+		everything.setAlignment(CENTER);
+		puzzleHolder.setAlignment(CENTER);
+		buttonHolder.setAlignment(CENTER);
+
+
+		sudokuListVBox.get(0).setVisible(true); //get first puzzle in list and make it visible
+		cheatField = sudokuList.get(0).getCheat();
+
+
+		solve.setOnAction(event -> {
+
+			try {
+				/**IMPORTANT THING #1: INCREASE YOUR SCORE**/
+				//if((c21.getText().equals("3") && c12.getText().equals("2")) || (c21.getText().equals("2") && c12.getText().equals("3")) || (d13.getText().equals("3") && d32.getText().equals("8")) || (f11.getText().equals("1") && f12.getText().equals("2") && f22.getText().equals("4") && g11.getText().equals("3") && g12.getText().equals("4") && h12.getText().equals("1")) && h21.getText().equals("4") && h22.getText().equals("3")){
+				if (sudokuList.get(0).checkAnswers() == true) {
+					conn.score++;
+					Score.setText("Score: " + conn.score); //Updates Score Text on UI
+					primaryStage.setTitle("Puzzle Gauntlet");
+					//door1.setDisable(true);
+					primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
+					conn.send("w"); //Sends a w to the server to let it know that someone WON
+					//primaryStage.setTitle("Puzzle Gauntlet");
+					//door1.setDisable(true);
+
+
+				} else
+					solve.setText("WRONG!!!...Try again!");
+			}
+			catch(Exception e){
+			}
+
+		});
+
+		giveUp.setOnAction(event -> {
+
+			try {
+				/**IMPORTANT THING #1: INCREASE YOUR SCORE**/
+				primaryStage.setTitle("Puzzle Gauntlet");
+				door1.setDisable(true);
+				primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
+				door1.setDisable(true);
+			}
+			catch(Exception e){
+			}
+
+		});
+
+		cheatField.setOnAction(event -> {
+
+			try {
+				if(cheatField.getText().equals("c"))
+					sudokuList.get(0).cheat();
+			}
+			catch(Exception e) {
+			}
+
+		});
+
+		//everything.setRotate(180);
+
+		gamePane.setCenter(everything);
+		return gamePane;
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		launch(args);
@@ -809,6 +1161,10 @@ public class ClientFX extends Application{
 		Scene scene4 = new Scene(createDoor4(), 900, 500);
 		Scene scene5 = new Scene(createDoor5(), 900, 500);
 		Scene scene6 = new Scene(createDoor6(), 900, 500);
+		Scene scene7 = new Scene(createDoor7(), 900, 500);
+		Scene scene8 = new Scene(createDoor8(), 900, 500);
+
+
 		Scene finalScene = startUpScene;
 		sceneList.add(scene1);
 		sceneList.add(scene2);
@@ -816,6 +1172,9 @@ public class ClientFX extends Application{
 		sceneList.add(scene4);
 		sceneList.add(scene5);
 		sceneList.add(scene6);
+		sceneList.add(scene7);
+		sceneList.add(scene8);
+
 		sceneList.add(finalScene);
 
 		primaryStage.setScene(startUpScene);
