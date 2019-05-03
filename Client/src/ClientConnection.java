@@ -95,9 +95,13 @@ public abstract class ClientConnection {
 						callback.accept("Server has notified client to start game");
 						gameStart = true;
 					}
-					else if(data.equals("Update your playerlist") ) {
+					else if(data.equals("u") ) {
 						playerList = (String) in.readObject();
 						updatePlayerList = true;
+					}
+					else if(data.equals("exit") ){
+						System.out.println("Client has received string to exit");
+						//return;
 					}
 					else
 						callback.accept(data);

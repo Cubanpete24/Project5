@@ -7,26 +7,42 @@ import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.*;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+import java.io.File;
+
+
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Random;
+
+
 
 
 public class ClientFX extends Application{
+
+
 
 	/**Do find out how to add your own puzzles, crtl+f STEP**/
 
 	/**Declare all my buttons and textfields**/
 	Button portButton, ipButton, play, connect, quit;
 	TextField portInput, ipInput, nameInput;
+	MediaPlayer mediaPlayer;
 	int port = 5555;
 	String ip = "127.0.0.1";
 	String clientName = "";
@@ -34,14 +50,17 @@ public class ClientFX extends Application{
 
 	/**STEP 1: DECLARE A SCENE FOR YOUR PUZZLE, EACH SCENE IS IT'S OWN PUZZLE**/
 	/**ALREADY DONE**/
-	Scene DoorScene1, DoorScene2, DoorScene3, DoorScene4;
+	Scene DoorScene1, DoorScene2, DoorScene3, DoorScene4, DoorScene5, DoorScene6;
 	/**STEP 2: DECLARE A BUTTON FOR YOUR PUZZLE, THIS WILL NOT BE USED IN THE FINAL IMPLEMENTATION BUT WILL GIVE YOU DIRECT ACCESS TO IT SO YOU CAN DEBUG IT**/
 	/**ALREADY DONE**/
-	Button door1, door2, door3, door4, testGame;
+	MenuItem door1, door2, door3, door4,door5, door6, testGame;
+	//Button door1, door2, door3, door4, door5, door6, testGame;
 	Stage primaryStage ; //THIS IS THE STAGE THAT DETERMINES WHAT THE USE IS CURRENTLY LOOKING AT
 	Scene startUpScene; //THIS IS THE SCENE THAT YOU SEE ON STARTUP
 	ArrayList<Scene> sceneList = new ArrayList<Scene>(); //Might be better as a hashmap but for now, its an arrayList
 	Text Score = new Text("Score: 0");
+
+
 
 
 	private ClientConnection  conn;
@@ -54,6 +73,8 @@ public class ClientFX extends Application{
 		door2.setVisible(true);
 		door3.setVisible(true);
 		door4.setVisible(true);
+		door5.setVisible(true);
+		door6.setVisible(true);
 	}
 
 
@@ -82,11 +103,20 @@ public class ClientFX extends Application{
 
 		/**STEP 3: INITIALIZE YOUR DOOR BUTTONS**/
 		/**ALREADY DONE**/
-		door1 = new Button("Door #1");
-		door2 = new Button("Door #2");
-		door3 = new Button("Door #3");
-		door4 = new Button("Door #4");
-        testGame = new Button("Test Game");
+		door1 = new MenuItem("Door #1");
+		door2 = new MenuItem("Door #2");
+		door3 = new MenuItem("Door #3");
+		door4 = new MenuItem("Door #4");
+		door5 = new MenuItem("Door #5");
+		door6 = new MenuItem("Door #6");
+        testGame = new MenuItem("Test Game");
+		//door1 = new Button("Door #1");
+		//door2 = new Button("Door #2");
+		//door3 = new Button("Door #3");
+		//door4 = new Button("Door #4");
+		//door5 = new Button("Door #5");
+		//door6 = new Button("Door #6");
+        //testGame = new Button("Test Game");
 
 
         /**THEY ARE INVISIBLE ON STARTUP, AND BECOME VISIBLE ONCE THE USER CONNECTS...THIS DOESN'T REALLY MATTER, BUT IS THERE ANYWAY**/
@@ -94,11 +124,9 @@ public class ClientFX extends Application{
 		door2.setVisible(false);
 		door3.setVisible(false);
 		door4.setVisible(false);
+		door5.setVisible(false);
+		door6.setVisible(false);
         testGame.setVisible(false);
-
-
-
-
 
         //Generic handler for the client choices
 		EventHandler<ActionEvent> buttonSendRPSLS = event -> {
@@ -188,14 +216,17 @@ public class ClientFX extends Application{
 				door2.setVisible(true);
 				door3.setVisible(true);
 				door4.setVisible(true);
+				door5.setVisible(true);
+				door6.setVisible(true);
 				testGame.setVisible(true);
 
 				conn.startConn(this.clientName);
 				/**COMMENTING OUT THIS THREAD FOR NOW UNTIL IT IS BETTER OPTIMIZED, FOR NOW NO DYNAMIC UI ELEMENTS ON THE CLIENT SIDE**/
 				buttonThread test = new buttonThread();
+
 				test.start();
 
-				conn.send("c");
+				conn.send("Why isn't this working");
 
 
 
@@ -239,7 +270,13 @@ public class ClientFX extends Application{
 		/**This HBox contains the buttons for the rock, paper, scissors etc...*/
 		/**STEP 3.5: ADD BUTTON TO HBOX OF DOOR BUTTONS**/
 		/**ALREADY DONE**/
-		HBox Doors = new HBox(10, Score, door1, door2, door3, door4, testGame);
+		//create a drop down menu
+
+		MenuButton dropMenu = new MenuButton("Puzzles");
+		dropMenu.getItems().addAll(door1, door2, door3, door4, door5, door6, testGame);
+
+		HBox Doors = new HBox(10, Score, dropMenu);
+		//HBox Doors = new HBox(10, Score, door1, door2, door3, door4, door5, door6, testGame);
 		Doors.setAlignment(Pos.CENTER);
 
 
@@ -252,6 +289,8 @@ public class ClientFX extends Application{
 				door2.setVisible(false);
 				door3.setVisible(false);
 				door4.setVisible(false);
+				door5.setVisible(false);
+				door6.setVisible(false);
 				testGame.setVisible(false);
             }
             catch(Exception e) {
@@ -267,6 +306,8 @@ public class ClientFX extends Application{
 		/**ALREADY DONE**/
 
 
+
+
 		/**door1 will set the stage to a new scene, we can come up with more creative puzzles**/
 		door1.setOnAction(event -> {
 
@@ -278,8 +319,6 @@ public class ClientFX extends Application{
 			}
 			catch(Exception e) {
 			}
-
-
 		});
 
 		/**ADRIAN'S DOOR HERE**/
@@ -292,8 +331,6 @@ public class ClientFX extends Application{
 			}
 			catch(Exception e) {
 			}
-
-
 		});
 
 		/**CHARLY'S DOOR HERE**/
@@ -324,17 +361,34 @@ public class ClientFX extends Application{
 
 		});
 
+		door5.setOnAction(event -> {
+			try {
+				DoorScene5 = new Scene(createDoor5(), 900, 500);
+				sceneList.add(DoorScene5);
+				primaryStage.setScene(DoorScene5);
+			}
+			catch(Exception e) {
+			}
+		});
+
+		door6.setOnAction(event -> {
+
+			try {
+				DoorScene6 = new Scene(createDoor6(), 900, 500);
+				sceneList.add(DoorScene6);
+				primaryStage.setScene(DoorScene6);
+			}
+			catch(Exception e) {
+			}
+		});
+
 		/**This is where I organize the layout and design of the UI**/
-
-
 
 		/**This HBox contains the the button and textfield for the port, this was done so the two could be close together**/
 		HBox Port = new HBox(2, portInput, portButton);
 		/**This HBox contains the button and textifeld for IP address, done so the two could be close together, and to make it look better**/
 		HBox IP = new HBox(2,ipInput,ipButton);
 		HBox Name = new HBox(2, nameInput);
-
-
 
 		/**HBox contains two other HBoxes, as well as the buttons to connect, play, and quit the game**/
 		HBox middleRow = new HBox(5, Port, IP, Name, connect, play, quit);
@@ -344,7 +398,7 @@ public class ClientFX extends Application{
 
 		/**Textbox stuff**/
 		Text PlayerText = new Text("Players: ");
-		playerList.setText("Oops...buttonThread \nis deactivated...\nSo I don't work");
+		//playerList.setText("Oops...buttonThread \nis deactivated...\nSo I don't work");
 
 		VBox PlayerListBox = new VBox(PlayerText, playerList);
 		HBox textStuff = new HBox(messages, PlayerListBox);
@@ -360,298 +414,375 @@ public class ClientFX extends Application{
 	/** TO DO**/
 
 	private Parent createDoor1() {
+		ArrayList<sudoku> sudokuList = new ArrayList<sudoku>();
+		ArrayList<VBox> sudokuListVBox = new ArrayList<VBox>();
 		Button choice1 = new Button("Press me to win the puzzle");
 		Button choice2 = new Button("Press me to do nothing");
 		Button choice3 = new Button("Press me to do nothing");
 		Text puzzleTitleCard = new Text("Challenge 1: Lightning Sudoku!");
-
-		/**Everything for the 2x2 Puzzle**/
-		TextField c11 = new TextField("1");
-		TextField c12 = new TextField("2");
-		TextField c21 = new TextField();
-		TextField c22 = new TextField("4");
-		c11.setPrefWidth(30);//setting width of cells
-		c12.setPrefWidth(30);
-		c21.setPrefWidth(30);
-		c22.setPrefWidth(30);
-		c11.setPrefHeight(30);
-		c12.setPrefHeight(30);
-		c21.setPrefHeight(30);
-		c22.setPrefHeight(30);
-		c11.setEditable(false); //making sure some cells aren't editable
-		c12.setEditable(false);
-		c21.setEditable(true);
-		c22.setEditable(false);
-		//c11.setBorder()
+		TextField cheatField;
 
 
-		/**Everything for the 3x3 puzzle**/
-		TextField d11 = new TextField("1");
-		TextField d12 = new TextField("2");
-		TextField d13 = new TextField("");
-		TextField d21 = new TextField("4");
-		TextField d22 = new TextField("5");
-		TextField d23 = new TextField("6");
-		TextField d31 = new TextField("7");
-		TextField d32 = new TextField("");
-		TextField d33 = new TextField("9");
-		d11.setPrefWidth(30);
-		d12.setPrefWidth(30);
-		d13.setPrefWidth(30);
-		d21.setPrefWidth(30);
-		d22.setPrefWidth(30);
-		d23.setPrefWidth(30);
-		d31.setPrefWidth(30);
-		d32.setPrefWidth(30);
-		d33.setPrefWidth(30);
-		d11.setPrefHeight(30);
-		d12.setPrefHeight(30);
-		d13.setPrefHeight(30);
-		d21.setPrefHeight(30);
-		d22.setPrefHeight(30);
-		d23.setPrefHeight(30);
-		d31.setPrefHeight(30);
-		d32.setPrefHeight(30);
-		d33.setPrefHeight(30);
-		d11.setEditable(false);
-		d12.setEditable(false);
-		d13.setEditable(true);
-		d21.setEditable(false);
-		d22.setEditable(false);
-		d23.setEditable(false);
-		d31.setEditable(false);
-		d32.setEditable(true);
-		d33.setEditable(false);
+		sudoku s1 = new sudoku();
+		s1.setUpperLeft(4,3,1,2);
+		s1.setUpperRight(99,99,3,99);
+		s1.setLowerLeft(99,99,2,1);
+		s1.setLowerRight(2, 99,99,99);
+        s1.setUpperLeftAnswers(4,3,1,2);
+        s1.setUpperRightAnswers(1,2,99,4);
+        s1.setLowerLeftAnswers(3,4,99,99);
+        s1.setLowerRightAnswers(99, 1,4,3);
 
-		/**Everything for Upper Left 2x2 puzzle**/
-		TextField e11 = new TextField("1");
-		TextField e12 = new TextField("2");
-		TextField e21 = new TextField("3");
-		TextField e22 = new TextField("4");
-		e11.setPrefWidth(30);//setting width of cells
-		e12.setPrefWidth(30);
-		e21.setPrefWidth(30);
-		e22.setPrefWidth(30);
-		e11.setPrefHeight(30);
-		e12.setPrefHeight(30);
-		e21.setPrefHeight(30);
-		e22.setPrefHeight(30);
-		e11.setEditable(false); //making sure some cells aren't editable
-		e12.setEditable(false);
-		e21.setEditable(true);
-		e22.setEditable(false);
-		HBox puzzle3row1UpperLeft = new HBox(e11, e12);
-		HBox puzzle3row2UpperLeft = new HBox(e21, e22);
 
-		/**Everything for Upper Right 2x2 puzzle**/
-		TextField f11 = new TextField("1");
-		TextField f12 = new TextField("2");
-		TextField f21 = new TextField("3");
-		TextField f22 = new TextField("4");
-		f11.setPrefWidth(30);//setting width of cells
-		f12.setPrefWidth(30);
-		f21.setPrefWidth(30);
-		f22.setPrefWidth(30);
-		f11.setPrefHeight(30);
-		f12.setPrefHeight(30);
-		f21.setPrefHeight(30);
-		f22.setPrefHeight(30);
-		f11.setEditable(false); //making sure some cells aren't editable
-		f12.setEditable(false);
-		f21.setEditable(false);
-		f22.setEditable(false);
-		HBox puzzle3row1UpperRight = new HBox(f11, f12);
-		HBox puzzle3row2UpperRight = new HBox(f21, f22);
 
-		/**Everything for Lower Left 2x2 puzzle**/
-		TextField g11 = new TextField("1");
-		TextField g12 = new TextField("2");
-		TextField g21 = new TextField("3");
-		TextField g22 = new TextField("4");
-		g11.setPrefWidth(30);//setting width of cells
-		g12.setPrefWidth(30);
-		g21.setPrefWidth(30);
-		g22.setPrefWidth(30);
-		g11.setPrefHeight(30);
-		g12.setPrefHeight(30);
-		g21.setPrefHeight(30);
-		g22.setPrefHeight(30);
-		g11.setEditable(false); //making sure some cells aren't editable
-		g12.setEditable(false);
-		g21.setEditable(true);
-		g22.setEditable(false);
-		HBox puzzle3row1LowerLeft = new HBox(g11, g12);
-		HBox puzzle3row2LowerLeft = new HBox(g21, g22);
+		sudoku s2 = new sudoku();
+		s2.setUpperLeft(99,3,4,99);
+		s2.setUpperRight(4,99,99,2);
+		s2.setLowerLeft(1,99,99,2);
+		s2.setLowerRight(99,3,1,99);
+        s2.setUpperLeftAnswers(2,99,99,1);
+        s2.setUpperRightAnswers(99,1,3,99);
+        s2.setLowerLeftAnswers(99,4,3,99);
+        s2.setLowerRightAnswers(2, 99,99,4);
 
-		/**Everything for Lower Left 2x2 puzzle**/
-		TextField h11 = new TextField("1");
-		TextField h12 = new TextField("2");
-		TextField h21 = new TextField();
-		TextField h22 = new TextField("4");
-		h11.setPrefWidth(30);//setting width of cells
-		h12.setPrefWidth(30);
-		h21.setPrefWidth(30);
-		h22.setPrefWidth(30);
-		h11.setPrefHeight(30);
-		h12.setPrefHeight(30);
-		h21.setPrefHeight(30);
-		h22.setPrefHeight(30);
-		h11.setEditable(false); //making sure some cells aren't editable
-		h12.setEditable(false);
-		h21.setEditable(true);
-		h22.setEditable(false);
-		HBox puzzle3row1LowerRight = new HBox(h11, h12);
-		HBox puzzle3row2LowerRight = new HBox(h21, h22);
 
+		//Puzzle 4 with Sudoku object
+		sudoku s3 = new sudoku();
+		s3.setUpperLeft(1,2,3,4);
+		s3.setUpperRight(1,2,3,4);
+		s3.setLowerLeft(1,2,3,4);
+		s3.setLowerRight(1,2,3,4);
+        s3.setUpperLeftAnswers(1,2,3,4);
+        s3.setUpperRightAnswers(1,2,3,4);
+        s3.setLowerLeftAnswers(1,2,3,4);
+        s3.setLowerRightAnswers(1,2,3,4);
 
 
 
 		Button solve = new Button("Solve");
+		solve.setAlignment(Pos.CENTER);
 
-		/**Where we compile everything for the puzzles**/
-		HBox puzzle1row1 = new HBox(c11, c12);
-		HBox puzzle1row2 = new HBox(c21, c22);
+		//To give the illusion that there are randomized puzzles
 
-		HBox puzzle2row1 = new HBox(d11, d12, d13);
-		HBox puzzle2row2 = new HBox(d21, d22, d23);
-		HBox puzzle2row3 = new HBox(d31, d32, d33);
+		//puzzle1.setVisible(false);
+		//puzzle2.setVisible(false);
+		//puzzle3.setVisible(false);
 
-		VBox puzzle3UpperLeft= new VBox(puzzle3row1UpperLeft, puzzle3row2UpperLeft);
-		VBox puzzle3UpperRight = new VBox(puzzle3row1UpperRight, puzzle3row2UpperRight);
-		VBox puzzle3LowerLeft = new VBox(puzzle3row1LowerLeft, puzzle3row2LowerLeft);
-		VBox puzzle3LowerRight = new VBox(puzzle3row1LowerRight, puzzle3row2LowerRight);
+		sudokuList.add(s1); //Add all possible puzzles to a list of puzzles
+		sudokuList.add(s2);
+		sudokuList.add(s3);
+		Collections.shuffle(sudokuList, new Random()); //shuffle the list
 
-		HBox puzzle3row1 = new HBox(5, puzzle3UpperLeft, puzzle3UpperRight);
-		HBox puzzle3row2 = new HBox(5, puzzle3LowerLeft, puzzle3LowerRight);
-
-		VBox puzzle3 = new VBox(5,puzzle3row1, puzzle3row2);
-
-
+        //populates arrayList of VBox's with all the sudoku puzzles, so we can make it visible/invisible. They are all invisible by default
+        for(int i = 0; i < sudokuList.size(); i++) {
+            sudokuListVBox.add(sudokuList.get(i).makePuzzle());
+            sudokuListVBox.get(i).setVisible(false);
+        }
 
 
-		VBox puzzle1 = new VBox( puzzle1row1, puzzle1row2);
-		VBox puzzle2 = new VBox( puzzle2row1, puzzle2row2, puzzle2row3);
-		HBox puzzleHolder = new HBox(50, puzzle1, puzzle2, puzzle3);
+		HBox puzzleHolder = new HBox(50, sudokuListVBox.get(0), sudokuListVBox.get(1));
 		VBox everything = new VBox(puzzleTitleCard, puzzleHolder, solve);
+		sudokuListVBox.get(0).setVisible(true); //get first puzzle in list and make it visible
+        cheatField = sudokuList.get(0).getCheat();
 
-
-
-
-
-
-		/**ESSENTIALLY, IT DOESN'T MATTER WHAT YOUR PUZZLE LOOKS LIKE, SO AS LONG AS THERE IS SOME MECHANISM THAT DOES THE FOLLOWING**/
-		choice1.setOnAction(event -> {
-
-			try {
-				/**IMPORTANT THING #1: INCREASE YOUR SCORE**/
-				conn.score++;
-				Score.setText("Score: " + conn.score); //Updates Score Text on UI
-				primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
-				/**IMPORTANT THING #2: Send character 'w' to server to let it know that someone beat the puzzle**/
-				conn.send("w"); //Sends a w to the server to let it know that someone WON
-			}
-			catch(Exception e) {
-			}
-
-		});
 
 		solve.setOnAction(event -> {
 
 			try {
-				/**IMPORTANT THING #1: INCREASE YOUR SCORE**/
-				if(c21.getText().equals("3") && d13.getText().equals("3") && d32.getText().equals("8")){
-					conn.score++;
-					Score.setText("Score: " + conn.score); //Updates Score Text on UI
-					primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
-					conn.send("w"); //Sends a w to the server to let it know that someone WON
-				}
-				else
-					solve.setText("Something is missing...Try again!");
-			}
-			catch(Exception e) {
-			}
+                /**IMPORTANT THING #1: INCREASE YOUR SCORE**/
+                //if((c21.getText().equals("3") && c12.getText().equals("2")) || (c21.getText().equals("2") && c12.getText().equals("3")) || (d13.getText().equals("3") && d32.getText().equals("8")) || (f11.getText().equals("1") && f12.getText().equals("2") && f22.getText().equals("4") && g11.getText().equals("3") && g12.getText().equals("4") && h12.getText().equals("1")) && h21.getText().equals("4") && h22.getText().equals("3")){
+                if (sudokuList.get(0).checkAnswers() == true) {
+                    conn.score++;
+                    Score.setText("Score: " + conn.score); //Updates Score Text on UI
+                    primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
+                    conn.send("w"); //Sends a w to the server to let it know that someone WON
+                } else
+                    solve.setText("WRONG!!!...Try again!");
+            }
+			catch(Exception e){
+                }
 
 		});
 
-		HBox choiceHBox = new HBox(10, choice1, choice2, choice3);
-		//VBox Door1Box = new VBox(puzzle, choiceHBox);
+        cheatField.setOnAction(event -> {
+
+            try {
+                if(cheatField.getText().equals("c"))
+                    sudokuList.get(0).cheat();
+            }
+            catch(Exception e) {
+            }
+
+        });
+
 
 		return everything;
 	}
 
 	/**ADRIAN'S PUZZLE HERE**/
-	private Parent createDoor2() {
-		Button choice1 = new Button("Press me to win the puzzle");
-		Button choice2 = new Button("Press me to do nothing");
-		Button choice3 = new Button("Press me to do nothing");
-		Text puzzle = new Text("what is the airspeed of an unladen swallow");
+	Button createImage(String s){
+		Button b = new Button();
+		Image i = new Image(s);
+		ImageView v = new ImageView(i);
+		v.setFitHeight(200);
+		v.setFitWidth(210);
+		v.setPreserveRatio(true);
+		b.setGraphic(v);
+		//b.setDisable(true);
 
-		choice1.setOnAction(event -> {
-
-			try {
-				conn.score++;
-				Score.setText("Score: " + conn.score);
-				primaryStage.setScene(sceneList.get(0));
-			}
-			catch(Exception e) {
-			}
-
-		});
-
-		HBox choiceHBox = new HBox(10, choice1, choice2, choice3);
-		VBox Door2Box = new VBox(puzzle, choiceHBox);
-
-		return Door2Box;
+		return b;
 	}
 
-	/**CHARLY'S PUZZLE HERE**/
-	private Parent createDoor3() {
-		Button choice1 = new Button("Press me to win the puzzle");
-		Button choice2 = new Button("Press me to do nothing");
-		Button choice3 = new Button("Press me to do nothing");
-		Text puzzle = new Text("what is the airspeed of an unladen swallow");
+	private Parent createDoor2() {
+		BorderPane background = new BorderPane();
+		background.setStyle("-fx-background-color: #654321;");
 
-		choice1.setOnAction(event -> {
+		//Create four pictures to display
+		Button clue1 = createImage("pictures/road.jpg");
+		Button clue2 = createImage("pictures/horses.jpg");
+		Button clue3 = createImage("pictures/horseintheback.jpg");
+		Button clue4 = createImage("pictures/billyray.png");
+		Button adrianCheck = new Button("Check Answer");
+		Button playMusic = new Button("Play Music");
+		Button adrianQuit = new Button("Quit Puzzle");
 
+
+
+		Text instructions = new Text("Guess the song by the pictures!");
+		instructions.setScaleX(3);
+		instructions.setScaleY(3);
+
+
+		TextField answerField = new TextField("Enter Answer Here");
+		answerField.setPrefWidth(200);
+
+		playMusic.setOnAction(event -> {
+			String path = "/Users/adrianzavala/Desktop/Project5/Client/src/sounds/OldTownRoad.mp3";
+			Media media = new Media(new File(path).toURI().toString());
+			mediaPlayer = new MediaPlayer(media);
+			mediaPlayer.play();
+		});
+
+		adrianCheck.setOnAction(event -> {
 			try {
-				conn.score++;
-				Score.setText("Score: " + conn.score);
-				primaryStage.setScene(sceneList.get(0));
+				//get input for the textfield
+				String adrianPuzzle = answerField.getText();
+				answerField.clear();
+
+				//make input lowercase to check for correctness
+				adrianPuzzle = adrianPuzzle.toLowerCase();
+
+				//Check if input is correct
+				if( adrianPuzzle.equals("old town road")){
+					conn.score++;
+					Score.setText("Score: " + conn.score);
+					primaryStage.setScene(sceneList.get(0));
+					conn.send("w"); // not updating the clients scoreboard
+					door2.setDisable(true);
+				}
+				else{
+					answerField.setText("Wrong Answer");
+				}
 			}
 			catch(Exception e) {
+
 			}
 
 		});
 
-		HBox choiceHBox = new HBox(10, choice1, choice2, choice3);
-		VBox Door3Box = new VBox(puzzle, choiceHBox);
+		adrianQuit.setOnAction(event -> {
+			primaryStage.setScene(sceneList.get(0));
+			door2.setDisable(true);
+		});
 
-		return Door3Box;
+
+		HBox choiceHBox = new HBox(5, clue1, clue2, clue3, clue4);
+		VBox top = new VBox(5, instructions);
+		HBox bottom = new HBox(5, answerField, playMusic, adrianCheck, adrianQuit);
+
+		choiceHBox.setAlignment(Pos.CENTER);
+		background.setCenter(choiceHBox);
+
+		top.setAlignment(Pos.BASELINE_CENTER);
+		top.setTranslateY(10);
+		background.setTop(top);
+
+		background.setBottom(bottom);
+		bottom.setAlignment(Pos.BASELINE_CENTER);
+
+		return background;
+	}
+
+
+	/**CHARLY'S PUZZLE HERE**/
+	//FIXME: need to apply gui to the buttons, make them red and green
+	private Parent createDoor3() {
+		Text puzzle = new Text("Click the buttons until they are all green, \nwhen done go to checkWinner to confirm");
+
+		VBox centerScene = new VBox();
+		ArrayList<HBox> rowButton = new ArrayList<>();
+		//ArrayList<Button> myButton = new ArrayList<>();
+		ArrayList<ArrayList<Button>> myButton = new ArrayList<>();
+		//ImageView redBox = new ImageView("red.png");
+		//redBox.set
+
+
+		for(ArrayList<Button> elem : myButton){
+			elem = new ArrayList<Button>();
+		}
+
+		for(int i=0;i<5;i++){//this whole block creates a 5X5 array of buttons and adds them to the scene
+			myButton.add(new ArrayList<Button>() );
+			rowButton.add(new HBox() );
+			for(int j=0;j<5;j++){
+				Button temp = new Button("red");//Integer.toString((i*5)+j) );
+				Image myImage = new Image("red.jpg");
+				ImageView myView = new ImageView(myImage);
+				myView.setPreserveRatio(true);
+				myView.setFitWidth(50);
+				temp.setGraphic(myView);
+				temp.setPrefSize(50,50);
+
+				myButton.get(i).add(temp);
+				rowButton.get(i).getChildren().addAll(myButton.get(i).get(j) );
+				//rowButton.get(myButton.get(i).get(j) );
+			}
+			centerScene.getChildren().addAll(rowButton.get(i) );
+		}
+
+		myButton.get(0).get(0).setOnAction(new EventHandler<ActionEvent>() {//button that changes them to green
+			@Override
+			public void handle(ActionEvent event) {
+				for(ArrayList<Button> elem: myButton){
+					for(Button ele : elem){
+						ele.setText("green");
+						Image myImage = new Image("green.jpg");
+						ImageView myView = new ImageView(myImage);
+						myView.setPreserveRatio(true);
+						myView.setFitWidth(50);
+						ele.setGraphic(myView);
+					}
+				}
+			}
+		});
+
+		Button checkWinner = new Button("Check Winner");
+		checkWinner.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				for(ArrayList<Button> elem : myButton){
+					for(Button ele : elem){
+						if(!ele.getText().equals("green") ){
+							return;
+						}
+					}
+
+					conn.score++;
+					Score.setText("Score: "+conn.score );
+					primaryStage.setScene(sceneList.get(0) );
+				}
+			}
+		});
+
+
+		HBox choiceHBox = new HBox(centerScene, checkWinner);
+		VBox Door3Box = new VBox(puzzle, choiceHBox);
+		BorderPane mainScene = new BorderPane(Door3Box);
+		return mainScene;
+	}
+
+	public ImageView createPictureOnButton(String dir) {
+		Image image = new Image(dir);
+		ImageView view = new ImageView(image);
+		view.setFitHeight(300);
+		view.setFitWidth(300);
+		view.setPreserveRatio(true);
+		return view;
+	}
+
+	private VBox setUpButton(String realAnswer) {
+
+		TextField answer = new TextField();
+		answer.setPrefHeight(5);
+		answer.setPrefWidth(5);
+
+		Button submitAnswerButton = new Button("Submit Answer");
+		Button giveUpButton = new Button("Give up");
+
+		giveUpButton.setOnAction(event -> {
+			primaryStage.setScene(sceneList.get(0));
+		});
+
+
+		submitAnswerButton.setOnAction(event -> {
+			try {
+				String theirAnswer = answer.getText().toUpperCase();
+				answer.clear();
+				if(theirAnswer.equals(realAnswer)) {
+					conn.score++;
+					Score.setText("Score: " + conn.score);
+					primaryStage.setScene(sceneList.get(0));
+					conn.send("w");
+				}
+				else {
+					answer.appendText("Try again. Delete this text to do so");
+				}
+			}
+			catch(Exception e) {
+			}
+		});
+
+		HBox playerButtonAction = new HBox(submitAnswerButton, giveUpButton);
+		VBox playerTotalAction = new VBox(answer, playerButtonAction);
+		return playerTotalAction;
 	}
 
 	/**KAVEESHA'S PUZZLE HERE**/
 	private Parent createDoor4() {
-		Button choice1 = new Button("Press me to win the puzzle");
-		Button choice2 = new Button("Press me to do nothing");
-		Button choice3 = new Button("Press me to do nothing");
-		Text puzzle = new Text("what is the airspeed of an unladen swallow");
+		BorderPane morseGameplay = new BorderPane();
+		Text morseCode = new Text("... -- .- ... .... / -... .-. --- ...");
+		morseCode.setFill(Color.DEEPPINK);
+		morseCode.setScaleX(3);
+		morseCode.setScaleY(3);
+		morseCode.setTranslateX(370);
+		morseCode.setTranslateY(30);
 
-		choice1.setOnAction(event -> {
+		VBox playerAction = setUpButton("SMASH BROS");
+		morseGameplay.setTop(morseCode);
+		morseGameplay.setBottom(playerAction);
+		morseGameplay.setStyle("-fx-background-color: lightskyblue");
 
-			try {
-				conn.score++;
-				Score.setText("Score: " + conn.score);
-				primaryStage.setScene(sceneList.get(0));
-			}
-			catch(Exception e) {
-			}
+		return morseGameplay;
+	}
 
-		});
+	private Parent createDoor5() {
+		BorderPane binaryGameplay = new BorderPane();
+		Text binary = new Text("1101 1010 1011");
+		binary.setFill(Color.CRIMSON);
+		binary.setScaleX(3);
+		binary.setScaleY(3);
+		binary.setTranslateX(350);
+		binary.setTranslateY(30);
+		VBox playerAction = setUpButton("DAB");
+		binaryGameplay.setTop(binary);
+		binaryGameplay.setBottom(playerAction);
+		binaryGameplay.setStyle("-fx-background-color: steelblue");
 
-		HBox choiceHBox = new HBox(10, choice1, choice2, choice3);
-		VBox Door4Box = new VBox(puzzle, choiceHBox);
+		return binaryGameplay;
+	}
 
-		return Door4Box;
+	private Parent createDoor6() {
+		Button mathQuestion = new Button();
+		mathQuestion.setGraphic(createPictureOnButton("mathPuzzle.jpg"));
+
+		BorderPane mathGameplay = new BorderPane();
+
+		VBox playerAction = setUpButton("51");
+		mathGameplay.setTop(mathQuestion);
+		mathGameplay.setBottom(playerAction);
+		mathGameplay.setStyle("-fx-background-color: palegreen");
+
+		return mathGameplay;
 	}
 
 	public static void main(String[] args) {
@@ -676,22 +807,21 @@ public class ClientFX extends Application{
 		Scene scene2 = new Scene(createDoor2(), 900, 500);
 		Scene scene3 = new Scene(createDoor3(), 900, 500);
 		Scene scene4 = new Scene(createDoor4(), 900, 500);
+		Scene scene5 = new Scene(createDoor5(), 900, 500);
+		Scene scene6 = new Scene(createDoor6(), 900, 500);
 		Scene finalScene = startUpScene;
 		sceneList.add(scene1);
 		sceneList.add(scene2);
 		sceneList.add(scene3);
 		sceneList.add(scene4);
+		sceneList.add(scene5);
+		sceneList.add(scene6);
 		sceneList.add(finalScene);
 
-
-
-
 		primaryStage.setScene(startUpScene);
+		primaryStage.setTitle("Puzzle Gauntlet");
 		this.primaryStage = primaryStage;
 		primaryStage.show();
-
-
-
 	}
 	
 	@Override
@@ -734,17 +864,13 @@ public class ClientFX extends Application{
 						Score.setText("Score: " + conn.score);
 
 					}
-					if(conn.gameStart == true){
+					if(conn.gameStart == true) {
 						//sceneNum++;
 						System.out.println("Sync");
 						//primaryStage.setScene(sceneList.get(0));
 						enableButtons();
 						conn.gameStart = false;
 					}
-					//else if(){
-
-                    //}
-					//System.out.println("Test");
 					this.sleep(1000);
 
 				}
