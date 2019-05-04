@@ -16,6 +16,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
@@ -43,7 +44,7 @@ public class ClientFX extends Application{
 	/**Declare all my buttons and textfields**/
 	Button portButton, ipButton, play, connect, quit;
 	TextField portInput, ipInput, nameInput;
-	MediaPlayer mediaPlayer;
+	MediaPlayer mediaPlayer, sunflowerSong;
 	int port = 5555;
 	String ip = "127.0.0.1";
 	String clientName = "";
@@ -431,7 +432,7 @@ public class ClientFX extends Application{
 
 			try {
 				//door1.setVisible(false); Comment this out once program is done
-				DoorScene10 = new Scene(createDoor10(), 900, 500); //We create the scene
+				DoorScene10 = new Scene(createDoor10(), 900, 375); //We create the scene
 				sceneList.add(DoorScene10); //We add the scene to an arrayList of Scenes so we can access it later
 				primaryStage.setScene(DoorScene10); //We display the scene
 				primaryStage.setTitle("Guess The Song #2 !");
@@ -713,6 +714,7 @@ public class ClientFX extends Application{
 
 				//Check if input is correct
 				if( adrianPuzzle.equals("old town road")){
+					mediaPlayer.stop();
 					conn.score++;
 					Score.setText("Score: " + conn.score);
 					primaryStage.setScene(sceneList.get(0));
@@ -1569,48 +1571,37 @@ public class ClientFX extends Application{
 
 		//Eugenio's gif/background code
 
-		Image bg = new Image("pictures/looking.gif");
-		BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, false, true, true);
+		Image bg = new Image("pictures/milesDesk.jpeg");
+		BackgroundSize backgroundSize = new BackgroundSize(200, 100, true, false, true, true);
 		BackgroundImage bgImg = new BackgroundImage(bg, null, null, null, backgroundSize);
 		Background bk = new Background(bgImg);
 
 		//background.set
 		background.setBackground(bk);
 
-		//Create four pictures to display
-		Button clue1 = createImage("pictures/road.jpg");
-		Button clue2 = createImage("pictures/horses.jpg");
-		Button clue3 = createImage("pictures/horseintheback.jpg");
-		Button clue4 = createImage("pictures/billyray.png");
-		Button adrianCheck = new Button("Check Answer");
-		Button playMusic = new Button("Play Music");
-		Button stopMusic = new Button("Stop Music");
-		Button adrianQuit = new Button("Quit Puzzle");
-
 		try{
-			String path = "/Users/adrianzavala/Desktop/Project5/Client/src/sounds/OldTownRoad.mp3";
-			Media media = new Media(new File(path).toURI().toString());
-			mediaPlayer = new MediaPlayer(media);}
+			String path = "/Users/adrianzavala/Desktop/Project5/Client/src/sounds/Sunflower.mp3";
+			Media m = new Media(new File(path).toURI().toString());
+			sunflowerSong = new MediaPlayer(m);}
 		catch (Exception e){
 			System.out.println("Could not create the music clip");
 		}
 
-		Text instructions = new Text("Guess the song by the pictures!");
+		Button adrianCheck = new Button("Check Answer");
+		Button playSunflower = new Button("Play Music");
+		Button stopSunflower = new Button("Stop Music");
+		Button adrianQuit = new Button("Quit Puzzle");
+
+		Text instructions = new Text("Guess the song!");
+		instructions.setRotate(-30);
+		instructions.setTranslateX(-290);
+		instructions.setTranslateY(100);
+		instructions.setFill(Color.CRIMSON);
 		instructions.setScaleX(3);
 		instructions.setScaleY(3);
 
-
 		TextField answerField = new TextField("Enter Answer Here");
-		answerField.setPrefWidth(200);
-
-
-		playMusic.setOnAction(event -> {
-			mediaPlayer.play();
-		});
-
-		stopMusic.setOnAction(event -> {
-			mediaPlayer.stop();
-		});
+		answerField.setPrefWidth(300);
 
 		adrianCheck.setOnAction(event -> {
 			try {
@@ -1622,7 +1613,8 @@ public class ClientFX extends Application{
 				adrianPuzzle = adrianPuzzle.toLowerCase();
 
 				//Check if input is correct
-				if( adrianPuzzle.equals("old town road")){
+				if( adrianPuzzle.equals("sunflower")){
+					sunflowerSong.stop();
 					conn.score++;
 					Score.setText("Score: " + conn.score);
 					primaryStage.setScene(sceneList.get(0));
@@ -1636,22 +1628,24 @@ public class ClientFX extends Application{
 			catch(Exception e) {
 
 			}
+		});
 
+		playSunflower.setOnAction(event -> {
+			sunflowerSong.play();
+		});
+
+		stopSunflower.setOnAction(event -> {
+			sunflowerSong.stop();
 		});
 
 		adrianQuit.setOnAction(event -> {
 			primaryStage.setScene(sceneList.get(0));
-			door2.setDisable(true);
-			mediaPlayer.stop();
+			door10.setDisable(true);
+			sunflowerSong.stop();
 		});
 
-
-		HBox choiceHBox = new HBox(5, clue1, clue2, clue3, clue4);
 		VBox top = new VBox(5, instructions);
-		HBox bottom = new HBox(5, answerField, adrianCheck, playMusic, stopMusic, adrianQuit);
-
-		choiceHBox.setAlignment(CENTER);
-		background.setCenter(choiceHBox);
+		HBox bottom = new HBox(5, answerField, adrianCheck, playSunflower, stopSunflower, adrianQuit);
 
 		top.setAlignment(Pos.BASELINE_CENTER);
 		top.setTranslateY(10);

@@ -2,23 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fbf1ba1-17c2-45b9-ad94-4b13981523a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Client/src/pictures/looking.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/pictures/milesDesk.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/sounds/Sunflower.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/ClientFX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/green.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/mathPuzzle.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/pictures/mathPuzzle.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/pictures/green.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/pictures/green.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/red.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/pictures/red.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/red.png" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/pictures/red.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientConnection$ConnThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientConnection$ConnThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/pictures/looking.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$1sudokuThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$1sudokuThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$buttonThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$buttonThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server/ServerConnection$ClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/ServerConnection$ClientThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server/ServerConnection$ConnThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/ServerConnection$ConnThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server/ServerConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/ServerConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server/ServerFX$buttonThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/ServerFX$buttonThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server/ServerFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/ServerFX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/pictures/looking.gif" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,34 +29,38 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/src/ClientFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="1565" column="71" selection-start-line="1565" selection-start-column="71" selection-end-line="1565" selection-end-column="71" />
+            <state relative-caret-position="391">
+              <caret line="720" column="51" lean-forward="true" selection-start-line="720" selection-start-column="51" selection-end-line="720" selection-end-column="51" />
               <folding>
-                <element signature="e#2125#2132#0" expanded="true" />
-                <element signature="e#2609#11913#0" />
-                <element signature="e#11956#17647#0" />
-                <element signature="e#12049#12057#0" expanded="true" />
-                <element signature="e#12109#12115#0" expanded="true" />
-                <element signature="e#17650#17926#0" />
-                <element signature="e#17929#20150#0" />
-                <element signature="e#20154#22525#0" />
-                <element signature="e#22528#22753#0" />
-                <element signature="e#22756#23688#0" />
-                <element signature="e#23691#24238#0" />
-                <element signature="e#24242#24708#0" />
-                <element signature="e#24711#25100#0" />
-                <element signature="e#25104#29526#0" />
-                <element signature="e#29529#34855#0" />
-                <element signature="e#29628#29636#0" expanded="true" />
-                <element signature="e#29688#29694#0" expanded="true" />
-                <element signature="e#34858#44014#0" />
-                <element signature="e#34935#34943#0" expanded="true" />
-                <element signature="e#34995#35001#0" expanded="true" />
-                <element signature="e#45466#45625#0" />
-                <element signature="e#45630#45801#0" />
+                <element signature="e#2054#2061#0" expanded="true" />
+                <element signature="e#2538#12381#0" />
+                <element signature="e#12424#18115#0" />
+                <element signature="e#12517#12525#0" expanded="true" />
+                <element signature="e#12577#12583#0" expanded="true" />
+                <element signature="e#18118#18394#0" />
+                <element signature="e#18986#19183#0" />
+                <element signature="e#20861#23250#0" />
+                <element signature="e#23253#23478#0" />
+                <element signature="e#23481#24413#0" />
+                <element signature="e#24416#24963#0" />
+                <element signature="e#24967#25433#0" />
+                <element signature="e#25436#25834#0" />
+                <element signature="e#25838#30260#0" />
+                <element signature="e#30263#35589#0" />
+                <element signature="e#30362#30370#0" expanded="true" />
+                <element signature="e#30422#30428#0" expanded="true" />
+                <element signature="e#35592#44748#0" />
+                <element signature="e#35669#35677#0" expanded="true" />
+                <element signature="e#35729#35735#0" expanded="true" />
+                <element signature="e#46392#47001#0" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/src/pictures/looking2.gif">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -78,9 +76,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="294" />
+    <option name="x" value="574" />
     <option name="y" value="23" />
-    <option name="width" value="1218" />
+    <option name="width" value="1106" />
     <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -105,6 +103,12 @@
             </path>
             <path>
               <item name="Project5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sounds" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project5" type="b2602c69:ProjectViewProjectNode" />
               <item name="Server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -124,10 +128,10 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Client/src/sounds" />
       <recent name="$PROJECT_DIR$/Client/src/pictures" />
       <recent name="$PROJECT_DIR$/Client/src" />
       <recent name="$PROJECT_DIR$/Client" />
-      <recent name="$PROJECT_DIR$/Client/src/sounds" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -178,10 +182,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="294" y="23" width="1218" height="1027" extended-state="0" />
+    <frame x="12" y="23" width="1567" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24659865" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19016394" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -191,7 +195,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32894737" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3739035" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -215,9 +219,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/ClientFX 2.java" />
-    <entry file="file://$PROJECT_DIR$/Client/src/pictures/looking.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/pictures/spiderman.gif">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -252,33 +253,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/looking2.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/pictures/looking.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/pictures/looking2.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/pictures/milesDesk.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/ClientFX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="1565" column="71" selection-start-line="1565" selection-start-column="71" selection-end-line="1565" selection-end-column="71" />
+        <state relative-caret-position="391">
+          <caret line="720" column="51" lean-forward="true" selection-start-line="720" selection-start-column="51" selection-end-line="720" selection-end-column="51" />
           <folding>
-            <element signature="e#2125#2132#0" expanded="true" />
-            <element signature="e#2609#11913#0" />
-            <element signature="e#11956#17647#0" />
-            <element signature="e#12049#12057#0" expanded="true" />
-            <element signature="e#12109#12115#0" expanded="true" />
-            <element signature="e#17650#17926#0" />
-            <element signature="e#17929#20150#0" />
-            <element signature="e#20154#22525#0" />
-            <element signature="e#22528#22753#0" />
-            <element signature="e#22756#23688#0" />
-            <element signature="e#23691#24238#0" />
-            <element signature="e#24242#24708#0" />
-            <element signature="e#24711#25100#0" />
-            <element signature="e#25104#29526#0" />
-            <element signature="e#29529#34855#0" />
-            <element signature="e#29628#29636#0" expanded="true" />
-            <element signature="e#29688#29694#0" expanded="true" />
-            <element signature="e#34858#44014#0" />
-            <element signature="e#34935#34943#0" expanded="true" />
-            <element signature="e#34995#35001#0" expanded="true" />
-            <element signature="e#45466#45625#0" />
-            <element signature="e#45630#45801#0" />
+            <element signature="e#2054#2061#0" expanded="true" />
+            <element signature="e#2538#12381#0" />
+            <element signature="e#12424#18115#0" />
+            <element signature="e#12517#12525#0" expanded="true" />
+            <element signature="e#12577#12583#0" expanded="true" />
+            <element signature="e#18118#18394#0" />
+            <element signature="e#18986#19183#0" />
+            <element signature="e#20861#23250#0" />
+            <element signature="e#23253#23478#0" />
+            <element signature="e#23481#24413#0" />
+            <element signature="e#24416#24963#0" />
+            <element signature="e#24967#25433#0" />
+            <element signature="e#25436#25834#0" />
+            <element signature="e#25838#30260#0" />
+            <element signature="e#30263#35589#0" />
+            <element signature="e#30362#30370#0" expanded="true" />
+            <element signature="e#30422#30428#0" expanded="true" />
+            <element signature="e#35592#44748#0" />
+            <element signature="e#35669#35677#0" expanded="true" />
+            <element signature="e#35729#35735#0" expanded="true" />
+            <element signature="e#46392#47001#0" />
           </folding>
         </state>
       </provider>
