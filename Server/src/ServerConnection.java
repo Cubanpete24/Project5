@@ -145,13 +145,11 @@ public abstract class ServerConnection {
 					}
 					else if((data.equals("c"))){
 						updatePlayerList = true;
-						callback.accept(clientName + " has entered the test realm");//Edit later
 						if(clients.size() < 2) {
 							callback.accept("Server awaiting 3 more players...But to test a build closer to the final game, have another person connect and press Test Game");
 						}
 						else if(clients.size() < 3) {
 							callback.accept("Server awaiting 2 more players...But for now");
-							send("g", clients); //Delete this later
 
 						}
 						else if(clients.size() < 4)

@@ -3,9 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="14ada50d-c349-4483-a974-cdfe3468ecb8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientConnection$ConnThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientConnection$ConnThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$1sudokuThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$1sudokuThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$buttonThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$buttonThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientFX.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/ServerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/ServerConnection.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,12 +22,15 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Client$ClientFX.ic" NAME="ClientFX Coverage Results" MODIFIED="1556953606039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
+            <state relative-caret-position="680">
               <caret line="43" selection-start-line="43" selection-end-line="43" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -33,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+            <state relative-caret-position="245">
+              <caret line="116" column="48" selection-start-line="116" selection-start-column="48" selection-end-line="116" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -45,17 +56,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="487" column="66" selection-start-line="487" selection-start-column="66" selection-end-line="487" selection-end-column="66" />
+            <state relative-caret-position="896">
+              <caret line="65" column="99" selection-start-line="65" selection-start-column="92" selection-end-line="65" selection-end-column="99" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1998#2005#0" expanded="true" />
-                <element signature="e#11623#11631#0" expanded="true" />
-                <element signature="e#11683#11689#0" expanded="true" />
-                <element signature="e#27397#27405#0" expanded="true" />
-                <element signature="e#27457#27463#0" expanded="true" />
-                <element signature="e#34511#34519#0" expanded="true" />
-                <element signature="e#34571#34577#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,7 +68,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sudoku.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2159">
+            <state relative-caret-position="493">
               <caret line="31" column="15" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
             </state>
           </provider>
@@ -86,36 +90,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>DoorScene1</find>
-      <find>door6</find>
-      <find>DoorScene5</find>
-      <find>createDoor1</find>
-      <find>createDoor6</find>
-      <find>folding</find>
-      <find>createdoor4</find>
-      <find>playerAction</find>
-      <find>update</find>
-      <find>old</find>
-      <find>sudoku</find>
-      <find>solve</find>
-      <find>door2.set</find>
-      <find>new scene</find>
-      <find>createdoor1()</find>
-      <find>buttonholder</find>
-      <find>door7.seton</find>
-      <find>lowerrightanswers</find>
-      <find>door7</find>
-      <find>gamepane</find>
       <find>opponent1score</find>
       <find>giveup</find>
       <find>gamePane.set</find>
       <find>do reme</find>
       <find>scenelist</find>
-      <find>sudo</find>
       <find>sudokugame</find>
       <find>padding</find>
-      <find>step</find>
       <find>giphy</find>
+      <find>door9.set</find>
+      <find>gamepane.set</find>
+      <find>insets</find>
+      <find>sudo</find>
+      <find>jerkfactor</find>
+      <find>jerkbutton</find>
+      <find>menu</find>
+      <find>dropdown</find>
+      <find>dropd</find>
+      <find>dr</find>
+      <find>dropmenu</find>
+      <find>buttonthread</find>
+      <find>current numb</find>
+      <find>name</find>
+      <find>door</find>
+      <find>step</find>
+      <find>test</find>
+      <find>start</find>
+      <find>enablebuttons</find>
+      <find>testgame</find>
+      <find>connection coul</find>
+      <find>for now</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -148,6 +152,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -171,12 +176,11 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556944429384" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556953983916" />
     <property name="last_opened_file_path" value="$USER_HOME$/Project2" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -201,56 +205,9 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="ClientFX" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="ClientFX" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClientFX" />
       <module name="Client" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <module name="Client" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <module name="Client" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -278,7 +235,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26865673" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27132195" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -295,7 +252,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.3285968" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3250444" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32502708" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -360,9 +317,16 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Thread.java" />
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="68" column="14" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
+        <state relative-caret-position="680">
           <caret line="43" selection-start-line="43" selection-end-line="43" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -372,24 +336,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="68" column="14" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sudoku.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2159">
+        <state relative-caret-position="493">
           <caret line="31" column="15" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Project5.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        <state relative-caret-position="245">
+          <caret line="116" column="48" selection-start-line="116" selection-start-column="48" selection-end-line="116" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -398,17 +358,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="487" column="66" selection-start-line="487" selection-start-column="66" selection-end-line="487" selection-end-column="66" />
+        <state relative-caret-position="896">
+          <caret line="65" column="99" selection-start-line="65" selection-start-column="92" selection-end-line="65" selection-end-column="99" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1998#2005#0" expanded="true" />
-            <element signature="e#11623#11631#0" expanded="true" />
-            <element signature="e#11683#11689#0" expanded="true" />
-            <element signature="e#27397#27405#0" expanded="true" />
-            <element signature="e#27457#27463#0" expanded="true" />
-            <element signature="e#34511#34519#0" expanded="true" />
-            <element signature="e#34571#34577#0" expanded="true" />
           </folding>
         </state>
       </provider>
