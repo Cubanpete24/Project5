@@ -19,6 +19,7 @@ import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -839,17 +840,19 @@ public class ClientFX extends Application{
 	private VBox setUpActions(String realAnswer, int whichDoor) {
 
 		TextField answer = new TextField();
-		answer.setPrefHeight(30);
-		answer.setPrefWidth(30);
+		answer.setMinHeight(30);
+		answer.setMinWidth(30);
 
 		Button submitAnswerButton = new Button("Submit Answer");
 		Button giveUpButton = new Button("Give up");
+		Button popUpButton = new Button("Pop up");
 
 		giveUpButton.setOnAction(event -> {
 			disableDoor(whichDoor);
 			primaryStage.setScene(sceneList.get(0));
 		});
 
+		popUpButton.setOnAction(event -> displayEndingWindow());
 
 		submitAnswerButton.setOnAction(event -> {
 			try {
@@ -870,11 +873,54 @@ public class ClientFX extends Application{
 			}
 		});
 
-		HBox playerButtonAction = new HBox(50, submitAnswerButton, giveUpButton);
+		HBox playerButtonAction = new HBox(50, submitAnswerButton, giveUpButton, popUpButton);
 		playerButtonAction.setAlignment(CENTER);
 		VBox playerTotalAction = new VBox(10, answer, playerButtonAction);
 		playerTotalAction.setAlignment(CENTER);
 		return playerTotalAction;
+	}
+
+	private void displayEndingWindow() {
+		Stage endingWindow = new Stage();
+
+		//block input events of user interaction until they deal with this window
+		endingWindow.initModality(Modality.APPLICATION_MODAL);
+		endingWindow.setTitle("Game Over");
+		endingWindow.setMinWidth(250);
+
+		Label playOrQuitLabel = new Label();
+		playOrQuitLabel.setText("Do you want to play again or quit?");
+		Button playAgainButton = new Button("Play Again");
+		playAgainButton.setOnAction(event -> primaryStage.setScene(sceneList.get(0)));
+
+		Button quitButton = new Button("Quit");
+
+		quitButton.setOnAction(event -> {
+
+			try {
+				conn.send("Quit");
+			}
+			catch(Exception e) {
+			}
+			endingWindow.close();
+			System.exit(0);
+
+		});
+		playAgainButton.setOnAction(event -> {
+			endingWindow.close();
+			primaryStage.setScene(sceneList.get(0));
+		});
+
+		HBox endingButtons = new HBox(10, playAgainButton, quitButton);
+		endingButtons.setAlignment(CENTER);
+		VBox endingLayout = new VBox(10);
+		endingLayout.getChildren().addAll(playOrQuitLabel, endingButtons);
+		endingLayout.setAlignment(Pos.CENTER);
+
+		Scene scene = new Scene(endingLayout);
+		endingWindow.setScene(scene);
+		//block any user interaction until the box is closed
+		endingWindow.showAndWait();
 	}
 
 	private void disableDoor(int whichDoor) {
