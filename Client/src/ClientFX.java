@@ -428,7 +428,7 @@ public class ClientFX extends Application{
 				DoorScene9 = new Scene(createDoor9(), 900, 500); //We create the scene
 				sceneList.add(DoorScene9); //We add the scene to an arrayList of Scenes so we can access it later
 				primaryStage.setScene(DoorScene9); //We display the scene
-				primaryStage.setTitle("Bad Sudoku!");
+				primaryStage.setTitle("Extreme Sudoku!");
 
 			}
 			catch(Exception e) {
@@ -484,8 +484,8 @@ public class ClientFX extends Application{
 		Button sabotage = new Button("Sabotage");
 
 		BorderPane gamePane = new BorderPane();
-		Image bg = new Image("pictures/giphy.gif");
-		BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
+		Image bg = new Image("pictures/bird1.gif");
+		BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, false, true, true);
 		BackgroundImage bgImg = new BackgroundImage(bg, null, null, null, backgroundSize);
 		Background background = new Background(bgImg);
 
@@ -1060,7 +1060,7 @@ public class ClientFX extends Application{
 		return gamePane;
 	}
 
-	/**Mean Sudoku**/
+	/**Extreme Sudoku**/
 	private Parent createDoor8() {
 		ArrayList<sudoku> sudokuList = new ArrayList<sudoku>();
 		ArrayList<VBox> sudokuListVBox = new ArrayList<VBox>();
@@ -1075,9 +1075,9 @@ public class ClientFX extends Application{
 		Button sabotage = new Button("Sabotage");
 
 		BorderPane gamePane = new BorderPane();
-		Image bg = new Image("pictures/giphy.gif");
+		Image bg = new Image("pictures/bird1.gif");
 		gamePane.setRotate(180);
-		BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
+		BackgroundSize backgroundSize = new BackgroundSize(100, 80, true, false, true, true);
 		BackgroundImage bgImg = new BackgroundImage(bg, null, null, null, backgroundSize);
 		Background background = new Background(bgImg);
 
@@ -1247,7 +1247,7 @@ public class ClientFX extends Application{
 		Button choice3 = new Button("Press me to do nothing");
 		conn.sudokuGameOn = true;
 
-		Text puzzleTitleCard = new Text("Welcome to Bad Sudoku!!");
+		Text puzzleTitleCard = new Text("Welcome to Extreme Sudoku!!");
 		TextField cheatField;
 
 		Button solve = new Button("Solve");
@@ -1258,7 +1258,7 @@ public class ClientFX extends Application{
 
 		BorderPane gamePane = new BorderPane();
 		Image bg = new Image("pictures/giphy.gif");
-		BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
+		BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, false, true, true);
 		BackgroundImage bgImg = new BackgroundImage(bg, null, null, null, backgroundSize);
 		Background background = new Background(bgImg);
 

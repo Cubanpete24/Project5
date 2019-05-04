@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="00cec935-15c3-475a-9d82-ce753cf7abb7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientConnection$ConnThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientConnection$ConnThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$buttonThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$buttonThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/ClientConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/ClientFX.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>

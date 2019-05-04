@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="14ada50d-c349-4483-a974-cdfe3468ecb8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientConnection$ConnThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientConnection$ConnThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$buttonThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$buttonThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientFX.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -51,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="556">
-              <caret line="430" column="43" selection-start-line="430" selection-start-column="43" selection-end-line="430" selection-end-column="43" />
+            <state relative-caret-position="336">
+              <caret line="487" column="66" selection-start-line="487" selection-start-column="66" selection-end-line="487" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1998#2005#0" expanded="true" />
@@ -92,7 +86,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Button</find>
       <find>DoorScene1</find>
       <find>door6</find>
       <find>DoorScene5</find>
@@ -122,6 +115,7 @@
       <find>sudokugame</find>
       <find>padding</find>
       <find>step</find>
+      <find>giphy</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -166,6 +160,12 @@
               <item name="Client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pictures" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -176,7 +176,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556942974617" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556944429384" />
     <property name="last_opened_file_path" value="$USER_HOME$/Project2" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -278,7 +278,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26882592" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26865673" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -398,8 +398,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="430" column="43" selection-start-line="430" selection-start-column="43" selection-end-line="430" selection-end-column="43" />
+        <state relative-caret-position="336">
+          <caret line="487" column="66" selection-start-line="487" selection-start-column="66" selection-end-line="487" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1998#2005#0" expanded="true" />
