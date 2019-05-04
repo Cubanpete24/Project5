@@ -880,6 +880,7 @@ public class ClientFX extends Application{
 		return playerTotalAction;
 	}
 
+	//does not allow the user to press anything until they do something to the pop up dialog box
 	private void displayEndingWindow() {
 		Stage endingWindow = new Stage();
 
