@@ -14,11 +14,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -29,7 +27,6 @@ import java.io.File;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -54,11 +51,11 @@ public class ClientFX extends Application{
 
 	/**STEP 1: DECLARE A SCENE FOR YOUR PUZZLE, EACH SCENE IS IT'S OWN PUZZLE**/
 	/**ALREADY DONE**/
-	Scene DoorScene1, DoorScene2, DoorScene3, DoorScene4, DoorScene5, DoorScene6, DoorScene7, DoorScene8, DoorScene9;
+	Scene DoorScene1, DoorScene2, DoorScene3, DoorScene4, DoorScene5, DoorScene6, DoorScene7, DoorScene8, DoorScene9, DoorScene10;
 	/**STEP 2: DECLARE A BUTTON FOR YOUR PUZZLE, THIS WILL NOT BE USED IN THE FINAL IMPLEMENTATION BUT WILL GIVE YOU DIRECT ACCESS TO IT SO YOU CAN DEBUG IT**/
 	/**ALREADY DONE**/
 	MenuButton dropMenu;
-	MenuItem door1, door2, door3, door4,door5, door6, door7, door8, door9;
+	MenuItem door1, door2, door3, door4,door5, door6, door7, door8, door9, door10;
 	Button testGame;
 	//Button door1, door2, door3, door4, door5, door6, testGame;
 	Stage primaryStage ; //THIS IS THE STAGE THAT DETERMINES WHAT THE USE IS CURRENTLY LOOKING AT
@@ -119,6 +116,7 @@ public class ClientFX extends Application{
 		door7 = new MenuItem("Door #7");
 		door8 = new MenuItem("Door #8");
 		door9 = new MenuItem("Door #9");
+		door10 = new MenuItem("Door #10");
 
 
 		//testGame = new MenuItem("Test Game");
@@ -285,7 +283,7 @@ public class ClientFX extends Application{
 
 		dropMenu = new MenuButton("Puzzles");
 		dropMenu.setVisible(false);
-		dropMenu.getItems().addAll(door1, door2, door3, door4, door5, door6, door7, door8, door9);
+		dropMenu.getItems().addAll(door1, door2, door3, door4, door5, door6, door7, door8, door9, door10);
 
 		HBox Doors = new HBox(10, Score, dropMenu);
 		//HBox Doors = new HBox(10, Score, door1, door2, door3, door4, door5, door6, testGame);
@@ -335,6 +333,7 @@ public class ClientFX extends Application{
 				DoorScene2 = new Scene(createDoor2(), 900, 500);
 				sceneList.add(DoorScene2);
 				primaryStage.setScene(DoorScene2);
+				primaryStage.setTitle("Guess The Song #1");
 			}
 			catch(Exception e) {
 			}
@@ -422,6 +421,20 @@ public class ClientFX extends Application{
 				sceneList.add(DoorScene9); //We add the scene to an arrayList of Scenes so we can access it later
 				primaryStage.setScene(DoorScene9); //We display the scene
 				primaryStage.setTitle("Extreme Sudoku!");
+
+			}
+			catch(Exception e) {
+			}
+		});
+
+		door10.setOnAction(event -> {
+
+			try {
+				//door1.setVisible(false); Comment this out once program is done
+				DoorScene10 = new Scene(createDoor10(), 900, 500); //We create the scene
+				sceneList.add(DoorScene10); //We add the scene to an arrayList of Scenes so we can access it later
+				primaryStage.setScene(DoorScene10); //We display the scene
+				primaryStage.setTitle("Guess The Song #2 !");
 
 			}
 			catch(Exception e) {
@@ -661,9 +674,16 @@ public class ClientFX extends Application{
 		Button clue4 = createImage("pictures/billyray.png");
 		Button adrianCheck = new Button("Check Answer");
 		Button playMusic = new Button("Play Music");
+		Button stopMusic = new Button("Stop Music");
 		Button adrianQuit = new Button("Quit Puzzle");
 
-
+		try{
+			String path = "/Users/adrianzavala/Desktop/Project5/Client/src/sounds/OldTownRoad.mp3";
+			Media media = new Media(new File(path).toURI().toString());
+			mediaPlayer = new MediaPlayer(media);}
+		catch (Exception e){
+			System.out.println("Could not create the music clip");
+		}
 
 		Text instructions = new Text("Guess the song by the pictures!");
 		instructions.setScaleX(3);
@@ -673,11 +693,13 @@ public class ClientFX extends Application{
 		TextField answerField = new TextField("Enter Answer Here");
 		answerField.setPrefWidth(200);
 
+
 		playMusic.setOnAction(event -> {
-			String path = "/Users/adrianzavala/Desktop/Project5/Client/src/sounds/OldTownRoad.mp3";
-			Media media = new Media(new File(path).toURI().toString());
-			mediaPlayer = new MediaPlayer(media);
 			mediaPlayer.play();
+		});
+
+		stopMusic.setOnAction(event -> {
+			mediaPlayer.stop();
 		});
 
 		adrianCheck.setOnAction(event -> {
@@ -710,12 +732,13 @@ public class ClientFX extends Application{
 		adrianQuit.setOnAction(event -> {
 			primaryStage.setScene(sceneList.get(0));
 			door2.setDisable(true);
+			mediaPlayer.stop();
 		});
 
 
 		HBox choiceHBox = new HBox(5, clue1, clue2, clue3, clue4);
 		VBox top = new VBox(5, instructions);
-		HBox bottom = new HBox(5, answerField, playMusic, adrianCheck, adrianQuit);
+		HBox bottom = new HBox(5, answerField, adrianCheck, playMusic, stopMusic, adrianQuit);
 
 		choiceHBox.setAlignment(CENTER);
 		background.setCenter(choiceHBox);
@@ -753,7 +776,7 @@ public class ClientFX extends Application{
 			rowButton.add(new HBox() );
 			for(int j=0;j<5;j++){
 				Button temp = new Button("red");//Integer.toString((i*5)+j) );
-				Image myImage = new Image("red.jpg");
+				Image myImage = new Image("pictures/red.jpg");
 				ImageView myView = new ImageView(myImage);
 				myView.setPreserveRatio(true);
 				myView.setFitWidth(50);
@@ -773,7 +796,7 @@ public class ClientFX extends Application{
 				for(ArrayList<Button> elem: myButton){
 					for(Button ele : elem){
 						ele.setText("green");
-						Image myImage = new Image("green.jpg");
+						Image myImage = new Image("pictures/green.jpg");
 						ImageView myView = new ImageView(myImage);
 						myView.setPreserveRatio(true);
 						myView.setFitWidth(50);
@@ -891,7 +914,7 @@ public class ClientFX extends Application{
 
 	private Parent createDoor6() {
 		Button mathQuestion = new Button();
-		mathQuestion.setGraphic(createPictureOnButton("mathPuzzle.jpg"));
+		mathQuestion.setGraphic(createPictureOnButton("pictures/mathPuzzle.jpg"));
 
 		BorderPane mathGameplay = new BorderPane();
 
@@ -1539,6 +1562,107 @@ public class ClientFX extends Application{
 		return gamePane;
 	}
 
+	/**ADRIAN'S PUZZLE 2**/
+	//TODO: Change picutes for specific songs, gif not working properly
+	private Parent createDoor10(){
+		BorderPane background = new BorderPane();
+
+		//Eugenio's gif/background code
+
+		Image bg = new Image("pictures/looking.gif");
+		BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, false, true, true);
+		BackgroundImage bgImg = new BackgroundImage(bg, null, null, null, backgroundSize);
+		Background bk = new Background(bgImg);
+
+		//background.set
+		background.setBackground(bk);
+
+		//Create four pictures to display
+		Button clue1 = createImage("pictures/road.jpg");
+		Button clue2 = createImage("pictures/horses.jpg");
+		Button clue3 = createImage("pictures/horseintheback.jpg");
+		Button clue4 = createImage("pictures/billyray.png");
+		Button adrianCheck = new Button("Check Answer");
+		Button playMusic = new Button("Play Music");
+		Button stopMusic = new Button("Stop Music");
+		Button adrianQuit = new Button("Quit Puzzle");
+
+		try{
+			String path = "/Users/adrianzavala/Desktop/Project5/Client/src/sounds/OldTownRoad.mp3";
+			Media media = new Media(new File(path).toURI().toString());
+			mediaPlayer = new MediaPlayer(media);}
+		catch (Exception e){
+			System.out.println("Could not create the music clip");
+		}
+
+		Text instructions = new Text("Guess the song by the pictures!");
+		instructions.setScaleX(3);
+		instructions.setScaleY(3);
+
+
+		TextField answerField = new TextField("Enter Answer Here");
+		answerField.setPrefWidth(200);
+
+
+		playMusic.setOnAction(event -> {
+			mediaPlayer.play();
+		});
+
+		stopMusic.setOnAction(event -> {
+			mediaPlayer.stop();
+		});
+
+		adrianCheck.setOnAction(event -> {
+			try {
+				//get input for the textfield
+				String adrianPuzzle = answerField.getText();
+				answerField.clear();
+
+				//make input lowercase to check for correctness
+				adrianPuzzle = adrianPuzzle.toLowerCase();
+
+				//Check if input is correct
+				if( adrianPuzzle.equals("old town road")){
+					conn.score++;
+					Score.setText("Score: " + conn.score);
+					primaryStage.setScene(sceneList.get(0));
+					conn.send("w"); // not updating the clients scoreboard
+					door2.setDisable(true);
+				}
+				else{
+					answerField.setText("Wrong Answer");
+				}
+			}
+			catch(Exception e) {
+
+			}
+
+		});
+
+		adrianQuit.setOnAction(event -> {
+			primaryStage.setScene(sceneList.get(0));
+			door2.setDisable(true);
+			mediaPlayer.stop();
+		});
+
+
+		HBox choiceHBox = new HBox(5, clue1, clue2, clue3, clue4);
+		VBox top = new VBox(5, instructions);
+		HBox bottom = new HBox(5, answerField, adrianCheck, playMusic, stopMusic, adrianQuit);
+
+		choiceHBox.setAlignment(CENTER);
+		background.setCenter(choiceHBox);
+
+		top.setAlignment(Pos.BASELINE_CENTER);
+		top.setTranslateY(10);
+		background.setTop(top);
+
+		background.setBottom(bottom);
+		bottom.setAlignment(Pos.BASELINE_CENTER);
+
+		return background;
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		launch(args);
@@ -1568,6 +1692,8 @@ public class ClientFX extends Application{
 		Scene scene7 = new Scene(createDoor7(), 900, 500);
 		Scene scene8 = new Scene(createDoor8(), 900, 500);
 
+		Scene scene10 = new Scene(createDoor10(), 900, 500);
+
 
 		Scene finalScene = startUpScene;
 		sceneList.add(scene1);
@@ -1578,6 +1704,8 @@ public class ClientFX extends Application{
 		sceneList.add(scene6);
 		sceneList.add(scene7);
 		sceneList.add(scene8);
+
+		sceneList.add(scene10);
 
 		sceneList.add(finalScene);
 
