@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 public class ServerFX extends Application{
 
     /**TEST TEST TEST Where I declare all the buttons, texts, and text fields used for the Server program**/
+
 	Button portButton, onButton;
 	Text scoreCard, playerScores;
 	TextField portInput;
@@ -23,14 +24,18 @@ public class ServerFX extends Application{
 	Stage myStage ;
 	Scene startupScene;
 
+	Timer playerTime = new Timer();
 	private ServerConnection  conn;
 	private TextArea messages = new TextArea();
 	private TextArea playerList = new TextArea();
+	private TextArea timer = new TextArea();
 
 
 	private Parent createContent() {
 		messages.setPrefHeight(250);
 		messages.setPrefWidth(200);
+		timer.setPrefWidth(150);
+		timer.setPrefHeight(4);
 
 		/**UI: Where I initialize all the new buttons, and text fields**/
 		portInput = new TextField();
@@ -90,7 +95,7 @@ public class ServerFX extends Application{
         /**This is where I organize the layout of the UI with H and VBoxes**/
 		HBox textStuff = new HBox(messages, playerList);
 
-		HBox stuff = new HBox(4, onButton);
+		HBox stuff = new HBox(4, onButton,timer);
 
 		HBox portStuff = new HBox(4, portInput, portButton);
 		VBox middleStuff = new VBox(1, scoreCard, playerScores);
@@ -121,7 +126,26 @@ public class ServerFX extends Application{
 		startupScene = new Scene(createContent());
 		primaryStage.setScene(startupScene);
 		primaryStage.show();
-		//conn.startConn();
+
+		Runnable updateGUI = new Runnable() {
+			@Override
+			public void run() {
+				while(true) {
+					timer.setText(playerTime.getString());
+					try {
+						if(playerTime.timeUp() ){
+							conn.send("exit",conn.superClients );
+						}
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						//e.printStackTrace();
+					}
+				}
+			}
+		};
+		//updateGUI.start();
+		Thread thread1 = new Thread(updateGUI);
+		thread1.start();
 
 	}
 
@@ -159,7 +183,8 @@ public class ServerFX extends Application{
 
 						/**This code block handles displaying who is currently connected to the server**/
 						String inServer;
-						int size = conn.clients.size();
+
+						//int size = conn.clients.size();
 						while(true){
 							if(conn.updatePlayerList == true){
 								inServer = ""; //Clears string so that we can reuse it
@@ -184,5 +209,4 @@ public class ServerFX extends Application{
 
 		}
 	}
-
 }

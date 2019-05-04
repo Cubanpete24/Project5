@@ -40,12 +40,16 @@ public abstract class ServerConnection {
 	}
 
 	/**This method sends the same message to everyone in an instance of a game**/
-	public void send(Serializable data, ArrayList<ClientThread> clients) throws Exception{
+	public void send(Serializable data, ArrayList<ClientThread> clients) {
 		synchronized(this) {
 
 			for (int i = 0; i < clients.size(); i++) {
-
-				clients.get(i).out.writeObject(data);
+				try {
+					clients.get(i).out.writeObject(data);
+				}
+				catch(Exception E){
+					//do nothing
+				}
 			}
 		}
 
@@ -114,7 +118,7 @@ public abstract class ServerConnection {
 
 			try (ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
 				 ObjectInputStream in = new ObjectInputStream(socket.getInputStream())) {
-
+				updatePlayerList = true;
 				callback.accept("Connection has been established: Current number of players " + clients.size());
 				this.out = out;
 				socket.setTcpNoDelay(true);
@@ -129,6 +133,13 @@ public abstract class ServerConnection {
 					}
 					else if((data.equals("w"))){
 						callback.accept(clientName + " won the puzzle");
+						this.score++;
+						updatePlayerList = true;
+					}
+					else if((data.equals("p"))){
+						callback.accept(clientName + " won a game of Pitch");
+						String message = clientName + " has won a game of Pitch";
+						send(message, clients);
 						this.score++;
 						updatePlayerList = true;
 					}
