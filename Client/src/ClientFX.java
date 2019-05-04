@@ -31,7 +31,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Random;
 
-import static javafx.geometry.Pos.CENTER;
+import static javafx.geometry.Pos.*;
+import static javafx.scene.paint.Color.WHITE;
 
 
 public class ClientFX extends Application{
@@ -904,33 +905,85 @@ public class ClientFX extends Application{
 		Image cardHand2 = new Image("pitch/1C.jpg");
 		Image cardHand3 = new Image("pitch/QD.jpg");
 
+		ImageView cfView1, cfView2, cfView3;
+		ImageView chView1, chView2, chView3;
+
+		cfView1 = new ImageView(cardField1);
+		cfView1.setFitHeight(200);
+		cfView1.setFitWidth(80);
+		cfView1.setPreserveRatio(true);
+		cfView2 = new ImageView(cardField2);
+		cfView2.setFitHeight(200);
+		cfView2.setFitWidth(80);
+		cfView2.setPreserveRatio(true);
+		cfView3 = new ImageView(cardField3);
+		cfView3.setFitHeight(200);
+		cfView3.setFitWidth(80);
+		cfView3.setPreserveRatio(true);
+
+		chView1 = new ImageView(cardHand1);
+		chView1.setFitHeight(200);
+		chView1.setFitWidth(80);
+		chView1.setPreserveRatio(true);
+		chView2 = new ImageView(cardHand2);
+		chView2.setFitHeight(200);
+		chView2.setFitWidth(80);
+		chView2.setPreserveRatio(true);
+		chView3 = new ImageView(cardHand3);
+		chView3.setFitHeight(200);
+		chView3.setFitWidth(80);
+		chView3.setPreserveRatio(true);
+
 		Button cf1 = new Button();
 		Button cf2 = new Button();
 		Button cf3 = new Button();
+		cf1.setGraphic(cfView1);
+		cf2.setGraphic(cfView2);
+		cf3.setGraphic(cfView3);
+
 
 		Button ch1 = new Button();
 		Button ch2 = new Button();
 		Button ch3 = new Button();
+		ch1.setGraphic(chView1);
+		ch2.setGraphic(chView2);
+		ch3.setGraphic(chView3);
 
 
-		HBox yourHand = new HBox(10, cf1, cf2, cf3);
+		HBox field = new HBox(5, cf1, cf2,cf3);
+		HBox yourHand = new HBox(15, ch1, ch2, ch3);
+		yourHand.setAlignment(BOTTOM_CENTER);
 
 		Text instructions = new Text("It's the last trick of the game...Everyone is tied...The Trump this round is Diamonds...It is your turn");
+		instructions.setFill(WHITE);
 
-        VBox scoreHolder = new VBox(yourScore, opponent1Score);
+		Text uhoh = new Text("You DO remember how to play Pitch, right?");
+		uhoh.setFill(WHITE);
+        VBox scoreHolder = new VBox(yourScore, opponent1Score, opponent2Score, opponent3Score);
+        VBox upperLeftHolder = new VBox(5, scoreHolder, instructions);
 
 		//Background image stuff
         BorderPane gamePane = new BorderPane();
-        Image bg = new Image("pictures/green.jpg");
+        field.setAlignment(CENTER);
+        gamePane.setCenter(field);
+        VBox BottomHolder = new VBox(5, uhoh,yourHand);
+        //BottomHolder.setAlignment(CENTER);
+        BottomHolder.setAlignment(BOTTOM_CENTER);
+        gamePane.setBottom(BottomHolder);
+		upperLeftHolder.setAlignment(TOP_LEFT);
+		//upperLeftHolder.setPadding();
+		gamePane.setTop(upperLeftHolder);
+
+		Image bg = new Image("pictures/green.jpg");
         BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
         BackgroundImage bgImg = new BackgroundImage(bg, null, null, null, backgroundSize);
         Background background = new Background(bgImg);
 
-		Text puzzleTitleCard = new Text("Under Construction!!");
+		//Text puzzleTitleCard = new Text("Under Construction!!");
 		TextField cheatField;
 
 		Button solve = new Button("Solve");
-		solve.setAlignment(CENTER);
+		//solve.setAlignment(CENTER);
 
 		Button giveUp = new Button("Give up");
 		Button sabotage = new Button("Sabotage");
@@ -945,11 +998,15 @@ public class ClientFX extends Application{
 
 		//HBox cardField = new HBox(50);
 		//HBox cardHand = new HBox(50, sudokuListVBox.get(0));
-		VBox everything = new VBox(30, puzzleTitleCard, giveUp);
-		everything.setAlignment(CENTER);
+		//VBox everything = new VBox(30,field,giveUp);
+		//gamePane.setCenter(everything);
+		//gamePane.setBottom(yourHand);
+
+		//everything.setAlignment(CENTER);
 
 
-		solve.setOnAction(event -> {
+
+		ch3.setOnAction(event -> {
 
 			try {
 				/**IMPORTANT THING #1: INCREASE YOUR SCORE**/
@@ -957,8 +1014,7 @@ public class ClientFX extends Application{
 					Score.setText("Score: " + conn.score); //Updates Score Text on UI
 					primaryStage.setTitle("Puzzle Gauntlet");
 					primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
-					conn.send("w"); //Sends a w to the server to let it know that someone WON
-
+					conn.send("p"); //Does the same thing as "w" but it informs everyone in the server that you won a game of Pitch
 			}
 			catch(Exception e){
 			}
@@ -979,7 +1035,6 @@ public class ClientFX extends Application{
 
 		});
 
-		gamePane.setCenter(everything);
 		return gamePane;
 	}
 

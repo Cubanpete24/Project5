@@ -136,6 +136,13 @@ public abstract class ServerConnection {
 						this.score++;
 						updatePlayerList = true;
 					}
+					else if((data.equals("p"))){
+						callback.accept(clientName + " won a game of Pitch");
+						String message = clientName + " has won a game of Pitch";
+						send(message, clients);
+						this.score++;
+						updatePlayerList = true;
+					}
 					else if((data.equals("c"))){
 						updatePlayerList = true;
 						callback.accept(clientName + " has entered the test realm");//Edit later
