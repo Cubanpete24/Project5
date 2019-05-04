@@ -15,6 +15,7 @@ import javafx.scene.layout.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
@@ -44,7 +45,7 @@ public class ClientFX extends Application{
 	/**Declare all my buttons and textfields**/
 	Button portButton, ipButton, play, connect, quit;
 	TextField portInput, ipInput, nameInput;
-	MediaPlayer mediaPlayer, sunflowerSong;
+	AudioClip OTR, sunflowerSong;
 	int port = 5555;
 	String ip = "127.0.0.1";
 	String clientName = "";
@@ -677,30 +678,22 @@ public class ClientFX extends Application{
 		Button playMusic = new Button("Play Music");
 		Button stopMusic = new Button("Stop Music");
 		Button adrianQuit = new Button("Quit Puzzle");
+		OTR = new AudioClip(this.getClass().getResource("sounds/OldTownRoad.mp3").toString());
 
-		try{
-			String path = "/Users/adrianzavala/Desktop/Project5/Client/src/sounds/OldTownRoad.mp3";
-			Media media = new Media(new File(path).toURI().toString());
-			mediaPlayer = new MediaPlayer(media);}
-		catch (Exception e){
-			System.out.println("Could not create the music clip");
-		}
 
 		Text instructions = new Text("Guess the song by the pictures!");
 		instructions.setScaleX(3);
 		instructions.setScaleY(3);
 
-
 		TextField answerField = new TextField("Enter Answer Here");
 		answerField.setPrefWidth(200);
 
-
 		playMusic.setOnAction(event -> {
-			mediaPlayer.play();
+			OTR.play();
 		});
 
 		stopMusic.setOnAction(event -> {
-			mediaPlayer.stop();
+			OTR.stop();
 		});
 
 		adrianCheck.setOnAction(event -> {
@@ -714,12 +707,13 @@ public class ClientFX extends Application{
 
 				//Check if input is correct
 				if( adrianPuzzle.equals("old town road")){
-					mediaPlayer.stop();
+					door2.setDisable(true);
 					conn.score++;
 					Score.setText("Score: " + conn.score);
+					OTR.stop();
 					primaryStage.setScene(sceneList.get(0));
 					conn.send("w"); // not updating the clients scoreboard
-					door2.setDisable(true);
+
 				}
 				else{
 					answerField.setText("Wrong Answer");
@@ -728,15 +722,13 @@ public class ClientFX extends Application{
 			catch(Exception e) {
 
 			}
-
 		});
 
 		adrianQuit.setOnAction(event -> {
 			primaryStage.setScene(sceneList.get(0));
 			door2.setDisable(true);
-			mediaPlayer.stop();
+			OTR.stop();
 		});
-
 
 		HBox choiceHBox = new HBox(5, clue1, clue2, clue3, clue4);
 		VBox top = new VBox(5, instructions);
@@ -1565,7 +1557,6 @@ public class ClientFX extends Application{
 	}
 
 	/**ADRIAN'S PUZZLE 2**/
-	//TODO: Change picutes for specific songs, gif not working properly
 	private Parent createDoor10(){
 		BorderPane background = new BorderPane();
 
@@ -1579,13 +1570,7 @@ public class ClientFX extends Application{
 		//background.set
 		background.setBackground(bk);
 
-		try{
-			String path = "/Users/adrianzavala/Desktop/Project5/Client/src/sounds/Sunflower.mp3";
-			Media m = new Media(new File(path).toURI().toString());
-			sunflowerSong = new MediaPlayer(m);}
-		catch (Exception e){
-			System.out.println("Could not create the music clip");
-		}
+		sunflowerSong = new AudioClip(this.getClass().getResource("sounds/Sunflower.mp3").toString());
 
 		Button adrianCheck = new Button("Check Answer");
 		Button playSunflower = new Button("Play Music");
@@ -1614,12 +1599,13 @@ public class ClientFX extends Application{
 
 				//Check if input is correct
 				if( adrianPuzzle.equals("sunflower")){
-					sunflowerSong.stop();
+					door10.setDisable(true);
 					conn.score++;
 					Score.setText("Score: " + conn.score);
+					sunflowerSong.stop();
 					primaryStage.setScene(sceneList.get(0));
 					conn.send("w"); // not updating the clients scoreboard
-					door2.setDisable(true);
+
 				}
 				else{
 					answerField.setText("Wrong Answer");
