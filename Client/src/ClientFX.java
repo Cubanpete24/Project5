@@ -808,6 +808,8 @@ public class ClientFX extends Application{
 		return mainScene;
 	}
 
+	/**KAVEESHA'S PART STARTS HERE**/
+
 	public ImageView createPictureOnButton(String dir) {
 		Image image = new Image(dir);
 		ImageView view = new ImageView(image);
@@ -817,16 +819,17 @@ public class ClientFX extends Application{
 		return view;
 	}
 
-	private VBox setUpButton(String realAnswer) {
+	private VBox setUpActions(String realAnswer, int whichDoor) {
 
 		TextField answer = new TextField();
-		answer.setPrefHeight(5);
-		answer.setPrefWidth(5);
+		answer.setPrefHeight(30);
+		answer.setPrefWidth(30);
 
 		Button submitAnswerButton = new Button("Submit Answer");
 		Button giveUpButton = new Button("Give up");
 
 		giveUpButton.setOnAction(event -> {
+			disableDoor(whichDoor);
 			primaryStage.setScene(sceneList.get(0));
 		});
 
@@ -838,6 +841,7 @@ public class ClientFX extends Application{
 				if(theirAnswer.equals(realAnswer)) {
 					conn.score++;
 					Score.setText("Score: " + conn.score);
+					disableDoor(whichDoor);
 					primaryStage.setScene(sceneList.get(0));
 					conn.send("w");
 				}
@@ -849,25 +853,49 @@ public class ClientFX extends Application{
 			}
 		});
 
-		HBox playerButtonAction = new HBox(submitAnswerButton, giveUpButton);
-		VBox playerTotalAction = new VBox(answer, playerButtonAction);
+		HBox playerButtonAction = new HBox(50, submitAnswerButton, giveUpButton);
+		playerButtonAction.setAlignment(CENTER);
+		VBox playerTotalAction = new VBox(10, answer, playerButtonAction);
+		playerTotalAction.setAlignment(CENTER);
 		return playerTotalAction;
 	}
 
-	/**KAVEESHA'S PUZZLE HERE**/
+	private void disableDoor(int whichDoor) {
+		if(whichDoor == 4) {
+			door4.setDisable(true);
+		}
+		if(whichDoor == 5) {
+			door5.setDisable(true);
+		}
+		if(whichDoor == 6) {
+			door6.setDisable(true);
+		}
+	}
+
+	private Background createMyBackground(String directory) {
+		Image bg = new Image(directory);
+		BackgroundSize backgroundSize = new BackgroundSize(100, 80, true, false, true, true);
+		BackgroundImage bgImg = new BackgroundImage(bg, null, null, null, backgroundSize);
+		Background background = new Background(bgImg);
+		return background;
+	}
+
 	private Parent createDoor4() {
 		BorderPane morseGameplay = new BorderPane();
+		Background myBackground = createMyBackground("pictures/morseCode.gif");
+
 		Text morseCode = new Text("... -- .- ... .... / -... .-. --- ...");
 		morseCode.setFill(Color.DEEPPINK);
 		morseCode.setScaleX(3);
 		morseCode.setScaleY(3);
-		morseCode.setTranslateX(370);
-		morseCode.setTranslateY(30);
 
-		VBox playerAction = setUpButton("SMASH BROS");
-		morseGameplay.setTop(morseCode);
+		VBox playerAction = setUpActions("SMASH BROS", 4);
+		morseGameplay.setPadding(new Insets(100));
+		morseGameplay.setAlignment(morseCode, Pos.CENTER);
+		morseGameplay.setCenter(morseCode);
+		morseGameplay.setAlignment(playerAction, Pos.CENTER);
 		morseGameplay.setBottom(playerAction);
-		morseGameplay.setStyle("-fx-background-color: lightskyblue");
+		morseGameplay.setBackground(myBackground);
 
 		return morseGameplay;
 	}
@@ -875,17 +903,20 @@ public class ClientFX extends Application{
 
 	private Parent createDoor5() {
 		BorderPane binaryGameplay = new BorderPane();
-		Text binary = new Text("1101 1010 1011");
-		binary.setFill(Color.CRIMSON);
-		binary.setScaleX(3);
-		binary.setScaleY(3);
-		binary.setTranslateX(350);
-		binary.setTranslateY(30);
-		VBox playerAction = setUpButton("DAB");
-		binaryGameplay.setTop(binary);
-		binaryGameplay.setBottom(playerAction);
-		binaryGameplay.setStyle("-fx-background-color: steelblue");
+		Background myBackground = createMyBackground("pictures/binary.gif");
 
+		Button binary = new Button("1101 1010 1011");
+		binary.setStyle("-fx-background-color: skyblue");
+		binary.setPrefHeight(150);
+		binary.setPrefWidth(150);
+
+		VBox playerAction = setUpActions("DAB", 5);
+		binaryGameplay.setPadding(new Insets(70));
+		binaryGameplay.setAlignment(binary, Pos.CENTER);
+		binaryGameplay.setCenter(binary);
+		binaryGameplay.setAlignment(playerAction, Pos.CENTER);
+		binaryGameplay.setBottom(playerAction);
+		binaryGameplay.setBackground(myBackground);
 		return binaryGameplay;
 	}
 
@@ -893,15 +924,21 @@ public class ClientFX extends Application{
 		Button mathQuestion = new Button();
 		mathQuestion.setGraphic(createPictureOnButton("mathPuzzle.jpg"));
 
+		Background myBackground = createMyBackground("pictures/problemSolving.gif");
+
 		BorderPane mathGameplay = new BorderPane();
 
-		VBox playerAction = setUpButton("51");
-		mathGameplay.setTop(mathQuestion);
+		VBox playerAction = setUpActions("51", 6);
+		mathGameplay.setPadding(new Insets(70));
+		mathGameplay.setAlignment(mathQuestion, Pos.CENTER);
+		mathGameplay.setCenter(mathQuestion);
+		mathGameplay.setAlignment(playerAction, Pos.CENTER);
 		mathGameplay.setBottom(playerAction);
-		mathGameplay.setStyle("-fx-background-color: palegreen");
+		mathGameplay.setBackground(myBackground);
 
 		return mathGameplay;
 	}
+	/**KAVEESHA'S PART ENDS HERE**/
 
 
 	private Parent createDoor7() {
@@ -1073,7 +1110,6 @@ public class ClientFX extends Application{
 		BackgroundSize backgroundSize = new BackgroundSize(100, 80, true, false, true, true);
 		BackgroundImage bgImg = new BackgroundImage(bg, null, null, null, backgroundSize);
 		Background background = new Background(bgImg);
-
 
 
 		//background.set
