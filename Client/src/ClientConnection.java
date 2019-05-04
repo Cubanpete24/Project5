@@ -19,10 +19,12 @@ public abstract class ClientConnection {
 	int score;
 	boolean gameStart = false;
 	boolean sudokuGameOn;
+	int jerkFactor = 1100; //Used to determine how fast the sudoku puzzle moves around
 
 
 
-	
+
+
 	public ClientConnection(Consumer<Serializable> callback) {
 		this.callback = callback;
 		connthread.setDaemon(true); //Don't know what this does but it must be important
@@ -83,6 +85,8 @@ public abstract class ClientConnection {
 				try {
 					this.out.writeObject("Change name");
 					this.out.writeObject(clientName);
+					this.out.writeObject("c");
+
 				}
 				catch (Exception e){
 					callback.accept("cannot write the name. Try again");

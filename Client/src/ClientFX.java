@@ -57,7 +57,9 @@ public class ClientFX extends Application{
 	Scene DoorScene1, DoorScene2, DoorScene3, DoorScene4, DoorScene5, DoorScene6, DoorScene7, DoorScene8, DoorScene9;
 	/**STEP 2: DECLARE A BUTTON FOR YOUR PUZZLE, THIS WILL NOT BE USED IN THE FINAL IMPLEMENTATION BUT WILL GIVE YOU DIRECT ACCESS TO IT SO YOU CAN DEBUG IT**/
 	/**ALREADY DONE**/
-	MenuItem door1, door2, door3, door4,door5, door6, door7, door8, door9, testGame;
+	MenuButton dropMenu;
+	MenuItem door1, door2, door3, door4,door5, door6, door7, door8, door9;
+	Button testGame;
 	//Button door1, door2, door3, door4, door5, door6, testGame;
 	Stage primaryStage ; //THIS IS THE STAGE THAT DETERMINES WHAT THE USE IS CURRENTLY LOOKING AT
 	Scene startUpScene; //THIS IS THE SCENE THAT YOU SEE ON STARTUP
@@ -73,12 +75,13 @@ public class ClientFX extends Application{
 	int sceneNum = 0;
 
 	void enableButtons(){
-		door1.setVisible(true);
-		door2.setVisible(true);
-		door3.setVisible(true);
-		door4.setVisible(true);
-		door5.setVisible(true);
-		door6.setVisible(true);
+		///door1.setVisible(true);
+		//door2.setVisible(true);
+		//door3.setVisible(true);
+		//door4.setVisible(true);
+		//door5.setVisible(true);
+		//door6.setVisible(true);
+		dropMenu.setVisible(true);
 	}
 
 
@@ -118,14 +121,14 @@ public class ClientFX extends Application{
 		door9 = new MenuItem("Door #9");
 
 
-		testGame = new MenuItem("Test Game");
+		//testGame = new MenuItem("Test Game");
 		//door1 = new Button("Door #1");
 		//door2 = new Button("Door #2");
 		//door3 = new Button("Door #3");
 		//door4 = new Button("Door #4");
 		//door5 = new Button("Door #5");
 		//door6 = new Button("Door #6");
-        //testGame = new Button("Test Game");
+        testGame = new Button("DEBUG GAMES");
 
 
         /**THEY ARE INVISIBLE ON STARTUP, AND BECOME VISIBLE ONCE THE USER CONNECTS...THIS DOESN'T REALLY MATTER, BUT IS THERE ANYWAY**/
@@ -135,7 +138,6 @@ public class ClientFX extends Application{
 		door4.setVisible(false);
 		door5.setVisible(false);
 		door6.setVisible(false);
-        testGame.setVisible(false);
 
         //Generic handler for the client choices
 		EventHandler<ActionEvent> buttonSendRPSLS = event -> {
@@ -235,7 +237,7 @@ public class ClientFX extends Application{
 
 				test.start();
 
-				conn.send("Why isn't this working");
+				//conn.send("Why isn't this working");
 
 
 
@@ -281,8 +283,9 @@ public class ClientFX extends Application{
 		/**ALREADY DONE**/
 		//create a drop down menu
 
-		MenuButton dropMenu = new MenuButton("Puzzles");
-		dropMenu.getItems().addAll(door1, door2, door3, door4, door5, door6, door7, door8, door9, testGame);
+		dropMenu = new MenuButton("Puzzles");
+		dropMenu.setVisible(false);
+		dropMenu.getItems().addAll(door1, door2, door3, door4, door5, door6, door7, door8, door9);
 
 		HBox Doors = new HBox(10, Score, dropMenu);
 		//HBox Doors = new HBox(10, Score, door1, door2, door3, door4, door5, door6, testGame);
@@ -293,17 +296,7 @@ public class ClientFX extends Application{
         testGame.setOnAction(event -> {
 
             try {
-                conn.send("c");
-				door1.setVisible(false);
-				door2.setVisible(false);
-				door3.setVisible(false);
-				door4.setVisible(false);
-				door5.setVisible(false);
-				door6.setVisible(false);
-				door7.setVisible(false);
-				door8.setVisible(false);
-				door9.setVisible(false);
-				testGame.setVisible(false);
+         		enableButtons();
             }
             catch(Exception e) {
             }
@@ -428,7 +421,7 @@ public class ClientFX extends Application{
 				DoorScene9 = new Scene(createDoor9(), 900, 500); //We create the scene
 				sceneList.add(DoorScene9); //We add the scene to an arrayList of Scenes so we can access it later
 				primaryStage.setScene(DoorScene9); //We display the scene
-				primaryStage.setTitle("Bad Sudoku!");
+				primaryStage.setTitle("Extreme Sudoku!");
 
 			}
 			catch(Exception e) {
@@ -444,7 +437,7 @@ public class ClientFX extends Application{
 		HBox Name = new HBox(2, nameInput);
 
 		/**HBox contains two other HBoxes, as well as the buttons to connect, play, and quit the game**/
-		HBox middleRow = new HBox(5, Port, IP, Name, connect, play, quit);
+		HBox middleRow = new HBox(5, testGame,Port, IP, Name, connect, play, quit);
 		middleRow.setAlignment(CENTER);
 
 		/**HBox contains the scores of each player**/
@@ -484,8 +477,8 @@ public class ClientFX extends Application{
 		Button sabotage = new Button("Sabotage");
 
 		BorderPane gamePane = new BorderPane();
-		Image bg = new Image("pictures/giphy.gif");
-		BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
+		Image bg = new Image("pictures/bird1.gif");
+		BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, false, true, true);
 		BackgroundImage bgImg = new BackgroundImage(bg, null, null, null, backgroundSize);
 		Background background = new Background(bgImg);
 
@@ -599,11 +592,11 @@ public class ClientFX extends Application{
                     conn.score++;
                     Score.setText("Score: " + conn.score); //Updates Score Text on UI
 					primaryStage.setTitle("Puzzle Gauntlet");
-					//door1.setDisable(true);
+					door1.setDisable(true);
 					primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
                     conn.send("w"); //Sends a w to the server to let it know that someone WON
 					//primaryStage.setTitle("Puzzle Gauntlet");
-					//door1.setDisable(true);
+					door1.setDisable(true);
 
 
 				} else
@@ -1048,9 +1041,9 @@ public class ClientFX extends Application{
 			try {
 				/**IMPORTANT THING #1: INCREASE YOUR SCORE**/
 				primaryStage.setTitle("Puzzle Gauntlet");
-				door1.setDisable(true);
+				door7.setDisable(true);
 				primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
-				door1.setDisable(true);
+				//door7.setDisable(true);
 			}
 			catch(Exception e){
 			}
@@ -1060,7 +1053,7 @@ public class ClientFX extends Application{
 		return gamePane;
 	}
 
-	/**Mean Sudoku**/
+	/**Extreme Sudoku**/
 	private Parent createDoor8() {
 		ArrayList<sudoku> sudokuList = new ArrayList<sudoku>();
 		ArrayList<VBox> sudokuListVBox = new ArrayList<VBox>();
@@ -1075,9 +1068,9 @@ public class ClientFX extends Application{
 		Button sabotage = new Button("Sabotage");
 
 		BorderPane gamePane = new BorderPane();
-		Image bg = new Image("pictures/giphy.gif");
+		Image bg = new Image("pictures/bird1.gif");
 		gamePane.setRotate(180);
-		BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
+		BackgroundSize backgroundSize = new BackgroundSize(100, 80, true, false, true, true);
 		BackgroundImage bgImg = new BackgroundImage(bg, null, null, null, backgroundSize);
 		Background background = new Background(bgImg);
 
@@ -1193,7 +1186,7 @@ public class ClientFX extends Application{
 					conn.score++;
 					Score.setText("Score: " + conn.score); //Updates Score Text on UI
 					primaryStage.setTitle("Puzzle Gauntlet");
-					//door1.setDisable(true);
+					door8.setDisable(true);
 					primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
 					conn.send("w"); //Sends a w to the server to let it know that someone WON
 					//primaryStage.setTitle("Puzzle Gauntlet");
@@ -1213,9 +1206,9 @@ public class ClientFX extends Application{
 			try {
 				/**IMPORTANT THING #1: INCREASE YOUR SCORE**/
 				primaryStage.setTitle("Puzzle Gauntlet");
-				door1.setDisable(true);
+				//door8.setDisable(true);
 				primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
-				door1.setDisable(true);
+				door8.setDisable(true);
 			}
 			catch(Exception e){
 			}
@@ -1247,7 +1240,8 @@ public class ClientFX extends Application{
 		Button choice3 = new Button("Press me to do nothing");
 		conn.sudokuGameOn = true;
 
-		Text puzzleTitleCard = new Text("Welcome to Bad Sudoku!!");
+
+		Text puzzleTitleCard = new Text("Welcome to Extreme Sudoku!!");
 		TextField cheatField;
 
 		Button solve = new Button("Solve");
@@ -1255,10 +1249,13 @@ public class ClientFX extends Application{
 
 		Button giveUp = new Button("Give up");
 		Button sabotage = new Button("Sabotage");
+		Button jerkButton = new Button("Press me to slow things down");
+		jerkButton.setVisible(false);
+
 
 		BorderPane gamePane = new BorderPane();
 		Image bg = new Image("pictures/giphy.gif");
-		BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
+		BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, false, true, true);
 		BackgroundImage bgImg = new BackgroundImage(bg, null, null, null, backgroundSize);
 		Background background = new Background(bgImg);
 
@@ -1374,8 +1371,11 @@ public class ClientFX extends Application{
 		class sudokuThread extends Thread {
 			public void run() {
 				try {
+					int count = 0;
 					int numCheck = 0;
 					while(conn.sudokuGameOn = true){
+						if(count >  5)
+							jerkButton.setVisible(true);
 						int randomNum = ThreadLocalRandom.current().nextInt(1, 9 + 1);
 						//int randomDegree = ThreadLocalRandom.current().nextInt(1, 180);
 						//puzzleHolder.setAlignment(CENTER);
@@ -1437,7 +1437,8 @@ public class ClientFX extends Application{
 
 						//System.out.println("sudokuThread " + randomNum);
 
-						this.sleep(700);
+						this.sleep(conn.jerkFactor);
+						count++;
 
 					}
 				}
@@ -1454,6 +1455,32 @@ public class ClientFX extends Application{
 
 
 
+		jerkButton.setOnAction(event -> {
+
+			try {
+				/**IMPORTANT THING #1: INCREASE YOUR SCORE**/
+				//if((c21.getText().equals("3") && c12.getText().equals("2")) || (c21.getText().equals("2") && c12.getText().equals("3")) || (d13.getText().equals("3") && d32.getText().equals("8")) || (f11.getText().equals("1") && f12.getText().equals("2") && f22.getText().equals("4") && g11.getText().equals("3") && g12.getText().equals("4") && h12.getText().equals("1")) && h21.getText().equals("4") && h22.getText().equals("3")){
+				Button b = (Button) event.getSource();
+				String message = b.getText();
+				if(b.getText().equals("Give up")){
+					primaryStage.setTitle("Puzzle Gauntlet");
+					conn.sudokuGameOn = false;
+					door1.setDisable(true);
+					primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
+					door1.setDisable(true);
+				}
+				else {
+					conn.jerkFactor = 300;
+					jerkButton.setText("Give up");
+				}
+
+
+			}
+			catch(Exception e){
+			}
+
+		});
+
 		solve.setOnAction(event -> {
 
 			try {
@@ -1464,7 +1491,7 @@ public class ClientFX extends Application{
 					conn.sudokuGameOn = false;
 					Score.setText("Score: " + conn.score); //Updates Score Text on UI
 					primaryStage.setTitle("Puzzle Gauntlet");
-					//door1.setDisable(true);
+					door9.setDisable(true);
 					primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
 					conn.send("w"); //Sends a w to the server to let it know that someone WON
 					//primaryStage.setTitle("Puzzle Gauntlet");
@@ -1484,9 +1511,11 @@ public class ClientFX extends Application{
 			try {
 				/**IMPORTANT THING #1: INCREASE YOUR SCORE**/
 				primaryStage.setTitle("Puzzle Gauntlet");
-				door1.setDisable(true);
+				conn.sudokuGameOn = false;
+
+				//door1.setDisable(true);
 				primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
-				door1.setDisable(true);
+				door9.setDisable(true);
 			}
 			catch(Exception e){
 			}
@@ -1503,7 +1532,9 @@ public class ClientFX extends Application{
 			}
 
 		});
-
+		gamePane.setBottom(jerkButton);
+		jerkButton.setAlignment(BOTTOM_LEFT);
+		jerkButton.setPadding(new Insets(15, 15, 15, 15));
 		gamePane.setCenter(everything);
 		return gamePane;
 	}
@@ -1521,6 +1552,8 @@ public class ClientFX extends Application{
 		ipButton = new Button("ip address");
 		play = new Button("New Game");
 		quit = new Button("Quit");
+
+		testGame = new Button("DEBUG GAMES");
 
 		connect = new Button("connect");
 		connect.setVisible(false);
@@ -1594,7 +1627,10 @@ public class ClientFX extends Application{
 						Score.setText("Score: " + conn.score);
 
 					}
-					if(conn.gameStart == true) {
+					else if(conn.gameStart == true){
+						dropMenu.setVisible(true);
+					}
+					else if(conn.gameStart == true) {
 						//sceneNum++;
 						System.out.println("Sync");
 						//primaryStage.setScene(sceneList.get(0));
