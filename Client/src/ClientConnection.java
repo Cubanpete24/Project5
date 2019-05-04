@@ -18,6 +18,7 @@ public abstract class ClientConnection {
 	String playerList = "";
 	int score;
 	boolean gameStart = false;
+	boolean sudokuGameOn;
 
 
 
@@ -103,6 +104,7 @@ public abstract class ClientConnection {
 						System.out.println("Client has received string to exit");
 						//return;
 					}
+
 					else
 						callback.accept(data);
 				}
