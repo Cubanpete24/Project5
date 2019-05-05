@@ -25,6 +25,7 @@ public abstract class ClientConnection {
 	boolean makeDropDownVisible = false;
 	boolean timeToGetWinner = false;
 	String winnerString = "";
+	boolean isNameValid = false;
 
 	public ClientConnection(Consumer<Serializable> callback) {
 		this.callback = callback;
@@ -83,9 +84,14 @@ public abstract class ClientConnection {
 				try {
 					this.out.writeObject("Change name");
 					this.out.writeObject(clientName);
-					this.out.writeObject("c");
-
-				}
+					Serializable data = (Serializable) in.readObject();
+					if (data.equals("Sorry, the name you inputted is already registered in the database. Try again!")) {
+					    isNameValid = false;
+                    }
+                    else if(data.equals("New name accepted!")) {
+                        this.out.writeObject("c");
+                    }
+                }
 				catch (Exception e){
 					callback.accept("cannot write the name. Try again");
 				}
@@ -114,6 +120,9 @@ public abstract class ClientConnection {
 						makeDropDownVisible = true;
 						playerTime.start();
 					}
+					else if(data.equals("New name accepted!")) {
+					    isNameValid = true;
+                    }
 					else if(data.toString().substring(0, 15).equals("The winner was ")) {
 						winnerString = data.toString();
 					}
