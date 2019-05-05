@@ -169,6 +169,7 @@ public abstract class ServerConnection {
 							callback.accept("waiting for 2 more people to play again");
 						}
 						if(countPlayAgain == 3) {
+							callback.accept("waiting for 1 more people to play again");
 						}
 						if(countPlayAgain == 4) {
 							//resets all of the clients scores to zero
