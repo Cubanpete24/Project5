@@ -917,6 +917,7 @@ public class ClientFX extends Application{
 			door9.setDisable(false);
 			door10.setDisable(false);
 			dropMenu.setVisible(false);
+			conn.score = 0;
 
 			try {
 				conn.send("increment play again variable");

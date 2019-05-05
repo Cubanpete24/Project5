@@ -3,25 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="c9930e5c-3298-474c-a766-972e1782b748" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientConnection$ConnThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientConnection$ConnThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientConnection$Timer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientConnection$Timer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$1sudokuThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$1sudokuThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$buttonThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$buttonThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientFX.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/ServerConnection$ClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/out/production/Server/ServerConnection$ClientThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/ServerConnection$ConnThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/out/production/Server/ServerConnection$ConnThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/ServerConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/out/production/Server/ServerConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/ServerFX$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/ServerFX$buttonThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/out/production/Server/ServerFX$buttonThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/ServerFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/out/production/Server/ServerFX.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/Timer.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/src/ServerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/ServerConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/ServerFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/ServerFX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/Timer.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,35 +21,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-47">
-              <caret line="898" column="17" lean-forward="true" selection-start-line="898" selection-start-column="17" selection-end-line="898" selection-end-column="17" />
+            <state relative-caret-position="201">
+              <caret line="1569" column="16" selection-start-line="1569" selection-start-column="8" selection-end-line="1569" selection-end-column="16" />
               <folding>
-                <element signature="e#2129#2136#0" expanded="true" />
-                <element signature="e#12592#12600#0" expanded="true" />
-                <element signature="e#12652#12658#0" expanded="true" />
-                <element signature="e#31555#31563#0" expanded="true" />
-                <element signature="e#31615#31621#0" expanded="true" />
-                <element signature="e#36861#36869#0" expanded="true" />
-                <element signature="e#36921#36927#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ClientConnection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="127" column="57" selection-start-line="127" selection-start-column="57" selection-end-line="127" selection-end-column="57" />
-              <folding>
-                <element signature="e#4114#4115#0" expanded="true" />
-                <element signature="e#4147#4148#0" expanded="true" />
-                <element signature="e#4231#4232#0" expanded="true" />
-                <element signature="e#4257#4258#0" expanded="true" />
+                <element signature="e#2159#2166#0" expanded="true" />
+                <element signature="e#12754#12762#0" expanded="true" />
+                <element signature="e#12814#12820#0" expanded="true" />
+                <element signature="e#33481#33489#0" expanded="true" />
+                <element signature="e#33541#33547#0" expanded="true" />
+                <element signature="e#38787#38795#0" expanded="true" />
+                <element signature="e#38847#38853#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,6 +76,9 @@
       <find>playerList</find>
       <find>quitButton</find>
       <find>quit</find>
+      <find>playagain</find>
+      <find>play again</find>
+      <find>t1.start</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -110,13 +88,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/AlertBox.java" />
-        <option value="$PROJECT_DIR$/src/ClientFX.java" />
         <option value="$PROJECT_DIR$/src/ClientConnection.java" />
+        <option value="$PROJECT_DIR$/src/ClientFX.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="793" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
     <option name="width" value="814" />
     <option name="height" value="867" />
   </component>
@@ -126,7 +104,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -139,10 +116,17 @@
               <item name="Client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pictures" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -193,10 +177,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="793" y="0" width="814" height="867" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.168435" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.0858209" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -206,8 +190,8 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.33787465" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32425067" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2611051" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -233,28 +217,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AlertBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="28" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AlertBox.java" />
     <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-47">
-          <caret line="898" column="17" lean-forward="true" selection-start-line="898" selection-start-column="17" selection-end-line="898" selection-end-column="17" />
+        <state relative-caret-position="201">
+          <caret line="1569" column="16" selection-start-line="1569" selection-start-column="8" selection-end-line="1569" selection-end-column="16" />
           <folding>
-            <element signature="e#2129#2136#0" expanded="true" />
-            <element signature="e#12592#12600#0" expanded="true" />
-            <element signature="e#12652#12658#0" expanded="true" />
-            <element signature="e#31555#31563#0" expanded="true" />
-            <element signature="e#31615#31621#0" expanded="true" />
-            <element signature="e#36861#36869#0" expanded="true" />
-            <element signature="e#36921#36927#0" expanded="true" />
+            <element signature="e#2159#2166#0" expanded="true" />
+            <element signature="e#12754#12762#0" expanded="true" />
+            <element signature="e#12814#12820#0" expanded="true" />
+            <element signature="e#33481#33489#0" expanded="true" />
+            <element signature="e#33541#33547#0" expanded="true" />
+            <element signature="e#38787#38795#0" expanded="true" />
+            <element signature="e#38847#38853#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -84,11 +84,15 @@ public abstract class ServerConnection {
 			try{
 				ServerSocket server = new ServerSocket(getPort());
 				while(true) {
-					ClientThread t1 = new ClientThread(server.accept());
-					clients.add(t1);
-					superClients.add(t1);
-					t1.start();
-					callback.accept("Checking name " + t1.clientName);
+					if(clients.size() < 5) {
+						ClientThread t1 = new ClientThread(server.accept());
+						clients.add(t1);
+						superClients.add(t1);
+						t1.start();
+						callback.accept("Checking name " + t1.clientName);
+
+					}
+
 				}
 
 			}
