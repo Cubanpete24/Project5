@@ -157,7 +157,6 @@ public abstract class ClientConnection {
 			try {
 				Thread.sleep(1000);
 			}
-			catch (Exception E) {
 			catch (InterruptedException E) {
 				System.out.println("Could not stop for 1 second");
 				return;
