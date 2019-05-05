@@ -24,7 +24,6 @@ public class ServerFX extends Application{
 	Stage myStage ;
 	Scene startupScene;
 
-	Timer playerTime = new Timer();
 	private ServerConnection  conn;
 	private TextArea messages = new TextArea();
 	private TextArea playerList = new TextArea();
@@ -127,25 +126,25 @@ public class ServerFX extends Application{
 		primaryStage.setScene(startupScene);
 		primaryStage.show();
 
-		Runnable updateGUI = new Runnable() {
-			@Override
-			public void run() {
-				while(true) {
-					timer.setText(playerTime.getString());
-					try {
-						if(playerTime.timeUp() ){
-							conn.send("exit",conn.superClients );
-						}
-						Thread.sleep(1000);
-					} catch (InterruptedException e) {
-						//e.printStackTrace();
-					}
-				}
-			}
-		};
-		//updateGUI.start();
-		Thread thread1 = new Thread(updateGUI);
-		thread1.start();
+//		Runnable updateGUI = new Runnable() {
+//			@Override
+//			public void run() {
+//				while(true) {
+//					timer.setText(playerTime.getString());
+//					try {
+//						if(playerTime.timeUp() ){
+//							conn.send("exit",conn.superClients );
+//						}
+//						Thread.sleep(1000);
+//					} catch (InterruptedException e) {
+//						//e.printStackTrace();
+//					}
+//				}
+//			}
+//		};
+//		//updateGUI.start();
+//		Thread thread1 = new Thread(updateGUI);
+//		thread1.start();
 
 	}
 
@@ -204,9 +203,7 @@ public class ServerFX extends Application{
 			catch (Exception e) {
 			    /**informative error message**/
 				System.out.println("Oops");
-
 			}
-
-		}
-	}
+		}//run
+	}//buttonThread
 }

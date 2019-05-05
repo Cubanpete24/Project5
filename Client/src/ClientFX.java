@@ -235,7 +235,6 @@ public class ClientFX extends Application{
 				conn.startConn(this.clientName);
 				/**COMMENTING OUT THIS THREAD FOR NOW UNTIL IT IS BETTER OPTIMIZED, FOR NOW NO DYNAMIC UI ELEMENTS ON THE CLIENT SIDE**/
 				buttonThread test = new buttonThread();
-
 				test.start();
 
 				//conn.send("Why isn't this working");
@@ -363,6 +362,7 @@ public class ClientFX extends Application{
 				DoorScene4 = new Scene(createDoor4(), 900, 500);
 				sceneList.add(DoorScene4);
 				primaryStage.setScene(DoorScene4);
+				primaryStage.setTitle("Morse Code Puzzle");
 			}
 			catch(Exception e) {
 			}
@@ -375,6 +375,7 @@ public class ClientFX extends Application{
 				DoorScene5 = new Scene(createDoor5(), 900, 500);
 				sceneList.add(DoorScene5);
 				primaryStage.setScene(DoorScene5);
+				primaryStage.setTitle("Binary Puzzle");
 			}
 			catch(Exception e) {
 			}
@@ -386,6 +387,7 @@ public class ClientFX extends Application{
 				DoorScene6 = new Scene(createDoor6(), 900, 500);
 				sceneList.add(DoorScene6);
 				primaryStage.setScene(DoorScene6);
+				primaryStage.setTitle("Math Puzzle");
 			}
 			catch(Exception e) {
 			}
@@ -424,7 +426,6 @@ public class ClientFX extends Application{
 				sceneList.add(DoorScene9); //We add the scene to an arrayList of Scenes so we can access it later
 				primaryStage.setScene(DoorScene9); //We display the scene
 				primaryStage.setTitle("Extreme Sudoku!");
-
 			}
 			catch(Exception e) {
 			}
@@ -845,14 +846,11 @@ public class ClientFX extends Application{
 
 		Button submitAnswerButton = new Button("Submit Answer");
 		Button giveUpButton = new Button("Give up");
-		Button popUpButton = new Button("Pop up");
 
 		giveUpButton.setOnAction(event -> {
 			disableDoor(whichDoor);
 			primaryStage.setScene(sceneList.get(0));
 		});
-
-		popUpButton.setOnAction(event -> displayEndingWindow());
 
 		submitAnswerButton.setOnAction(event -> {
 			try {
@@ -873,7 +871,7 @@ public class ClientFX extends Application{
 			}
 		});
 
-		HBox playerButtonAction = new HBox(50, submitAnswerButton, giveUpButton, popUpButton);
+		HBox playerButtonAction = new HBox(50, submitAnswerButton, giveUpButton);
 		playerButtonAction.setAlignment(CENTER);
 		VBox playerTotalAction = new VBox(10, answer, playerButtonAction);
 		playerTotalAction.setAlignment(CENTER);
@@ -908,6 +906,23 @@ public class ClientFX extends Application{
 
 		});
 		playAgainButton.setOnAction(event -> {
+			door1.setDisable(false);
+			door2.setDisable(false);
+			door3.setDisable(false);
+			door4.setDisable(false);
+			door5.setDisable(false);
+			door6.setDisable(false);
+			door7.setDisable(false);
+			door8.setDisable(false);
+			door9.setDisable(false);
+			door10.setDisable(false);
+			dropMenu.setVisible(false);
+
+			try {
+				conn.send("increment play again variable");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			endingWindow.close();
 			primaryStage.setScene(sceneList.get(0));
 		});
@@ -1816,29 +1831,35 @@ public class ClientFX extends Application{
 					if(numCheck != conn.score){
 						numCheck = conn.score;
 						Score.setText("Score: " + conn.score);
-
 					}
-					else if(conn.gameStart == true){
+					if(conn.gameStart == true){
 						dropMenu.setVisible(true);
-					}
-					else if(conn.gameStart == true) {
 						//sceneNum++;
 						System.out.println("Sync");
 						//primaryStage.setScene(sceneList.get(0));
 						enableButtons();
 						conn.gameStart = false;
 					}
+					if(conn.gameEnd == true) {
+						//have to open the pop up window in the start thread, so you have to do platform.runlater
+						new Thread(() -> {
+							Platform.runLater(() -> {
+								displayEndingWindow();
+							});
+						}).start();
+						conn.gameEnd = false;
+					}
+					if(conn.makeDropDownVisible == true) {
+						dropMenu.setVisible(true);
+					}
 					this.sleep(1000);
 
 				}
 			}
 			catch (Exception e) {
+				e.printStackTrace();
 				System.out.println("Oops in buttonThread");
-
 			}
-
 		}
 	}
-
-
 }

@@ -20,6 +20,8 @@ public abstract class ServerConnection {
 	boolean gameOver; //lets us know when tell the UI to ask the user to play again or start a new round
 	boolean updatePlayerList = false;
 
+	int countPlayAgain = 0;
+
 	/**  Every time the client wants to send something to the server, it must be in order of (STRING, INT, INT)  **/
 	/**  and this method also sends the end of round message to both players  **/
 
@@ -157,14 +159,35 @@ public abstract class ServerConnection {
 						else if(clients.size() == 4) {
 							send("g", clients);
 						}
-
 					}
+					else if((data.equals("increment play again variable"))) {
+						countPlayAgain++;
+						if(countPlayAgain == 1) {
+							callback.accept("waiting for 3 more people to play again");
+						}
+						if(countPlayAgain == 2) {
+							callback.accept("waiting for 2 more people to play again");
+						}
+						if(countPlayAgain == 3) {
+						}
+						if(countPlayAgain == 4) {
+							//resets all of the clients scores to zero
+							for(int i = 0; i < clients.size(); i++) {
+								clients.get(i).score = 0;
+							}
+							updatePlayerList = true;
+							countPlayAgain = 0;
+							send("play again", clients);
+						}
+					}
+
 					//this appends what happened during the game to the server gui
 					else {
 						callback.accept(clientName + " Says: " + data);
 					}
 				}
 			} catch (Exception e) {
+				e.printStackTrace();
 				callback.accept("connection Closed");
 				System.out.println("We are removing " + this.getName() + "\nAfter remove...\n");
 				clients.remove(this);

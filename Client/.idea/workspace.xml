@@ -2,7 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9930e5c-3298-474c-a766-972e1782b748" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientConnection$ConnThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientConnection$ConnThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$buttonThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$buttonThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/ServerConnection$ClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/out/production/Server/ServerConnection$ClientThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/ServerConnection$ConnThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/out/production/Server/ServerConnection$ConnThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/ServerConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/out/production/Server/ServerConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/ServerFX$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/ServerFX$buttonThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/out/production/Server/ServerFX$buttonThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/ServerFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/out/production/Server/ServerFX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/Timer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/ServerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/ServerConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/ServerFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/ServerFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/Timer.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="882" column="96" selection-start-line="882" selection-start-column="96" selection-end-line="882" selection-end-column="96" />
+            <state relative-caret-position="-47">
+              <caret line="898" column="17" lean-forward="true" selection-start-line="898" selection-start-column="17" selection-end-line="898" selection-end-column="17" />
               <folding>
                 <element signature="e#2129#2136#0" expanded="true" />
                 <element signature="e#12592#12600#0" expanded="true" />
@@ -26,6 +45,21 @@
                 <element signature="e#31615#31621#0" expanded="true" />
                 <element signature="e#36861#36869#0" expanded="true" />
                 <element signature="e#36921#36927#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ClientConnection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="127" column="57" selection-start-line="127" selection-start-column="57" selection-end-line="127" selection-end-column="57" />
+              <folding>
+                <element signature="e#4114#4115#0" expanded="true" />
+                <element signature="e#4147#4148#0" expanded="true" />
+                <element signature="e#4231#4232#0" expanded="true" />
+                <element signature="e#4257#4258#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -44,6 +78,28 @@
     <findStrings>
       <find>TextField</find>
       <find>primaryStage</find>
+      <find>enableButtons</find>
+      <find>enableB</find>
+      <find>for</find>
+      <find>Timer</find>
+      <find>updatePlayerList</find>
+      <find>gameSTart</find>
+      <find>conn</find>
+      <find>displayEnding</find>
+      <find>buttonThread</find>
+      <find>enable</find>
+      <find>testGame</find>
+      <find>dropMenu</find>
+      <find>door1</find>
+      <find>dropMen</find>
+      <find>start</find>
+      <find>messages</find>
+      <find>the button</find>
+      <find>updatePlayer</find>
+      <find>makeDrop</find>
+      <find>playAgain</find>
+      <find>playerList</find>
+      <find>quitButton</find>
       <find>quit</find>
     </findStrings>
   </component>
@@ -55,6 +111,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/AlertBox.java" />
         <option value="$PROJECT_DIR$/src/ClientFX.java" />
+        <option value="$PROJECT_DIR$/src/ClientConnection.java" />
       </list>
     </option>
   </component>
@@ -90,7 +147,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557013641912" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557033168637" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib/javafx.web.jar!/" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -109,7 +166,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="ClientFX" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="ClientFX" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClientFX" />
       <module name="Client" />
       <method v="2">
@@ -148,8 +205,8 @@
       <window_info id="Learn" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.33378747" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32833788" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.33787465" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32425067" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -188,8 +245,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="882" column="96" selection-start-line="882" selection-start-column="96" selection-end-line="882" selection-end-column="96" />
+        <state relative-caret-position="-47">
+          <caret line="898" column="17" lean-forward="true" selection-start-line="898" selection-start-column="17" selection-end-line="898" selection-end-column="17" />
           <folding>
             <element signature="e#2129#2136#0" expanded="true" />
             <element signature="e#12592#12600#0" expanded="true" />
@@ -198,6 +255,19 @@
             <element signature="e#31615#31621#0" expanded="true" />
             <element signature="e#36861#36869#0" expanded="true" />
             <element signature="e#36921#36927#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="127" column="57" selection-start-line="127" selection-start-column="57" selection-end-line="127" selection-end-column="57" />
+          <folding>
+            <element signature="e#4114#4115#0" expanded="true" />
+            <element signature="e#4147#4148#0" expanded="true" />
+            <element signature="e#4231#4232#0" expanded="true" />
+            <element signature="e#4257#4258#0" expanded="true" />
           </folding>
         </state>
       </provider>
