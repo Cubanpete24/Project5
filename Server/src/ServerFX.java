@@ -79,8 +79,10 @@ public class ServerFX extends Application{
      * pressed again, it closes the window**/
 		onButton.setOnAction(event -> {
 			try {
-				if(onButton.getText().equals("Turn off Server"))
+				if(onButton.getText().equals("Turn off Server")) {
+					Platform.exit();
 					System.exit(0);
+				}
 				conn = createServer();
 				conn.startConn();
 				onButton.setText("Turn off Server");
@@ -196,8 +198,12 @@ public class ServerFX extends Application{
 								conn.send("u", conn.superClients);
 								conn.send(inServer, conn.superClients);
 							}
+							if(conn.playerQuit == true) {
+								conn.closeConn();
+								this.interrupt();
+								return;
+							}
 							this.sleep(1000); //sleep done to give the program a little break, without the sleep there is a nullpointer exception
-
 						}
 					}
 			catch (Exception e) {
