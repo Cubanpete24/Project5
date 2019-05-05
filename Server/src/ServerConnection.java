@@ -19,7 +19,7 @@ public abstract class ServerConnection {
 	/**The ClientThread Object contains lots of info, like player number, score, name (in this case name of thread), etc**/
 	boolean gameOver; //lets us know when tell the UI to ask the user to play again or start a new round
 	boolean updatePlayerList = false;
-	boolean playerQuit = false;
+
 	int countPlayAgain = 0;
 
 	/**  Every time the client wants to send something to the server, it must be in order of (STRING, INT, INT)  **/
@@ -59,11 +59,10 @@ public abstract class ServerConnection {
 	}
 
 	public void closeConn() throws Exception{
-		connthread.socket.close();
-//		for(int i = 0; i < clients.size(); i++){
-////			if(clients.get(i).clientName == connthread.)
-//			clients.get(i).socket.close();
-//		}
+		//connthread.socket.close();
+		for(int i = 0; i < clients.size(); i++){
+			clients.get(i).socket.close();
+		}
 		System.out.println("server goes thru here 4");
 
 	}
@@ -74,7 +73,6 @@ public abstract class ServerConnection {
 	 loop to keep accepting clients. The sockets returned by accept need to go on their own thread. **/
 
 	class ConnThread extends Thread{
-		Socket socket;
 		ConnThread(){}
 
 		public void run() {
@@ -86,8 +84,7 @@ public abstract class ServerConnection {
 			try{
 				ServerSocket server = new ServerSocket(getPort());
 				while(true) {
-					this.socket = server.accept();
-					ClientThread t1 = new ClientThread(socket);
+					ClientThread t1 = new ClientThread(server.accept());
 					clients.add(t1);
 					superClients.add(t1);
 					t1.start();
@@ -107,7 +104,6 @@ public abstract class ServerConnection {
 		String clientName = "";
 		private Socket socket;
 		private ObjectOutputStream out;
-		private ObjectInputStream in;
 		String data;
 		String hand;
 		int score;
@@ -185,12 +181,6 @@ public abstract class ServerConnection {
 							send("play again", clients);
 						}
 					}
-					else if(data.equals("Quit")) {
-						socket.close();
-						clients.remove(this);
-						superClients.remove(this);
-						playerQuit = true;
-					}
 
 					//this appends what happened during the game to the server gui
 					else {
@@ -199,7 +189,7 @@ public abstract class ServerConnection {
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
-
+				callback.accept("connection Closed");
 				System.out.println("We are removing " + this.getName() + "\nAfter remove...\n");
 				clients.remove(this);
 				superClients.remove(this);

@@ -108,7 +108,6 @@ public abstract class ClientConnection {
 					}
 					else if(data.equals("play again")) {
 						callback.accept("Server has notified client to start game again!");
-						playerTime.interrupt();
 						playerTime = new Timer();
 						makeDropDownVisible = true;
 						playerTime.start();
@@ -126,7 +125,7 @@ public abstract class ClientConnection {
 	class Timer extends Thread {
 		String updateString = "test";
 //		boolean timeExpired = false;
-		int startingSecond = 10;//3 minutes, 180 seconds seconds;
+		int startingSecond = 180;//3 minutes, 180 seconds seconds;
 
 		int counter = startingSecond;
 		int mins;
@@ -158,9 +157,7 @@ public abstract class ClientConnection {
 				Thread.sleep(1000);
 			}
 			catch (Exception E) {
-			catch (InterruptedException E) {
 				System.out.println("Could not stop for 1 second");
-				return;
 			}
 
 			System.out.println("Countdown from "+ startingSecond+ " to "+ 0);
@@ -177,16 +174,11 @@ public abstract class ClientConnection {
 				} catch (Exception E) {
 					callback.accept("could not count down by one second");
 				}
-				if(Thread.interrupted()) {
-					return;
-				}
+
 			}
 			callback.accept("Time is up!");
 			gameEnd = true;
 			System.out.println("Time is up!");
-			if(Thread.interrupted()) {
-				return;
-			}
 		}//run
 	}//end timer class
 }	

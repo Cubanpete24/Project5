@@ -269,14 +269,12 @@ public class ClientFX extends Application{
 
 			try {
 				conn.send("Quit");
-				conn.closeConn();
-				conn.playerTime.interrupt();
-				Platform.exit();
-				System.exit(0);
 			//System.exit(0);
 			}
 			catch(Exception e) {
 			}
+
+			System.exit(0);
 
 		});
 
@@ -900,15 +898,12 @@ public class ClientFX extends Application{
 
 			try {
 				conn.send("Quit");
-				endingWindow.close();
-				conn.closeConn();
-				conn.playerTime.interrupt();
-				Platform.exit();
-				System.exit(0);
 			}
 			catch(Exception e) {
-				e.printStackTrace();
 			}
+			endingWindow.close();
+			System.exit(0);
+
 		});
 		playAgainButton.setOnAction(event -> {
 			door1.setDisable(false);
