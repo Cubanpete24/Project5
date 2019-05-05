@@ -23,6 +23,8 @@ public abstract class ClientConnection {
 	int jerkFactor = 1100; //Used to determine how fast the sudoku puzzle moves around
 	Timer playerTime = new Timer();
 	boolean makeDropDownVisible = false;
+	boolean timeToGetWinner = false;
+	String winnerString = "";
 
 	public ClientConnection(Consumer<Serializable> callback) {
 		this.callback = callback;
@@ -112,6 +114,9 @@ public abstract class ClientConnection {
 						makeDropDownVisible = true;
 						playerTime.start();
 					}
+					else if(data.toString().substring(0, 15).equals("The winner was ")) {
+						winnerString = data.toString();
+					}
 					else
 						callback.accept(data);
 				}
@@ -125,7 +130,7 @@ public abstract class ClientConnection {
 	class Timer extends Thread {
 		String updateString = "test";
 //		boolean timeExpired = false;
-		int startingSecond = 180;//3 minutes, 180 seconds seconds;
+		int startingSecond = 20;//3 minutes, 180 seconds seconds;
 
 		int counter = startingSecond;
 		int mins;
@@ -168,6 +173,14 @@ public abstract class ClientConnection {
 				//System.out.println("Remaining Min:" + mins + " sec:" + seconds);
 				callback.accept("Remaining Min:" + mins + " sec:" + seconds);
 				//updateString = "Rem min:" + mins + " sec:" + seconds;
+				if(counter == 1) {
+                    try {
+                        send("calulate winner");
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        callback.accept("could not calculate the winner");
+                    }
+				}
 				try {
 					counter--;
 					Thread.sleep(1000);

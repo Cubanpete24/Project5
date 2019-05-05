@@ -881,17 +881,14 @@ public class ClientFX extends Application{
 	//does not allow the user to press anything until they do something to the pop up dialog box
 	private void displayEndingWindow() {
 		Stage endingWindow = new Stage();
-
 		//block input events of user interaction until they deal with this window
 		endingWindow.initModality(Modality.APPLICATION_MODAL);
 		endingWindow.setTitle("Game Over");
 		endingWindow.setMinWidth(250);
 
-		Label playOrQuitLabel = new Label();
-		playOrQuitLabel.setText("Do you want to play again or quit?");
+		Label playOrQuitLabel = new Label("Do you want to play again or quit?");
+		Label winnerLabel = new Label(conn.winnerString);
 		Button playAgainButton = new Button("Play Again");
-		playAgainButton.setOnAction(event -> primaryStage.setScene(sceneList.get(0)));
-
 		Button quitButton = new Button("Quit");
 
 		quitButton.setOnAction(event -> {
@@ -905,6 +902,7 @@ public class ClientFX extends Application{
 			System.exit(0);
 
 		});
+
 		playAgainButton.setOnAction(event -> {
 			door1.setDisable(false);
 			door2.setDisable(false);
@@ -931,7 +929,7 @@ public class ClientFX extends Application{
 		HBox endingButtons = new HBox(10, playAgainButton, quitButton);
 		endingButtons.setAlignment(CENTER);
 		VBox endingLayout = new VBox(10);
-		endingLayout.getChildren().addAll(playOrQuitLabel, endingButtons);
+		endingLayout.getChildren().addAll(playOrQuitLabel, winnerLabel, endingButtons);
 		endingLayout.setAlignment(Pos.CENTER);
 
 		Scene scene = new Scene(endingLayout);
