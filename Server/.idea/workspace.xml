@@ -11,6 +11,10 @@
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/ClientConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/ClientFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/ServerConnection$ClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/ServerConnection$ClientThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/ServerConnection$ConnThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/ServerConnection$ConnThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/ServerConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/ServerConnection.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ServerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerConnection.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -25,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ServerConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1667">
-              <caret line="88" column="130" selection-start-line="88" selection-start-column="52" selection-end-line="88" selection-end-column="130" />
+            <state relative-caret-position="230">
+              <caret line="206" column="8" selection-start-line="206" selection-start-column="8" selection-end-line="206" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -34,8 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ServerFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="644">
-              <caret line="80" column="17" lean-forward="true" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
+            <state relative-caret-position="2771">
+              <caret line="174" column="11" selection-start-line="174" selection-start-column="11" selection-end-line="174" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -52,6 +56,7 @@
       <find>timer.app</find>
       <find>Timer</find>
       <find>messages</find>
+      <find>clients</find>
       <find>updatePlayerList</find>
       <find>updatePl</find>
       <find>superclients</find>
@@ -59,9 +64,6 @@
       <find>Platform</find>
       <find>playerList</find>
       <find>winner</find>
-      <find>Says</find>
-      <find>add</find>
-      <find>clients</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -224,17 +226,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServerFX.java">
+    <entry file="file://$PROJECT_DIR$/src/ServerConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="80" column="17" lean-forward="true" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
+        <state relative-caret-position="230">
+          <caret line="206" column="8" selection-start-line="206" selection-start-column="8" selection-end-line="206" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServerConnection.java">
+    <entry file="file://$PROJECT_DIR$/src/ServerFX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1667">
-          <caret line="88" column="130" selection-start-line="88" selection-start-column="52" selection-end-line="88" selection-end-column="130" />
+        <state relative-caret-position="2771">
+          <caret line="174" column="11" selection-start-line="174" selection-start-column="11" selection-end-line="174" selection-end-column="11" />
         </state>
       </provider>
     </entry>

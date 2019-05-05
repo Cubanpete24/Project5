@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
@@ -80,32 +79,6 @@ public abstract class ServerConnection {
 		return index;
 	}
 
-	public boolean doesNameExists(String name) {
-		boolean nameUsed = false;
-		int index = 0;
-		for(int i = 0; i < clients.size(); i++) {
-			if(clients.get(i).clientName == name)  {
-				try {
-					clients.get(i).out.writeObject("Sorry, the name you inputted is already registered in the database. Try again!");
-				} catch (IOException e) {
-					e.printStackTrace();
-					callback.accept("Could not send message to client saying that they inputted a name that already existed");
-				}
-				index = i;
-				nameUsed = true;
-			}
-		}
-		if(nameUsed == false) {
-			try {
-				clients.get(index).out.writeObject("New name accepted!");
-			} catch (IOException e) {
-				e.printStackTrace();
-				callback.accept("could create establish the actual name of the client");
-			}
-		}
-		return nameUsed;
-	}
-
 	abstract protected int getPort();
 
 	/** The idea is: your network connection is in its own thread. The accept method needs to be in an infinite
@@ -115,13 +88,11 @@ public abstract class ServerConnection {
 		ConnThread(){}
 
 		public void run() {
-			//old stuff from project 3
 			if(clients.size() < 2)
 				callback.accept("Server awaiting connection");
-
 			else
 				callback.accept("2 players are in the arena, we can be ready to play");
-			//end old stuff from project 3
+
 			try{
 				ServerSocket server = new ServerSocket(getPort());
 				while(true) {
@@ -172,12 +143,8 @@ public abstract class ServerConnection {
 
 					//Check for what input the user is sending to manipulate
 					if( (data.equals("Change name")) ){
-						data = (String) in.readObject(); //contains the name of client, need to do it twice to get the name and not change name
-						//goes until a name the user enters does not exist in the database
-						//does name exists covers it when it is true
-						if(doesNameExists(data) == false) {
-							this.clientName = data;
-						}
+						data = (String) in.readObject(); //contains the name of client
+						this.clientName = data;
 					}
 					else if((data.equals("w"))){
 						callback.accept(clientName + " won the puzzle");

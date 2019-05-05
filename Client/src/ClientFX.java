@@ -198,10 +198,12 @@ public class ClientFX extends Application{
 		nameInput.setOnAction(event -> {
 			try {
 				//TODO check if name is in use
+				//true
 				clientName = nameInput.getText();
 				nameInput.clear();
-                messages.appendText("Your name is now: " + clientName + "\n");
-                connect.setVisible(true);
+				messages.appendText("Your name is now: " + clientName + "\n");
+				connect.setVisible(true);
+				//false - try again and do not store
 			}
 			catch(Exception e) {
 				// TODO debugging take out
@@ -1811,7 +1813,7 @@ public class ClientFX extends Application{
 			Platform.runLater(()->{
 				messages.appendText(data.toString() + "\n");
 			});
-		}, clientName);
+		}, "Paul");
 	}
 
 
