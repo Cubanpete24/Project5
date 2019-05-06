@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fbf1ba1-17c2-45b9-ad94-4b13981523a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/ClientFX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$buttonThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$buttonThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,23 +12,43 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/src/ClientFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="627" column="25" lean-forward="true" selection-start-line="627" selection-start-column="25" selection-end-line="627" selection-end-column="25" />
+            <state relative-caret-position="179">
+              <caret line="683" column="22" lean-forward="true" selection-start-line="683" selection-start-column="22" selection-end-line="683" selection-end-column="22" />
               <folding>
-                <element signature="e#1890#9308#0" />
-                <element signature="e#9351#16325#0" />
-                <element signature="e#17631#18240#0" />
+                <element signature="e#2054#2061#0" expanded="true" />
+                <element signature="e#2538#12381#0" />
+                <element signature="e#12424#18115#0" />
+                <element signature="e#12517#12525#0" expanded="true" />
+                <element signature="e#12577#12583#0" expanded="true" />
+                <element signature="e#18118#18394#0" />
+                <element signature="e#20861#23250#0" />
+                <element signature="e#23253#23478#0" />
+                <element signature="e#23481#24413#0" />
+                <element signature="e#24416#24963#0" />
+                <element signature="e#24967#25433#0" />
+                <element signature="e#25436#25834#0" />
+                <element signature="e#25838#30260#0" />
+                <element signature="e#30263#35589#0" />
+                <element signature="e#30362#30370#0" expanded="true" />
+                <element signature="e#30422#30428#0" expanded="true" />
+                <element signature="e#35592#44748#0" />
+                <element signature="e#35669#35677#0" expanded="true" />
+                <element signature="e#35729#35735#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/src/pictures/looking2.gif">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -47,9 +64,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="569" />
+    <option name="x" value="384" />
     <option name="y" value="23" />
-    <option name="width" value="1111" />
+    <option name="width" value="1296" />
     <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -58,6 +75,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -90,7 +108,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -99,9 +116,10 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Client/src/sounds" />
+      <recent name="$PROJECT_DIR$/Client/src/pictures" />
       <recent name="$PROJECT_DIR$/Client/src" />
       <recent name="$PROJECT_DIR$/Client" />
-      <recent name="$PROJECT_DIR$/Client/src/sounds" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -152,50 +170,142 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="569" y="23" width="1111" height="1027" extended-state="0" />
+    <frame x="384" y="23" width="1296" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Learn" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26286247" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16108453" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32894737" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Learn" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32894737" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3739035" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32894737" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32894737" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.19016394" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Learn" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3739035" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32894737" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32894737" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+    </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Client/src/sounds/OldTownRoad.mp3">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/ClientFX 2.java" />
+    <entry file="file://$PROJECT_DIR$/Client/src/pictures/spiderman.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/pictures/green.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/pictures/red.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/pictures/mathPuzzle.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/pictures/red.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/pictures/bird1.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/pictures/road.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/pictures/giphy.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/pictures/horses.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/sudoku.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/looking2.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/pictures/looking.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/pictures/looking2.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/pictures/milesDesk.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/ClientFX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="627" column="25" lean-forward="true" selection-start-line="627" selection-start-column="25" selection-end-line="627" selection-end-column="25" />
+        <state relative-caret-position="179">
+          <caret line="683" column="22" lean-forward="true" selection-start-line="683" selection-start-column="22" selection-end-line="683" selection-end-column="22" />
           <folding>
-            <element signature="e#1890#9308#0" />
-            <element signature="e#9351#16325#0" />
-            <element signature="e#17631#18240#0" />
+            <element signature="e#2054#2061#0" expanded="true" />
+            <element signature="e#2538#12381#0" />
+            <element signature="e#12424#18115#0" />
+            <element signature="e#12517#12525#0" expanded="true" />
+            <element signature="e#12577#12583#0" expanded="true" />
+            <element signature="e#18118#18394#0" />
+            <element signature="e#20861#23250#0" />
+            <element signature="e#23253#23478#0" />
+            <element signature="e#23481#24413#0" />
+            <element signature="e#24416#24963#0" />
+            <element signature="e#24967#25433#0" />
+            <element signature="e#25436#25834#0" />
+            <element signature="e#25838#30260#0" />
+            <element signature="e#30263#35589#0" />
+            <element signature="e#30362#30370#0" expanded="true" />
+            <element signature="e#30422#30428#0" expanded="true" />
+            <element signature="e#35592#44748#0" />
+            <element signature="e#35669#35677#0" expanded="true" />
+            <element signature="e#35729#35735#0" expanded="true" />
           </folding>
         </state>
       </provider>

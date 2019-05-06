@@ -14,11 +14,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
-import javafx.stage.Screen;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -29,7 +30,6 @@ import java.io.File;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -46,7 +46,7 @@ public class ClientFX extends Application{
 	/**Declare all my buttons and textfields**/
 	Button portButton, ipButton, play, connect, quit;
 	TextField portInput, ipInput, nameInput;
-	MediaPlayer mediaPlayer;
+	AudioClip OTR, sunflowerSong;
 	int port = 5555;
 	String ip = "127.0.0.1";
 	String clientName = "";
@@ -54,11 +54,11 @@ public class ClientFX extends Application{
 
 	/**STEP 1: DECLARE A SCENE FOR YOUR PUZZLE, EACH SCENE IS IT'S OWN PUZZLE**/
 	/**ALREADY DONE**/
-	Scene DoorScene1, DoorScene2, DoorScene3, DoorScene4, DoorScene5, DoorScene6, DoorScene7, DoorScene8, DoorScene9;
+	Scene DoorScene1, DoorScene2, DoorScene3, DoorScene4, DoorScene5, DoorScene6, DoorScene7, DoorScene8, DoorScene9, DoorScene10;
 	/**STEP 2: DECLARE A BUTTON FOR YOUR PUZZLE, THIS WILL NOT BE USED IN THE FINAL IMPLEMENTATION BUT WILL GIVE YOU DIRECT ACCESS TO IT SO YOU CAN DEBUG IT**/
 	/**ALREADY DONE**/
 	MenuButton dropMenu;
-	MenuItem door1, door2, door3, door4,door5, door6, door7, door8, door9;
+	MenuItem door1, door2, door3, door4,door5, door6, door7, door8, door9, door10;
 	Button testGame;
 	//Button door1, door2, door3, door4, door5, door6, testGame;
 	Stage primaryStage ; //THIS IS THE STAGE THAT DETERMINES WHAT THE USE IS CURRENTLY LOOKING AT
@@ -119,6 +119,7 @@ public class ClientFX extends Application{
 		door7 = new MenuItem("Door #7");
 		door8 = new MenuItem("Door #8");
 		door9 = new MenuItem("Door #9");
+		door10 = new MenuItem("Door #10");
 
 
 		//testGame = new MenuItem("Test Game");
@@ -234,7 +235,6 @@ public class ClientFX extends Application{
 				conn.startConn(this.clientName);
 				/**COMMENTING OUT THIS THREAD FOR NOW UNTIL IT IS BETTER OPTIMIZED, FOR NOW NO DYNAMIC UI ELEMENTS ON THE CLIENT SIDE**/
 				buttonThread test = new buttonThread();
-
 				test.start();
 
 				//conn.send("Why isn't this working");
@@ -285,7 +285,7 @@ public class ClientFX extends Application{
 
 		dropMenu = new MenuButton("Puzzles");
 		dropMenu.setVisible(false);
-		dropMenu.getItems().addAll(door1, door2, door3, door4, door5, door6, door7, door8, door9);
+		dropMenu.getItems().addAll(door1, door2, door3, door4, door5, door6, door7, door8, door9, door10);
 
 		HBox Doors = new HBox(10, Score, dropMenu);
 		//HBox Doors = new HBox(10, Score, door1, door2, door3, door4, door5, door6, testGame);
@@ -335,6 +335,7 @@ public class ClientFX extends Application{
 				DoorScene2 = new Scene(createDoor2(), 900, 500);
 				sceneList.add(DoorScene2);
 				primaryStage.setScene(DoorScene2);
+				primaryStage.setTitle("Guess The Song #1");
 			}
 			catch(Exception e) {
 			}
@@ -361,6 +362,7 @@ public class ClientFX extends Application{
 				DoorScene4 = new Scene(createDoor4(), 900, 500);
 				sceneList.add(DoorScene4);
 				primaryStage.setScene(DoorScene4);
+				primaryStage.setTitle("Morse Code Puzzle");
 			}
 			catch(Exception e) {
 			}
@@ -373,6 +375,7 @@ public class ClientFX extends Application{
 				DoorScene5 = new Scene(createDoor5(), 900, 500);
 				sceneList.add(DoorScene5);
 				primaryStage.setScene(DoorScene5);
+				primaryStage.setTitle("Binary Puzzle");
 			}
 			catch(Exception e) {
 			}
@@ -384,6 +387,7 @@ public class ClientFX extends Application{
 				DoorScene6 = new Scene(createDoor6(), 900, 500);
 				sceneList.add(DoorScene6);
 				primaryStage.setScene(DoorScene6);
+				primaryStage.setTitle("Math Puzzle");
 			}
 			catch(Exception e) {
 			}
@@ -422,6 +426,19 @@ public class ClientFX extends Application{
 				sceneList.add(DoorScene9); //We add the scene to an arrayList of Scenes so we can access it later
 				primaryStage.setScene(DoorScene9); //We display the scene
 				primaryStage.setTitle("Extreme Sudoku!");
+			}
+			catch(Exception e) {
+			}
+		});
+
+		door10.setOnAction(event -> {
+
+			try {
+				//door1.setVisible(false); Comment this out once program is done
+				DoorScene10 = new Scene(createDoor10(), 900, 375); //We create the scene
+				sceneList.add(DoorScene10); //We add the scene to an arrayList of Scenes so we can access it later
+				primaryStage.setScene(DoorScene10); //We display the scene
+				primaryStage.setTitle("Guess The Song #2 !");
 
 			}
 			catch(Exception e) {
@@ -661,23 +678,24 @@ public class ClientFX extends Application{
 		Button clue4 = createImage("pictures/billyray.png");
 		Button adrianCheck = new Button("Check Answer");
 		Button playMusic = new Button("Play Music");
+		Button stopMusic = new Button("Stop Music");
 		Button adrianQuit = new Button("Quit Puzzle");
-
+		OTR = new AudioClip(this.getClass().getResource("sounds/OldTownRoad.mp3").toString());
 
 
 		Text instructions = new Text("Guess the song by the pictures!");
 		instructions.setScaleX(3);
 		instructions.setScaleY(3);
 
-
 		TextField answerField = new TextField("Enter Answer Here");
 		answerField.setPrefWidth(200);
 
 		playMusic.setOnAction(event -> {
-			String path = "/Users/adrianzavala/Desktop/Project5/Client/src/sounds/OldTownRoad.mp3";
-			Media media = new Media(new File(path).toURI().toString());
-			mediaPlayer = new MediaPlayer(media);
-			mediaPlayer.play();
+			OTR.play();
+		});
+
+		stopMusic.setOnAction(event -> {
+			OTR.stop();
 		});
 
 		adrianCheck.setOnAction(event -> {
@@ -691,11 +709,13 @@ public class ClientFX extends Application{
 
 				//Check if input is correct
 				if( adrianPuzzle.equals("old town road")){
+					door2.setDisable(true);
 					conn.score++;
 					Score.setText("Score: " + conn.score);
+					OTR.stop();
 					primaryStage.setScene(sceneList.get(0));
 					conn.send("w"); // not updating the clients scoreboard
-					door2.setDisable(true);
+
 				}
 				else{
 					answerField.setText("Wrong Answer");
@@ -704,18 +724,17 @@ public class ClientFX extends Application{
 			catch(Exception e) {
 
 			}
-
 		});
 
 		adrianQuit.setOnAction(event -> {
 			primaryStage.setScene(sceneList.get(0));
 			door2.setDisable(true);
+			OTR.stop();
 		});
-
 
 		HBox choiceHBox = new HBox(5, clue1, clue2, clue3, clue4);
 		VBox top = new VBox(5, instructions);
-		HBox bottom = new HBox(5, answerField, playMusic, adrianCheck, adrianQuit);
+		HBox bottom = new HBox(5, answerField, adrianCheck, playMusic, stopMusic, adrianQuit);
 
 		choiceHBox.setAlignment(CENTER);
 		background.setCenter(choiceHBox);
@@ -753,7 +772,7 @@ public class ClientFX extends Application{
 			rowButton.add(new HBox() );
 			for(int j=0;j<5;j++){
 				Button temp = new Button("red");//Integer.toString((i*5)+j) );
-				Image myImage = new Image("red.jpg");
+				Image myImage = new Image("pictures/red.jpg");
 				ImageView myView = new ImageView(myImage);
 				myView.setPreserveRatio(true);
 				myView.setFitWidth(50);
@@ -773,7 +792,7 @@ public class ClientFX extends Application{
 				for(ArrayList<Button> elem: myButton){
 					for(Button ele : elem){
 						ele.setText("green");
-						Image myImage = new Image("green.jpg");
+						Image myImage = new Image("pictures/green.jpg");
 						ImageView myView = new ImageView(myImage);
 						myView.setPreserveRatio(true);
 						myView.setFitWidth(50);
@@ -808,6 +827,8 @@ public class ClientFX extends Application{
 		return mainScene;
 	}
 
+	/**KAVEESHA'S PART STARTS HERE**/
+
 	public ImageView createPictureOnButton(String dir) {
 		Image image = new Image(dir);
 		ImageView view = new ImageView(image);
@@ -817,19 +838,19 @@ public class ClientFX extends Application{
 		return view;
 	}
 
-	private VBox setUpButton(String realAnswer) {
+	private VBox setUpActions(String realAnswer, int whichDoor) {
 
 		TextField answer = new TextField();
-		answer.setPrefHeight(5);
-		answer.setPrefWidth(5);
+		answer.setMinHeight(30);
+		answer.setMinWidth(30);
 
 		Button submitAnswerButton = new Button("Submit Answer");
 		Button giveUpButton = new Button("Give up");
 
 		giveUpButton.setOnAction(event -> {
+			disableDoor(whichDoor);
 			primaryStage.setScene(sceneList.get(0));
 		});
-
 
 		submitAnswerButton.setOnAction(event -> {
 			try {
@@ -838,6 +859,7 @@ public class ClientFX extends Application{
 				if(theirAnswer.equals(realAnswer)) {
 					conn.score++;
 					Score.setText("Score: " + conn.score);
+					disableDoor(whichDoor);
 					primaryStage.setScene(sceneList.get(0));
 					conn.send("w");
 				}
@@ -849,25 +871,109 @@ public class ClientFX extends Application{
 			}
 		});
 
-		HBox playerButtonAction = new HBox(submitAnswerButton, giveUpButton);
-		VBox playerTotalAction = new VBox(answer, playerButtonAction);
+		HBox playerButtonAction = new HBox(50, submitAnswerButton, giveUpButton);
+		playerButtonAction.setAlignment(CENTER);
+		VBox playerTotalAction = new VBox(10, answer, playerButtonAction);
+		playerTotalAction.setAlignment(CENTER);
 		return playerTotalAction;
 	}
 
-	/**KAVEESHA'S PUZZLE HERE**/
+	//does not allow the user to press anything until they do something to the pop up dialog box
+	private void displayEndingWindow() {
+		Stage endingWindow = new Stage();
+		//block input events of user interaction until they deal with this window
+		endingWindow.initModality(Modality.APPLICATION_MODAL);
+		endingWindow.setTitle("Game Over");
+		endingWindow.setMinWidth(250);
+
+		Label playOrQuitLabel = new Label("Do you want to play again or quit?");
+		Label winnerLabel = new Label(conn.winnerString);
+		Button playAgainButton = new Button("Play Again");
+		Button quitButton = new Button("Quit");
+
+		quitButton.setOnAction(event -> {
+
+			try {
+				conn.send("Quit");
+			}
+			catch(Exception e) {
+			}
+			endingWindow.close();
+			System.exit(0);
+
+		});
+
+		playAgainButton.setOnAction(event -> {
+			door1.setDisable(false);
+			door2.setDisable(false);
+			door3.setDisable(false);
+			door4.setDisable(false);
+			door5.setDisable(false);
+			door6.setDisable(false);
+			door7.setDisable(false);
+			door8.setDisable(false);
+			door9.setDisable(false);
+			door10.setDisable(false);
+			dropMenu.setVisible(false);
+			conn.score = 0;
+
+			try {
+				conn.send("increment play again variable");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			endingWindow.close();
+			primaryStage.setScene(sceneList.get(0));
+		});
+
+		HBox endingButtons = new HBox(10, playAgainButton, quitButton);
+		endingButtons.setAlignment(CENTER);
+		VBox endingLayout = new VBox(10);
+		endingLayout.getChildren().addAll(playOrQuitLabel, winnerLabel, endingButtons);
+		endingLayout.setAlignment(Pos.CENTER);
+
+		Scene scene = new Scene(endingLayout);
+		endingWindow.setScene(scene);
+		//block any user interaction until the box is closed
+		endingWindow.showAndWait();
+	}
+
+	private void disableDoor(int whichDoor) {
+		if(whichDoor == 4) {
+			door4.setDisable(true);
+		}
+		if(whichDoor == 5) {
+			door5.setDisable(true);
+		}
+		if(whichDoor == 6) {
+			door6.setDisable(true);
+		}
+	}
+
+	private Background createMyBackground(String directory) {
+		Image bg = new Image(directory);
+		BackgroundSize backgroundSize = new BackgroundSize(100, 80, true, false, true, true);
+		BackgroundImage bgImg = new BackgroundImage(bg, null, null, null, backgroundSize);
+		Background background = new Background(bgImg);
+		return background;
+	}
+
 	private Parent createDoor4() {
 		BorderPane morseGameplay = new BorderPane();
+		Background myBackground = createMyBackground("pictures/morseCode.gif");
+
 		Text morseCode = new Text("... -- .- ... .... / -... .-. --- ...");
 		morseCode.setFill(Color.DEEPPINK);
 		morseCode.setScaleX(3);
 		morseCode.setScaleY(3);
-		morseCode.setTranslateX(370);
-		morseCode.setTranslateY(30);
 
-		VBox playerAction = setUpButton("SMASH BROS");
-		morseGameplay.setTop(morseCode);
+		VBox playerAction = setUpActions("SMASH BROS", 4);
+		morseGameplay.setPadding(new Insets(100));
+		morseGameplay.setAlignment(morseCode, Pos.CENTER);
+		morseGameplay.setCenter(morseCode);
+		morseGameplay.setAlignment(playerAction, Pos.CENTER);
 		morseGameplay.setBottom(playerAction);
-		morseGameplay.setStyle("-fx-background-color: lightskyblue");
+		morseGameplay.setBackground(myBackground);
 
 		return morseGameplay;
 	}
@@ -875,33 +981,42 @@ public class ClientFX extends Application{
 
 	private Parent createDoor5() {
 		BorderPane binaryGameplay = new BorderPane();
-		Text binary = new Text("1101 1010 1011");
-		binary.setFill(Color.CRIMSON);
-		binary.setScaleX(3);
-		binary.setScaleY(3);
-		binary.setTranslateX(350);
-		binary.setTranslateY(30);
-		VBox playerAction = setUpButton("DAB");
-		binaryGameplay.setTop(binary);
-		binaryGameplay.setBottom(playerAction);
-		binaryGameplay.setStyle("-fx-background-color: steelblue");
+		Background myBackground = createMyBackground("pictures/binary.gif");
 
+		Button binary = new Button("1101 1010 1011");
+		binary.setStyle("-fx-background-color: skyblue");
+		binary.setPrefHeight(150);
+		binary.setPrefWidth(150);
+
+		VBox playerAction = setUpActions("DAB", 5);
+		binaryGameplay.setPadding(new Insets(70));
+		binaryGameplay.setAlignment(binary, Pos.CENTER);
+		binaryGameplay.setCenter(binary);
+		binaryGameplay.setAlignment(playerAction, Pos.CENTER);
+		binaryGameplay.setBottom(playerAction);
+		binaryGameplay.setBackground(myBackground);
 		return binaryGameplay;
 	}
 
 	private Parent createDoor6() {
 		Button mathQuestion = new Button();
-		mathQuestion.setGraphic(createPictureOnButton("mathPuzzle.jpg"));
+		mathQuestion.setGraphic(createPictureOnButton("pictures/mathPuzzle.jpg"));
+
+		Background myBackground = createMyBackground("pictures/problemSolving.gif");
 
 		BorderPane mathGameplay = new BorderPane();
 
-		VBox playerAction = setUpButton("51");
-		mathGameplay.setTop(mathQuestion);
+		VBox playerAction = setUpActions("51", 6);
+		mathGameplay.setPadding(new Insets(70));
+		mathGameplay.setAlignment(mathQuestion, Pos.CENTER);
+		mathGameplay.setCenter(mathQuestion);
+		mathGameplay.setAlignment(playerAction, Pos.CENTER);
 		mathGameplay.setBottom(playerAction);
-		mathGameplay.setStyle("-fx-background-color: palegreen");
+		mathGameplay.setBackground(myBackground);
 
 		return mathGameplay;
 	}
+	/**KAVEESHA'S PART ENDS HERE**/
 
 
 	private Parent createDoor7() {
@@ -1073,7 +1188,6 @@ public class ClientFX extends Application{
 		BackgroundSize backgroundSize = new BackgroundSize(100, 80, true, false, true, true);
 		BackgroundImage bgImg = new BackgroundImage(bg, null, null, null, backgroundSize);
 		Background background = new Background(bgImg);
-
 
 
 		//background.set
@@ -1539,6 +1653,93 @@ public class ClientFX extends Application{
 		return gamePane;
 	}
 
+	/**ADRIAN'S PUZZLE 2**/
+	private Parent createDoor10(){
+		BorderPane background = new BorderPane();
+
+		//Eugenio's gif/background code
+
+		Image bg = new Image("pictures/milesDesk.jpeg");
+		BackgroundSize backgroundSize = new BackgroundSize(200, 100, true, false, true, true);
+		BackgroundImage bgImg = new BackgroundImage(bg, null, null, null, backgroundSize);
+		Background bk = new Background(bgImg);
+
+		//background.set
+		background.setBackground(bk);
+
+		sunflowerSong = new AudioClip(this.getClass().getResource("sounds/Sunflower.mp3").toString());
+
+		Button adrianCheck = new Button("Check Answer");
+		Button playSunflower = new Button("Play Music");
+		Button stopSunflower = new Button("Stop Music");
+		Button adrianQuit = new Button("Quit Puzzle");
+
+		Text instructions = new Text("Guess the song!");
+		instructions.setRotate(-30);
+		instructions.setTranslateX(-290);
+		instructions.setTranslateY(100);
+		instructions.setFill(Color.CRIMSON);
+		instructions.setScaleX(3);
+		instructions.setScaleY(3);
+
+		TextField answerField = new TextField("Enter Answer Here");
+		answerField.setPrefWidth(300);
+
+		adrianCheck.setOnAction(event -> {
+			try {
+				//get input for the textfield
+				String adrianPuzzle = answerField.getText();
+				answerField.clear();
+
+				//make input lowercase to check for correctness
+				adrianPuzzle = adrianPuzzle.toLowerCase();
+
+				//Check if input is correct
+				if( adrianPuzzle.equals("sunflower")){
+					door10.setDisable(true);
+					conn.score++;
+					Score.setText("Score: " + conn.score);
+					sunflowerSong.stop();
+					primaryStage.setScene(sceneList.get(0));
+					conn.send("w"); // not updating the clients scoreboard
+
+				}
+				else{
+					answerField.setText("Wrong Answer");
+				}
+			}
+			catch(Exception e) {
+
+			}
+		});
+
+		playSunflower.setOnAction(event -> {
+			sunflowerSong.play();
+		});
+
+		stopSunflower.setOnAction(event -> {
+			sunflowerSong.stop();
+		});
+
+		adrianQuit.setOnAction(event -> {
+			primaryStage.setScene(sceneList.get(0));
+			door10.setDisable(true);
+			sunflowerSong.stop();
+		});
+
+		VBox top = new VBox(5, instructions);
+		HBox bottom = new HBox(5, answerField, adrianCheck, playSunflower, stopSunflower, adrianQuit);
+
+		top.setAlignment(Pos.BASELINE_CENTER);
+		top.setTranslateY(10);
+		background.setTop(top);
+
+		background.setBottom(bottom);
+		bottom.setAlignment(Pos.BASELINE_CENTER);
+
+		return background;
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		launch(args);
@@ -1568,6 +1769,8 @@ public class ClientFX extends Application{
 		Scene scene7 = new Scene(createDoor7(), 900, 500);
 		Scene scene8 = new Scene(createDoor8(), 900, 500);
 
+		Scene scene10 = new Scene(createDoor10(), 900, 500);
+
 
 		Scene finalScene = startUpScene;
 		sceneList.add(scene1);
@@ -1578,6 +1781,8 @@ public class ClientFX extends Application{
 		sceneList.add(scene6);
 		sceneList.add(scene7);
 		sceneList.add(scene8);
+
+		sceneList.add(scene10);
 
 		sceneList.add(finalScene);
 
@@ -1625,29 +1830,35 @@ public class ClientFX extends Application{
 					if(numCheck != conn.score){
 						numCheck = conn.score;
 						Score.setText("Score: " + conn.score);
-
 					}
-					else if(conn.gameStart == true){
+					if(conn.gameStart == true){
 						dropMenu.setVisible(true);
-					}
-					else if(conn.gameStart == true) {
 						//sceneNum++;
 						System.out.println("Sync");
 						//primaryStage.setScene(sceneList.get(0));
 						enableButtons();
 						conn.gameStart = false;
 					}
+					if(conn.gameEnd == true) {
+						//have to open the pop up window in the start thread, so you have to do platform.runlater
+						new Thread(() -> {
+							Platform.runLater(() -> {
+								displayEndingWindow();
+							});
+						}).start();
+						conn.gameEnd = false;
+					}
+					if(conn.makeDropDownVisible == true) {
+						dropMenu.setVisible(true);
+					}
 					this.sleep(1000);
 
 				}
 			}
 			catch (Exception e) {
+				e.printStackTrace();
 				System.out.println("Oops in buttonThread");
-
 			}
-
 		}
 	}
-
-
 }

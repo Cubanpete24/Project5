@@ -20,6 +20,10 @@ public abstract class ServerConnection {
 	boolean gameOver; //lets us know when tell the UI to ask the user to play again or start a new round
 	boolean updatePlayerList = false;
 
+	int countPlayAgain = 0;
+	String winnerName = "";
+	int winnerScore = 0;
+
 	/**  Every time the client wants to send something to the server, it must be in order of (STRING, INT, INT)  **/
 	/**  and this method also sends the end of round message to both players  **/
 
@@ -62,7 +66,17 @@ public abstract class ServerConnection {
 			clients.get(i).socket.close();
 		}
 		System.out.println("server goes thru here 4");
-
+	}
+	public int computeWinnerIndex() {
+		int index = 0;
+		int max = 0;
+		for(int whichPlayer = 0; whichPlayer < clients.size(); whichPlayer++) {
+			if(clients.get(whichPlayer).score > max) {
+				max = clients.get(whichPlayer).score;
+				index = whichPlayer;
+			}
+ 		}
+		return index;
 	}
 
 	abstract protected int getPort();
@@ -82,13 +96,14 @@ public abstract class ServerConnection {
 			try{
 				ServerSocket server = new ServerSocket(getPort());
 				while(true) {
-					ClientThread t1 = new ClientThread(server.accept());
-					clients.add(t1);
-					superClients.add(t1);
-					t1.start();
-					callback.accept("Checking name " + t1.clientName);
+					if(clients.size() < 5) {
+						ClientThread t1 = new ClientThread(server.accept());
+						clients.add(t1);
+						superClients.add(t1);
+						t1.start();
+						callback.accept("Checking name " + t1.clientName);
+					}
 				}
-
 			}
 			catch(Exception e) {
 				callback.accept("connection Closed");
@@ -157,7 +172,35 @@ public abstract class ServerConnection {
 						else if(clients.size() == 4) {
 							send("g", clients);
 						}
-
+					}
+					else if((data.equals("increment play again variable"))) {
+						countPlayAgain++;
+						if(countPlayAgain == 1) {
+							callback.accept("waiting for 3 more people to play again");
+						}
+						if(countPlayAgain == 2) {
+							callback.accept("waiting for 2 more people to play again");
+						}
+						if(countPlayAgain == 3) {
+							callback.accept("waiting for 1 more people to play again");
+						}
+						if(countPlayAgain == 4) {
+							//resets all of the clients scores to zero
+							for(int i = 0; i < clients.size(); i++) {
+								clients.get(i).score = 0;
+							}
+							updatePlayerList = true;
+							countPlayAgain = 0;
+							send("play again", clients);
+						}
+					}
+					else if((data.equals("calculate winner"))) {
+						callback.accept("calculating the winner...");
+						int indexOfWinner = computeWinnerIndex();
+						winnerName = clients.get(indexOfWinner).clientName;
+						winnerScore = clients.get(indexOfWinner).score;
+						callback.accept("The winner was: " + winnerName + " with a score of " + winnerScore);
+						send("The winner was " + winnerName + "with score: " + winnerScore, clients);
 					}
 					//this appends what happened during the game to the server gui
 					else {
@@ -165,13 +208,13 @@ public abstract class ServerConnection {
 					}
 				}
 			} catch (Exception e) {
+				e.printStackTrace();
 				callback.accept("connection Closed");
 				System.out.println("We are removing " + this.getName() + "\nAfter remove...\n");
 				clients.remove(this);
 				superClients.remove(this);
 				for(int i = 0; i < clients.size(); i++){
 					System.out.println(clients.get(i).getName() + "\n");
-
 				}
 			}
 		}
