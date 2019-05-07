@@ -130,7 +130,7 @@ public abstract class ClientConnection {
 	class Timer extends Thread {
 		String updateString = "test";
 //		boolean timeExpired = false;
-		int startingSecond = 20;//3 minutes, 180 seconds seconds;
+		int startingSecond = 180;//3 minutes, 180 seconds seconds;
 
 		int counter = startingSecond;
 		int mins;
