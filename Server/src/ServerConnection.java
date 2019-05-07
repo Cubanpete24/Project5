@@ -158,21 +158,7 @@ public abstract class ServerConnection {
 						this.score++;
 						updatePlayerList = true;
 					}
-					else if((data.equals("c"))){
-						updatePlayerList = true;
-						if(clients.size() < 2) {
-							callback.accept("Server awaiting 3 more players...But to test a build closer to the final game, have another person connect and press Test Game");
-						}
-						else if(clients.size() < 3) {
-							callback.accept("Server awaiting 2 more players...But for now");
 
-						}
-						else if(clients.size() < 4)
-							callback.accept("Server awaiting 1 more player...");
-						else if(clients.size() == 4) {
-							send("g", clients);
-						}
-					}
 					else if((data.equals("increment play again variable"))) {
 						countPlayAgain++;
 						if(countPlayAgain == 1) {
@@ -194,6 +180,21 @@ public abstract class ServerConnection {
 							send("play again", clients);
 						}
 					}
+                    else if((data.equals("c"))){
+                        updatePlayerList = true;
+                        if(clients.size() < 2) {
+                            callback.accept("Server awaiting 3 more players...But to test a build closer to the final game, have another person connect and press Test Game");
+                        }
+                        else if(clients.size() < 3) {
+                            callback.accept("Server awaiting 2 more players...But for now");
+
+                        }
+                        else if(clients.size() < 4)
+                            callback.accept("Server awaiting 1 more player...");
+                        else if(clients.size() == 4) {
+                            send("g", clients);
+                        }
+                    }
 					else if((data.equals("calculate winner"))) {
 						callback.accept("calculating the winner...");
 						int indexOfWinner = computeWinnerIndex();
