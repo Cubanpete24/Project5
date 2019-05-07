@@ -25,6 +25,9 @@ public abstract class ClientConnection {
 	boolean makeDropDownVisible = false;
 	boolean timeToGetWinner = false;
 	String winnerString = "";
+	int mins;
+	int seconds;
+
 
 	public ClientConnection(Consumer<Serializable> callback) {
 		this.callback = callback;
@@ -130,16 +133,16 @@ public abstract class ClientConnection {
 	class Timer extends Thread {
 		String updateString = "test";
 //		boolean timeExpired = false;
-		int startingSecond = 20;//3 minutes, 180 seconds seconds;
+		int startingSecond = 70;//3 minutes, 180 seconds seconds;
 
 		int counter = startingSecond;
-		int mins;
-		int seconds;
+		//int mins;
+		//int seconds;
 
 		Timer(){
 			mins = counter / 60;
 			seconds = counter - (mins * 60);
-			updateString = "Rem min:" + mins + " sec:" + seconds;
+			updateString =  mins + ":" + seconds;
 		}
 //		public boolean timeUp(){
 //			return this.timeExpired;
@@ -171,7 +174,8 @@ public abstract class ClientConnection {
 				seconds = counter - (mins * 60);
 
 				//System.out.println("Remaining Min:" + mins + " sec:" + seconds);
-				callback.accept("Remaining Min:" + mins + " sec:" + seconds);
+
+				//callback.accept("Remaining Min:" + mins + " sec:" + seconds);
 				//updateString = "Rem min:" + mins + " sec:" + seconds;
 				if(counter == 1) {
                     try {
@@ -190,6 +194,7 @@ public abstract class ClientConnection {
 
 			}
 			callback.accept("Time is up!");
+			seconds = 0;
 			gameEnd = true;
 			System.out.println("Time is up!");
 		}//run

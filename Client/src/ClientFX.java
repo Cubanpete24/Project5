@@ -18,6 +18,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -51,6 +54,24 @@ public class ClientFX extends Application{
 	String ip = "127.0.0.1";
 	String clientName = "";
 	boolean updatePlayerList;
+
+
+	//Text for the timer used to countdown how much time you have left. For some reason, the timerText object does not like to be shared across scenes, so a new instance of Text needed to be created for each scene. The text is updated in buttonThread
+	Text timerText = new Text("Time"); //timerText for lobbyScreen
+	Text timerText1 = new Text("Time");//timerText for door1
+	Text timerText2 = new Text("Time");//timerText for door2
+	Text timerText3 = new Text("Time");//timerText for door3
+	Text timerText4 = new Text("Time");//timerText for door4
+	Text timerText5 = new Text("Time");//timerText for door5
+	Text timerText6 = new Text("Time");//timerText for door6
+	Text timerText7 = new Text("Time");//timerText for door7
+	Text timerText8 = new Text("Time");//timerText for door8
+	Text timerText9 = new Text("Time");//timerText for door9
+	Text timerText10 = new Text("Time");//timerText for door10
+
+
+
+
 
 	/**STEP 1: DECLARE A SCENE FOR YOUR PUZZLE, EACH SCENE IS IT'S OWN PUZZLE**/
 	/**ALREADY DONE**/
@@ -468,8 +489,39 @@ public class ClientFX extends Application{
 
 		/**Finally, VBox contains all the HBoxes**/
 		VBox root = new VBox(5, textStuff, Doors, middleRow); //bottomRow is not included as it does not pertain to project 4
-		root.setPrefSize(600, 500);
-		return root;
+		root.setPrefSize(400, 500);
+
+		//BEGIN TIMER STUFF
+		//Created a borderpane for the express purpose of being able to slap the timer on the current scene that we have.
+		BorderPane startUpPane = new BorderPane();
+
+
+		//SUPER IMPORTANT...each scene has it's own timerText variable. because Text variables do not like being shared across multiple scenes
+		//Door1 must use timerText1...
+		//Door2 must use timerText2...
+		//Door3 must use timerText3...etc
+		//They've already been declared, and are getting updated by buttonThread. If you copy the stuff below make sure you replace all instances of "timerText" with the timerText of your door
+
+		//Created VBox so we have better control of where to put the TimerText
+		VBox timerTextHolder = new VBox(timerText);
+
+		//Padding so it's not hugging the border of the window
+		timerTextHolder.setPadding(new Insets(15));
+
+		//Sets the size
+		timerText.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+
+		//essentially making the center of our newly cre the scene we had previously
+		startUpPane.setCenter(root);
+		startUpPane.setRight(timerTextHolder);
+
+		//I have my timer
+		timerTextHolder.setAlignment(BOTTOM_RIGHT);
+
+
+		//END TIMER STUFF
+		//If you created a borderPane make sure your createDoor method returns it.
+		return startUpPane;
 
 	}
 
@@ -649,7 +701,17 @@ public class ClientFX extends Application{
 
         });
 
+        //Text timerText1 = timerText;
 		gamePane.setCenter(everything);
+		VBox timerTextHolder = new VBox(timerText1);
+
+		//Padding so it's not hugging the border of the window
+		timerTextHolder.setPadding(new Insets(15));
+		timerText1.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+		gamePane.setRight(timerTextHolder);
+
+		//I have my timer
+		timerTextHolder.setAlignment(BOTTOM_RIGHT);
 		return gamePane;
 	}
 
@@ -895,11 +957,12 @@ public class ClientFX extends Application{
 
 			try {
 				conn.send("Quit");
+				System.exit(0);
+				endingWindow.close();
+
 			}
 			catch(Exception e) {
 			}
-			endingWindow.close();
-			System.exit(0);
 
 		});
 
@@ -1081,7 +1144,8 @@ public class ClientFX extends Application{
 
 
 		HBox field = new HBox(5, cf1, cf2,cf3);
-		HBox yourHand = new HBox(15, ch1, ch2, ch3);
+		HBox yourHand1 = new HBox(15, ch1, ch2, ch3);
+		HBox yourHand = new HBox(40, yourHand1, timerText7);
 		yourHand.setAlignment(BOTTOM_CENTER);
 
 		Text instructions = new Text("It's the last trick of the game...Everyone is tied...The Trump this round is Diamonds...It is your turn");
@@ -1165,10 +1229,21 @@ public class ClientFX extends Application{
 
 		});
 
+
+		//Padding so it's not hugging the border of the window
+		//Sets the size
+		timerText7.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+
+		//essentially making the center of our newly cre the scene we had previously
+		//gamePane.setRight(timerTextHolder);
+
+		//I have my timer
+		//timerTextHolder.setAlignment(BOTTOM_RIGHT);
+
 		return gamePane;
 	}
 
-	/**Extreme Sudoku**/
+	/**Upside down Sudoku**/
 	private Parent createDoor8() {
 		ArrayList<sudoku> sudokuList = new ArrayList<sudoku>();
 		ArrayList<VBox> sudokuListVBox = new ArrayList<VBox>();
@@ -1343,7 +1418,17 @@ public class ClientFX extends Application{
 		//everything.setRotate(180);
 
 		gamePane.setCenter(everything);
+		VBox timerTextHolder = new VBox(timerText8);
+
+		//Padding so it's not hugging the border of the window
+		timerTextHolder.setPadding(new Insets(15));
+		timerText8.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+		gamePane.setRight(timerTextHolder);
+
+		//I have my timer
+		timerTextHolder.setAlignment(BOTTOM_RIGHT);
 		return gamePane;
+
 	}
 
 	private Parent createDoor9() {
@@ -1650,6 +1735,18 @@ public class ClientFX extends Application{
 		jerkButton.setAlignment(BOTTOM_LEFT);
 		jerkButton.setPadding(new Insets(15, 15, 15, 15));
 		gamePane.setCenter(everything);
+
+
+		gamePane.setCenter(everything);
+		VBox timerTextHolder = new VBox(timerText9);
+
+		//Padding so it's not hugging the border of the window
+		timerTextHolder.setPadding(new Insets(15));
+		timerText9.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+		gamePane.setRight(timerTextHolder);
+
+		//I have my timer
+		timerTextHolder.setAlignment(BOTTOM_RIGHT);
 		return gamePane;
 	}
 
@@ -1758,7 +1855,7 @@ public class ClientFX extends Application{
 
 		connect = new Button("connect");
 		connect.setVisible(false);
-		startUpScene = new Scene(createStartup(), 900, 500);
+		startUpScene = new Scene(createStartup(), 800, 500);
 		sceneList.add(startUpScene);
 		Scene scene1 = new Scene(createDoor1(), 900, 500);
 		Scene scene2 = new Scene(createDoor2(), 900, 500);
@@ -1851,6 +1948,19 @@ public class ClientFX extends Application{
 					if(conn.makeDropDownVisible == true) {
 						dropMenu.setVisible(true);
 					}
+					timerText.setText(conn.mins + ":" + String.format("%02d", conn.seconds));
+					timerText1.setText(conn.mins + ":" + String.format("%02d", conn.seconds));
+					timerText2.setText(conn.mins + ":" + String.format("%02d", conn.seconds));
+					timerText3.setText(conn.mins + ":" + String.format("%02d", conn.seconds));
+					timerText4.setText(conn.mins + ":" + String.format("%02d", conn.seconds));
+					timerText5.setText(conn.mins + ":" + String.format("%02d", conn.seconds));
+					timerText6.setText(conn.mins + ":" + String.format("%02d", conn.seconds));
+					timerText7.setText(conn.mins + ":" + String.format("%02d", conn.seconds));
+					timerText8.setText(conn.mins + ":" + String.format("%02d", conn.seconds));
+					timerText9.setText(conn.mins + ":" + String.format("%02d", conn.seconds));
+					timerText10.setText(conn.mins + ":" + String.format("%02d", conn.seconds));
+
+
 					this.sleep(1000);
 
 				}
