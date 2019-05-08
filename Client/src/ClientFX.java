@@ -1038,6 +1038,17 @@ public class ClientFX extends Application{
 		morseGameplay.setBottom(playerAction);
 		morseGameplay.setBackground(myBackground);
 
+		VBox timerTextHolder = new VBox(timerText4);
+
+		//Padding so it's not hugging the border of the window
+		timerTextHolder.setPadding(new Insets(15));
+		timerText4.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+		timerText4.setFill(WHITE);
+		morseGameplay.setRight(timerTextHolder);
+
+		//I have my timer
+		timerTextHolder.setAlignment(BOTTOM_RIGHT);
+
 		return morseGameplay;
 	}
 
@@ -1058,6 +1069,17 @@ public class ClientFX extends Application{
 		binaryGameplay.setAlignment(playerAction, Pos.CENTER);
 		binaryGameplay.setBottom(playerAction);
 		binaryGameplay.setBackground(myBackground);
+
+		VBox timerTextHolder = new VBox(timerText5);
+
+		//Padding so it's not hugging the border of the window
+		timerTextHolder.setPadding(new Insets(15));
+		timerText5.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+		timerText5.setFill(WHITE);
+		binaryGameplay.setRight(timerTextHolder);
+
+		//I have my timer
+		timerTextHolder.setAlignment(BOTTOM_RIGHT);
 		return binaryGameplay;
 	}
 
@@ -1076,6 +1098,17 @@ public class ClientFX extends Application{
 		mathGameplay.setAlignment(playerAction, Pos.CENTER);
 		mathGameplay.setBottom(playerAction);
 		mathGameplay.setBackground(myBackground);
+
+		VBox timerTextHolder = new VBox(timerText6);
+
+		//Padding so it's not hugging the border of the window
+		timerTextHolder.setPadding(new Insets(15));
+		timerText6.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+		timerText6.setFill(WHITE);
+		mathGameplay.setRight(timerTextHolder);
+
+		//I have my timer
+		timerTextHolder.setAlignment(BOTTOM_RIGHT);
 
 		return mathGameplay;
 	}
