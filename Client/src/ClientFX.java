@@ -369,6 +369,7 @@ public class ClientFX extends Application{
 				DoorScene3 = new Scene(createDoor3(), 900, 500);
 				sceneList.add(DoorScene3);
 				primaryStage.setScene(DoorScene3);
+				primaryStage.setTitle("Box Mania");
 			}
 			catch(Exception e) {
 			}
@@ -815,14 +816,10 @@ public class ClientFX extends Application{
 	/**CHARLY'S PUZZLE HERE**/
 	//FIXME: need to apply gui to the buttons, make them red and green
 	private Parent createDoor3() {
-		Text puzzle = new Text("Click the buttons until they are all green, \nwhen done go to checkWinner to confirm");
-
+		Text puzzle = new Text("Click the buttons until they are all green, when done go to checkWinner to confirm");
 		VBox centerScene = new VBox();
 		ArrayList<HBox> rowButton = new ArrayList<>();
-		//ArrayList<Button> myButton = new ArrayList<>();
 		ArrayList<ArrayList<Button>> myButton = new ArrayList<>();
-		//ImageView redBox = new ImageView("red.png");
-		//redBox.set
 
 
 		for(ArrayList<Button> elem : myButton){
@@ -834,16 +831,10 @@ public class ClientFX extends Application{
 			rowButton.add(new HBox() );
 			for(int j=0;j<5;j++){
 				Button temp = new Button("red");//Integer.toString((i*5)+j) );
-				Image myImage = new Image("pictures/red.jpg");
-				ImageView myView = new ImageView(myImage);
-				myView.setPreserveRatio(true);
-				myView.setFitWidth(50);
-				temp.setGraphic(myView);
+				temp.setGraphic(setImage("red"));
 				temp.setPrefSize(50,50);
-
 				myButton.get(i).add(temp);
 				rowButton.get(i).getChildren().addAll(myButton.get(i).get(j) );
-				//rowButton.get(myButton.get(i).get(j) );
 			}
 			centerScene.getChildren().addAll(rowButton.get(i) );
 		}
@@ -852,15 +843,135 @@ public class ClientFX extends Application{
 			@Override
 			public void handle(ActionEvent event) {
 				for(ArrayList<Button> elem: myButton){
-					for(Button ele : elem){
-						ele.setText("green");
-						Image myImage = new Image("pictures/green.jpg");
-						ImageView myView = new ImageView(myImage);
-						myView.setPreserveRatio(true);
-						myView.setFitWidth(50);
-						ele.setGraphic(myView);
+					for(int i=0;i<5;i++){
+						myButton.get(0).get(i).setGraphic(setImage("green"));
+						myButton.get(0).get(i).setText("green");
+					}
+					for(int i=0;i<5;i++){
+						myButton.get(4).get(i).setGraphic(setImage("green"));
+						myButton.get(4).get(i).setText("green");
+					}
+//					for(Button ele : elem){
+//						ele.setText("green");
+//						ele.setGraphic(setImage("green"));
+//					}
+				}
+			}
+		});
+		myButton.get(0).get(1).setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				myButton.get(0).get(1).setText("green");
+				myButton.get(0).get(1).setGraphic(setImage("green"));
+
+				myButton.get(1).get(2).setText("green");
+				myButton.get(1).get(2).setGraphic(setImage("green"));
+
+				myButton.get(2).get(3).setText("green");
+				myButton.get(2).get(3).setGraphic(setImage("green"));
+
+				myButton.get(3).get(4).setText("green");
+				myButton.get(3).get(4).setGraphic(setImage("green"));
+			}
+		});
+
+		myButton.get(0).get(4).setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				myButton.get(0).get(4).setText("green");
+				myButton.get(0).get(4).setGraphic(setImage("green"));
+
+				myButton.get(1).get(3).setText("green");
+				myButton.get(1).get(3).setGraphic(setImage("green"));
+
+				myButton.get(2).get(2).setText("green");
+				myButton.get(2).get(2).setGraphic(setImage("green"));
+
+				myButton.get(3).get(1).setText("green");
+				myButton.get(3).get(1).setGraphic(setImage("green"));
+
+				myButton.get(4).get(0).setText("green");
+				myButton.get(4).get(0).setGraphic(setImage("green"));
+			}
+		});
+
+		myButton.get(2).get(2).setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				for(int i=1;i<=3;i++) {
+					for(int j = 1;j<=3;j++) {
+						myButton.get(i).get(j).setText("green");
+						myButton.get(i).get(j).setGraphic(setImage("green"));
+
+						myButton.get(i).get(j).setText("green");
+						myButton.get(i).get(j).setGraphic(setImage("green"));
+
+						myButton.get(i).get(j).setText("green");
+						myButton.get(i).get(j).setGraphic(setImage("green"));
 					}
 				}
+				myButton.get(2).get(2).setText("red");
+				myButton.get(2).get(2).setGraphic(setImage("red" ));
+			}
+		});
+
+		myButton.get(1).get(1).setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				for(int i=1;i<=2;i++) {
+					for(int j = 1;j<=2;j++) {
+						myButton.get(i).get(j).setText("green");
+						myButton.get(i).get(j).setGraphic(setImage("green"));
+
+						myButton.get(i).get(j).setText("green");
+						myButton.get(i).get(j).setGraphic(setImage("green"));
+
+						myButton.get(i).get(j).setText("green");
+						myButton.get(i).get(j).setGraphic(setImage("green"));
+					}
+				}
+				myButton.get(1).get(1).setText("red");
+				myButton.get(1).get(1).setGraphic(setImage("red" ));
+			}
+		});
+
+		myButton.get(0).get(2).setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				for(int i=1;i<=3;i++) {
+					for(int j = 0;j<=0;j++) {
+						myButton.get(i).get(j).setText("green");
+						myButton.get(i).get(j).setGraphic(setImage("green"));
+
+						myButton.get(i).get(j).setText("green");
+						myButton.get(i).get(j).setGraphic(setImage("green"));
+
+						myButton.get(i).get(j).setText("green");
+						myButton.get(i).get(j).setGraphic(setImage("green"));
+					}
+				}
+				myButton.get(4).get(4).setText("red");
+				myButton.get(4).get(4).setGraphic(setImage("red" ));
+			}
+		});
+
+		myButton.get(2).get(4).setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				for(int i=1;i<=3;i++) {
+					for(int j = 4;j<=4;j++) {
+						myButton.get(i).get(j).setText("green");
+						myButton.get(i).get(j).setGraphic(setImage("green"));
+
+						myButton.get(i).get(j).setText("green");
+						myButton.get(i).get(j).setGraphic(setImage("green"));
+
+						myButton.get(i).get(j).setText("green");
+						myButton.get(i).get(j).setGraphic(setImage("green"));
+					}
+				}
+				myButton.get(1).get(1).setText("red");
+				myButton.get(1).get(1).setGraphic(setImage("red" ));
 			}
 		});
 
@@ -872,21 +983,42 @@ public class ClientFX extends Application{
 					for(Button ele : elem){
 						if(!ele.getText().equals("green") ){
 							return;
+							//ele.setGraphic(setImage("red"));//temp
+							//ele.setText("red");//temp
 						}
 					}
-
-					conn.score++;
-					Score.setText("Score: "+conn.score );
-					primaryStage.setScene(sceneList.get(0) );
 				}
+				conn.score++;
+				Score.setText("Score: "+conn.score );
+				primaryStage.setScene(sceneList.get(0) );
+			}
+		});
+		Button quitePuzzle = new Button("quite :'(");
+		quitePuzzle.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				Score.setText("Score: "+conn.score );
+				primaryStage.setScene(sceneList.get(0) );
 			}
 		});
 
-
-		HBox choiceHBox = new HBox(centerScene, checkWinner);
+		HBox choiceHBox = new HBox(centerScene, checkWinner, quitePuzzle);
 		VBox Door3Box = new VBox(puzzle, choiceHBox);
 		BorderPane mainScene = new BorderPane(Door3Box);
+
+		Door3Box.setAlignment(CENTER);
+		choiceHBox.setAlignment(CENTER);
+		choiceHBox.setSpacing(10);
+		mainScene.setBackground(createMyBackground("pictures/ticktock.gif"));
+
 		return mainScene;
+	}
+	ImageView setImage(String name){
+		Image myImage = new Image("pictures/"+name+".jpg");
+		ImageView myView = new ImageView(myImage);
+		myView.setPreserveRatio(true);
+		myView.setFitWidth(50);
+		return myView;
 	}
 
 	/**KAVEESHA'S PART STARTS HERE**/
