@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e839f9f5-77cf-4b8f-98df-339808d35141" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Client/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$1sudokuThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$1sudokuThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$buttonThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$buttonThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/ClientFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/pictures/ticktock.gif" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/pictures/ticktock.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,10 +25,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ServerConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="72" column="47" selection-start-line="72" selection-start-column="47" selection-end-line="72" selection-end-column="47" />
+            <state relative-caret-position="74">
+              <caret line="55" column="17" lean-forward="true" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
               <folding>
-                <element signature="e#4084#4092#0" expanded="true" />
                 <element signature="e#4121#4122#0" expanded="true" />
                 <element signature="e#4145#4146#0" expanded="true" />
               </folding>
@@ -35,8 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ServerFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-272">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="210">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -77,8 +80,8 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="793" />
     <option name="width" value="814" />
     <option name="height" value="867" />
   </component>
@@ -89,6 +92,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -105,13 +109,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557295451757" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib/javafx.web.jar!/" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -155,10 +159,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="814" height="867" extended-state="0" />
+    <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1949602" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12290503" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -168,7 +172,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32833788" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32736155" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -225,31 +229,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServerFX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-272">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ServerConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="72" column="47" selection-start-line="72" selection-start-column="47" selection-end-line="72" selection-end-column="47" />
+        <state relative-caret-position="74">
+          <caret line="55" column="17" lean-forward="true" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
           <folding>
-            <element signature="e#4084#4092#0" expanded="true" />
             <element signature="e#4121#4122#0" expanded="true" />
             <element signature="e#4145#4146#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ServerFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>javafx-swt</last-edited>
+          <last-edited>openjfx-11.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -266,6 +292,19 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Server</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
