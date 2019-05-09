@@ -988,11 +988,13 @@ public class ClientFX extends Application{
 						}
 					}
 				}
+				door3.setDisable(true);
 				conn.score++;
 				Score.setText("Score: "+conn.score );
 				primaryStage.setScene(sceneList.get(0) );
 			}
 		});
+
 		Button quitePuzzle = new Button("quite :'(");
 		quitePuzzle.setOnAction(new EventHandler<ActionEvent>() {
 			@Override

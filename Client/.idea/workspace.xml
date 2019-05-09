@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64d82e92-dcca-4efb-a29a-8f36eb2bfe94" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$1sudokuThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$1sudokuThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$buttonThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$buttonThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/ticktock.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/ticktock.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientFX.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,16 +13,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="1011" column="69" selection-start-line="1011" selection-start-column="69" selection-end-line="1011" selection-end-column="69" />
+            <state relative-caret-position="199">
+              <caret line="1088" lean-forward="true" selection-start-line="1088" selection-end-line="1088" />
             </state>
           </provider>
         </entry>
@@ -64,10 +55,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>buttonThread</find>
-      <find>enable</find>
-      <find>testGame</find>
-      <find>dropMenu</find>
       <find>door1</find>
       <find>dropMen</find>
       <find>start</find>
@@ -94,6 +81,10 @@
       <find>createClient</find>
       <find>timerText</find>
       <find>createPicture</find>
+      <find>door1.setVisible(</find>
+      <find>door2.setVisible(</find>
+      <find>door2.setVisible(false);</find>
+      <find>door1.setVisible(false);</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -259,8 +250,8 @@
     <entry file="file://$PROJECT_DIR$/src/AlertBox.java" />
     <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="1011" column="69" selection-start-line="1011" selection-start-column="69" selection-end-line="1011" selection-end-column="69" />
+        <state relative-caret-position="199">
+          <caret line="1088" lean-forward="true" selection-start-line="1088" selection-end-line="1088" />
         </state>
       </provider>
     </entry>
