@@ -158,17 +158,30 @@ public abstract class ServerConnection {
 						this.score++;
 						updatePlayerList = true;
 					}
+					else if((data.equals("l"))){
+						callback.accept(clientName + " lost a game of Pitch");
+						String message = "Hey everyone, " + clientName + " forgot how to play Pitch";
+						send(message, clients);
+						this.score--;
+						updatePlayerList = true;
+					}
 
 					else if((data.equals("increment play again variable"))) {
 						countPlayAgain++;
 						if(countPlayAgain == 1) {
 							callback.accept("waiting for 3 more people to play again");
+							send("waiting for 3 more people to play again", clients);
+
 						}
 						if(countPlayAgain == 2) {
 							callback.accept("waiting for 2 more people to play again");
+							send("waiting for 2 more people to play again", clients);
+
 						}
 						if(countPlayAgain == 3) {
-							callback.accept("waiting for 1 more people to play again");
+							callback.accept("waiting for 1 more person to play again");
+							send("waiting for 1 more person to play again", clients);
+
 						}
 						if(countPlayAgain == 4) {
 							//resets all of the clients scores to zero
@@ -183,25 +196,33 @@ public abstract class ServerConnection {
                     else if((data.equals("c"))){
                         updatePlayerList = true;
                         if(clients.size() < 2) {
-                            callback.accept("Server awaiting 3 more players...But to test a build closer to the final game, have another person connect and press Test Game");
-                        }
-                        else if(clients.size() < 3) {
-                            callback.accept("Server awaiting 2 more players...But for now");
+                            callback.accept("Server awaiting 3 more players...");
+							send("waiting for 3 more people to join", clients);
 
-                        }
-                        else if(clients.size() < 4)
-                            callback.accept("Server awaiting 1 more player...");
+						}
+                        else if(clients.size() < 3) {
+                            callback.accept("Server awaiting 2 more players...");
+							send("waiting for 2 more people to join", clients);
+
+
+						}
+                        else if(clients.size() < 4) {
+							callback.accept("Server awaiting 1 more player...");
+							send("waiting for 1 more person to join", clients);
+						}
                         else if(clients.size() == 4) {
                             send("g", clients);
-                        }
+							send("On your mark...get set...Go! The one to complete the most puzzles in 3 minutes wins!", clients);
+
+						}
                     }
 					else if((data.equals("calculate winner"))) {
 						callback.accept("calculating the winner...");
 						int indexOfWinner = computeWinnerIndex();
 						winnerName = clients.get(indexOfWinner).clientName;
 						winnerScore = clients.get(indexOfWinner).score;
-						callback.accept("The winner was: " + winnerName + " with a score of " + winnerScore);
-						send("The winner was " + winnerName + "with score: " + winnerScore, clients);
+						callback.accept("The winner was:  " + winnerName + " with a score of " + winnerScore);
+						send("The winner was " + winnerName + " with score: " + winnerScore, clients);
 					}
 					//this appends what happened during the game to the server gui
 					else {

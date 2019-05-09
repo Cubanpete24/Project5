@@ -125,7 +125,7 @@ public class ClientFX extends Application{
 		nameInput = new TextField("Enter Name");
 		nameInput.setPrefWidth(90);
 
-		messages.appendText( "Welcome to Project 5, please enter your port and IP address\nIf you do not have one, the default will be chosen when you press connect\nOnce you enter your name, you will be able to connect\n");
+		messages.appendText( "Welcome to the Puzzle Gauntlet, please enter your port and IP address\nIf you do not have one, the default will be chosen when you press connect\nOnce you enter your name, you will be able to connect\n\nThe rules of the game are simple, 4 people enter, (4 people also leave)\nThe Puzzle Gauntlet has 10 puzzles, you only have one attempt at each\nWhoever completes the most puzzles in 3 minutes wins!\n\n");
 		//disableButtons();
 		play.setVisible(false);
 
@@ -150,7 +150,7 @@ public class ClientFX extends Application{
 		//door4 = new Button("Door #4");
 		//door5 = new Button("Door #5");
 		//door6 = new Button("Door #6");
-        testGame = new Button("DEBUG GAMES");
+        testGame = new Button("TRY OUT GAMES");
 
 
         /**THEY ARE INVISIBLE ON STARTUP, AND BECOME VISIBLE ONCE THE USER CONNECTS...THIS DOESN'T REALLY MATTER, BUT IS THERE ANYWAY**/
@@ -160,6 +160,7 @@ public class ClientFX extends Application{
 		door4.setVisible(false);
 		door5.setVisible(false);
 		door6.setVisible(false);
+
 
         //Generic handler for the client choices
 		EventHandler<ActionEvent> buttonSendRPSLS = event -> {
@@ -245,13 +246,13 @@ public class ClientFX extends Application{
 				ipInput.setVisible(false);
 				connect.setVisible(false);
 				nameInput.setVisible(false);
+				testGame.setVisible(false);
 				door1.setVisible(true);
 				door2.setVisible(true);
 				door3.setVisible(true);
 				door4.setVisible(true);
 				door5.setVisible(true);
 				door6.setVisible(true);
-				testGame.setVisible(true);
 
 				conn.startConn(this.clientName);
 				/**COMMENTING OUT THIS THREAD FOR NOW UNTIL IT IS BETTER OPTIMIZED, FOR NOW NO DYNAMIC UI ELEMENTS ON THE CLIENT SIDE**/
@@ -522,6 +523,8 @@ public class ClientFX extends Application{
 
 		//END TIMER STUFF
 		//If you created a borderPane make sure your createDoor method returns it.
+		//testGame.setVisible(false);
+
 		return startUpPane;
 
 	}
@@ -1333,7 +1336,7 @@ public class ClientFX extends Application{
 		//upperLeftHolder.setPadding();
 		gamePane.setTop(upperLeftHolder);
 
-		Image bg = new Image("pictures/green.jpg");
+		Image bg = new Image("pictures/pitchTable.jpg");
         BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
         BackgroundImage bgImg = new BackgroundImage(bg, null, null, null, backgroundSize);
         Background background = new Background(bgImg);
@@ -1363,6 +1366,37 @@ public class ClientFX extends Application{
 
 		//everything.setAlignment(CENTER);
 
+		ch1.setOnAction(event -> {
+
+			try {
+				/**IMPORTANT THING #1: INCREASE YOUR SCORE**/
+				door7.setDisable(true);
+				primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
+				conn.send("l"); //Does the same thing as "w" but it informs everyone in the server that you won a game of Pitch
+				primaryStage.setTitle("Puzzle Gauntlet");
+				door7.setDisable(true);
+				conn.score--;
+			}
+			catch(Exception e){
+			}
+
+		});
+
+		ch2.setOnAction(event -> {
+
+			try {
+				/**IMPORTANT THING #1: INCREASE YOUR SCORE**/
+				door7.setDisable(true);
+				primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
+				conn.send("l"); //Does the same thing as "w" but it informs everyone in the server that you won a game of Pitch
+				primaryStage.setTitle("Puzzle Gauntlet");
+				door7.setDisable(true);
+				conn.score--;
+			}
+			catch(Exception e){
+			}
+
+		});
 
 
 		ch3.setOnAction(event -> {
@@ -1372,13 +1406,33 @@ public class ClientFX extends Application{
 					conn.score++;
 					Score.setText("Score: " + conn.score); //Updates Score Text on UI
 					primaryStage.setTitle("Puzzle Gauntlet");
-					primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
+				door7.setDisable(true);
+
+				primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
 					conn.send("p"); //Does the same thing as "w" but it informs everyone in the server that you won a game of Pitch
+					primaryStage.setTitle("Puzzle Gauntlet");
+					door7.setDisable(true);
 			}
 			catch(Exception e){
 			}
 
 		});
+
+		EventHandler<ActionEvent> literallyAnythingElse = new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				try {
+					door7.setDisable(true);
+					primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
+					conn.send("l"); //Does the same thing as "w" but it informs everyone in the server that you won a game of Pitch
+					primaryStage.setTitle("Puzzle Gauntlet");
+					door7.setDisable(true);
+					conn.score--;
+
+				}
+				catch (Exception e){
+				}
+			}
+		};
 
 		giveUp.setOnAction(event -> {
 
@@ -1391,6 +1445,12 @@ public class ClientFX extends Application{
 			}
 			catch(Exception e){
 			}
+
+			ch1.setOnAction(literallyAnythingElse);
+			ch2.setOnAction(literallyAnythingElse);
+			cf1.setOnAction(literallyAnythingElse);
+			cf2.setOnAction(literallyAnythingElse);
+			cf3.setOnAction(literallyAnythingElse);
 
 		});
 
@@ -1829,9 +1889,9 @@ public class ClientFX extends Application{
 				if(b.getText().equals("Give up")){
 					primaryStage.setTitle("Puzzle Gauntlet");
 					conn.sudokuGameOn = false;
-					door1.setDisable(true);
+					door9.setDisable(true);
 					primaryStage.setScene(sceneList.get(0)); //Sets scene back to the primary stage
-					door1.setDisable(true);
+					door9.setDisable(true);
 				}
 				else {
 					conn.jerkFactor = 300;
@@ -2016,7 +2076,8 @@ public class ClientFX extends Application{
 		play = new Button("New Game");
 		quit = new Button("Quit");
 
-		testGame = new Button("DEBUG GAMES");
+		testGame = new Button("TRY OUT GAMES");
+		testGame.setVisible(false);
 
 		connect = new Button("connect");
 		connect.setVisible(false);

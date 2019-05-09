@@ -133,7 +133,7 @@ public abstract class ClientConnection {
 	class Timer extends Thread {
 		String updateString = "test";
 //		boolean timeExpired = false;
-		int startingSecond = 70;//3 minutes, 180 seconds seconds;
+		int startingSecond = 180;//3 minutes, 180 seconds seconds;
 
 		int counter = startingSecond;
 		//int mins;
@@ -160,7 +160,7 @@ public abstract class ClientConnection {
 			counter = startingSecond;
 			//int mins;
 			//int seconds;
-			callback.accept("Countdown from " + startingSecond + " to " + 0);
+			//callback.accept("Countdown from " + startingSecond + " to " + 0);
 			try {
 				Thread.sleep(1000);
 			}
@@ -179,7 +179,7 @@ public abstract class ClientConnection {
 				//updateString = "Rem min:" + mins + " sec:" + seconds;
 				if(counter == 1) {
                     try {
-                        send("calulate winner");
+                        send("calculate winner");
                     } catch (Exception e) {
                         e.printStackTrace();
                         callback.accept("could not calculate the winner");
