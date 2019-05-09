@@ -991,6 +991,7 @@ public class ClientFX extends Application{
 						}
 					}
 				}
+				door3.setDisable(true);
 				conn.score++;
 				Score.setText("Score: "+conn.score );
 				primaryStage.setScene(sceneList.get(0) );
@@ -1002,6 +1003,8 @@ public class ClientFX extends Application{
 			public void handle(ActionEvent event) {
 				Score.setText("Score: "+conn.score );
 				primaryStage.setScene(sceneList.get(0) );
+				door3.setDisable(true);
+
 			}
 		});
 
@@ -1083,23 +1086,12 @@ public class ClientFX extends Application{
 		endingWindow.setTitle("Game Over");
 		endingWindow.setMinWidth(250);
 
-		Label playOrQuitLabel = new Label("Do you want to play again or quit?");
+		Label playOrQuitLabel = new Label("Do you want to play again?");
 		Label winnerLabel = new Label(conn.winnerString);
 		Button playAgainButton = new Button("Play Again");
-		Button quitButton = new Button("Quit");
+		//Button quitButton = new Button("Quit");
 
-		quitButton.setOnAction(event -> {
 
-			try {
-				conn.send("Quit");
-				System.exit(0);
-				endingWindow.close();
-
-			}
-			catch(Exception e) {
-			}
-
-		});
 
 		playAgainButton.setOnAction(event -> {
 			door1.setDisable(false);
@@ -1124,7 +1116,7 @@ public class ClientFX extends Application{
 			primaryStage.setScene(sceneList.get(0));
 		});
 
-		HBox endingButtons = new HBox(10, playAgainButton, quitButton);
+		HBox endingButtons = new HBox(10, playAgainButton);
 		endingButtons.setAlignment(CENTER);
 		VBox endingLayout = new VBox(10);
 		endingLayout.getChildren().addAll(playOrQuitLabel, winnerLabel, endingButtons);
