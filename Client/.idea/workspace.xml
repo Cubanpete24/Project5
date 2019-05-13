@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64d82e92-dcca-4efb-a29a-8f36eb2bfe94" name="Default Changelist" comment="">
+    <list default="true" id="6d0d9865-c51f-4ed9-ad56-fe2feffc9468" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$10.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$1sudokuThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$1sudokuThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$7.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX$buttonThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX$buttonThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/ClientFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientFX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/META-INF/Client.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Puzzle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/green.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/mathPuzzle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/red.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/red.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/META-INF/Server.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/out/production/Server/production/Server/production/Server/production/Server/production/Server/production/Server/production/Server/sample.fxml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,52 +39,34 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Client.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="1088" column="68" selection-start-line="1088" selection-start-column="68" selection-end-line="1088" selection-end-column="68" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#15315#15323#0" expanded="true" />
-                <element signature="e#15375#15381#0" expanded="true" />
-                <element signature="e#43976#43984#0" expanded="true" />
-                <element signature="e#44036#44042#0" expanded="true" />
-                <element signature="e#49625#49633#0" expanded="true" />
-                <element signature="e#49685#49691#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1239">
+              <caret line="1224" column="33" selection-start-line="1224" selection-start-column="33" selection-end-line="1224" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sudoku.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/pictures/dancingMoose.gif">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+        <entry file="file://$PROJECT_DIR$/src/pictures/cockerSpaniel.gif">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1241">
-              <caret line="73" column="14" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
+            <state relative-caret-position="34">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -73,57 +74,40 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="79" selection-start-line="79" selection-end-line="79" />
-              <folding>
-                <element signature="e#1194#1195#0" expanded="true" />
-                <element signature="e#1222#1223#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="867">
+              <caret line="59" column="45" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>quit</find>
-      <find>conn.send(&quot;Quit</find>
-      <find>pop up</find>
-      <find>updateString</find>
-      <find>displayEndingWindow</find>
-      <find>playerList</find>
-      <find>timeTo</find>
-      <find>playAgain</find>
-      <find>conn.send</find>
-      <find>conn.send(&quot;w&quot;)</find>
-      <find>connect</find>
-      <find>clientName</find>
-      <find>nameInput</find>
-      <find>port</find>
-      <find>error for name</find>
-      <find>createClient</find>
-      <find>timerText</find>
-      <find>createPicture</find>
-      <find>time is</find>
-      <find>time is up</find>
-      <find>displayending</find>
-      <find>pitch</find>
-      <find>door9</find>
-      <find>door3</find>
-      <find>testgame.setvisible</find>
-      <find>testgame.setv</find>
-      <find>setvisible</find>
+      <find>door10</find>
+      <find>setVisible</find>
+      <find>dropMenu.setVisible(false)</find>
+      <find>dropMenu.setVisible(true)</find>
+      <find>createDoor4</find>
+      <find>rodg</find>
+      <find>dropMenu</find>
+      <find>finalScene</find>
+      <find>startUPScene</find>
+      <find>no conne</find>
+      <find>no connection</find>
+      <find>stop</find>
+      <find>stop()</find>
       <find>start</find>
-      <find>welcome to</find>
-      <find>countdown to</find>
+      <find>no</find>
+      <find>no conn</find>
+      <find>janu</find>
+      <find>OTR</find>
+      <find>Otr</find>
+      <find>door14</find>
+      <find>otr</find>
+      <find>doorScene14</find>
+      <find>door4</find>
+      <find>setonact</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -132,16 +116,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/AlertBox.java" />
-        <option value="$PROJECT_DIR$/src/ClientConnection.java" />
         <option value="$PROJECT_DIR$/src/ClientFX.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="x" value="951" />
+    <option name="width" value="978" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -149,6 +131,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -165,29 +149,20 @@
               <item name="Client" type="b2602c69:ProjectViewProjectNode" />
               <item name="Client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pictures" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pitch" type="462c0819:PsiDirectoryNode" />
+              <item name="sounds" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557380444827" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib/javafx.web.jar!/" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="C:/Java/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib/javafx.web.jar!/" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -220,37 +195,36 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="64d82e92-dcca-4efb-a29a-8f36eb2bfe94" name="Default Changelist" comment="" />
-      <created>1557000350970</created>
+      <changelist id="6d0d9865-c51f-4ed9-ad56-fe2feffc9468" name="Default Changelist" comment="" />
+      <created>1557669422788</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1557000350970</updated>
+      <updated>1557669422788</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.22944297" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14228188" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Designer" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Learn" order="6" />
-      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.33713356" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26110125" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22237961" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32736155" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -261,17 +235,16 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26259947" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.093959734" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Designer" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Learn" order="6" />
-      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.33787465" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32833788" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.04249292" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -279,7 +252,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32970026" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -290,94 +263,40 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout-to-restore>
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sudoku.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AlertBox.java" />
     <entry file="file://$PROJECT_DIR$/src/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="1088" column="68" selection-start-line="1088" selection-start-column="68" selection-end-line="1088" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#15315#15323#0" expanded="true" />
-            <element signature="e#15375#15381#0" expanded="true" />
-            <element signature="e#43976#43984#0" expanded="true" />
-            <element signature="e#44036#44042#0" expanded="true" />
-            <element signature="e#49625#49633#0" expanded="true" />
-            <element signature="e#49685#49691#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-          <folding>
-            <element signature="e#1194#1195#0" expanded="true" />
-            <element signature="e#1222#1223#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="867">
+          <caret line="59" column="45" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pictures/cockerSpaniel.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pictures/dancingMoose.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1239">
+          <caret line="1224" column="33" selection-start-line="1224" selection-start-column="33" selection-end-line="1224" selection-end-column="33" />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>openjfx-11.0</last-edited>
+          <last-edited>javafx-swt</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -389,32 +308,6 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>Client</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

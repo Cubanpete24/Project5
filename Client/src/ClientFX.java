@@ -49,7 +49,7 @@ public class ClientFX extends Application{
 	/**Declare all my buttons and textfields**/
 	Button portButton, ipButton, play, connect, quit;
 	TextField portInput, ipInput, nameInput;
-	AudioClip OTR, sunflowerSong;
+	AudioClip OTR, sunflowerSong, makeItJingle;
 	int port = 5555;
 	String ip = "127.0.0.1";
 	String clientName = "";
@@ -68,18 +68,20 @@ public class ClientFX extends Application{
 	Text timerText8 = new Text("Time");//timerText for door8
 	Text timerText9 = new Text("Time");//timerText for door9
 	Text timerText10 = new Text("Time");//timerText for door10
-
-
+	Text timerText11 = new Text("Time");//timerText for door11
+	Text timerText12 = new Text("Time");//timerText for door 11
+	Text timerText13 = new Text("Time");
+	Text timerText14 = new Text("Time");
 
 
 
 	/**STEP 1: DECLARE A SCENE FOR YOUR PUZZLE, EACH SCENE IS IT'S OWN PUZZLE**/
 	/**ALREADY DONE**/
-	Scene DoorScene1, DoorScene2, DoorScene3, DoorScene4, DoorScene5, DoorScene6, DoorScene7, DoorScene8, DoorScene9, DoorScene10;
+	Scene DoorScene1, DoorScene2, DoorScene3, DoorScene4, DoorScene5, DoorScene6, DoorScene7, DoorScene8, DoorScene9, DoorScene10, DoorScene11, DoorScene12, DoorScene13, DoorScene14;
 	/**STEP 2: DECLARE A BUTTON FOR YOUR PUZZLE, THIS WILL NOT BE USED IN THE FINAL IMPLEMENTATION BUT WILL GIVE YOU DIRECT ACCESS TO IT SO YOU CAN DEBUG IT**/
 	/**ALREADY DONE**/
 	MenuButton dropMenu;
-	MenuItem door1, door2, door3, door4,door5, door6, door7, door8, door9, door10;
+	MenuItem door1, door2, door3, door4,door5, door6, door7, door8, door9, door10, door11, door12, door13, door14;
 	Button testGame;
 	//Button door1, door2, door3, door4, door5, door6, testGame;
 	Stage primaryStage ; //THIS IS THE STAGE THAT DETERMINES WHAT THE USE IS CURRENTLY LOOKING AT
@@ -96,12 +98,6 @@ public class ClientFX extends Application{
 	int sceneNum = 0;
 
 	void enableButtons(){
-		///door1.setVisible(true);
-		//door2.setVisible(true);
-		//door3.setVisible(true);
-		//door4.setVisible(true);
-		//door5.setVisible(true);
-		//door6.setVisible(true);
 		dropMenu.setVisible(true);
 	}
 
@@ -141,25 +137,20 @@ public class ClientFX extends Application{
 		door8 = new MenuItem("Door #8");
 		door9 = new MenuItem("Door #9");
 		door10 = new MenuItem("Door #10");
+		door11 = new MenuItem("Door #11");
+		door12 = new MenuItem("Door #12");
+		door13 = new MenuItem("Door #13");
+		door14 = new MenuItem("Door #14");
 
-
-		//testGame = new MenuItem("Test Game");
-		//door1 = new Button("Door #1");
-		//door2 = new Button("Door #2");
-		//door3 = new Button("Door #3");
-		//door4 = new Button("Door #4");
-		//door5 = new Button("Door #5");
-		//door6 = new Button("Door #6");
         testGame = new Button("TRY OUT GAMES");
 
-
         /**THEY ARE INVISIBLE ON STARTUP, AND BECOME VISIBLE ONCE THE USER CONNECTS...THIS DOESN'T REALLY MATTER, BUT IS THERE ANYWAY**/
-		door1.setVisible(false);
-		door2.setVisible(false);
-		door3.setVisible(false);
-		door4.setVisible(false);
-		door5.setVisible(false);
-		door6.setVisible(false);
+//		door1.setVisible(false);
+//		door2.setVisible(false);
+//		door3.setVisible(false);
+//		door4.setVisible(false);
+//		door5.setVisible(false);
+//		door6.setVisible(false);
 
 
         //Generic handler for the client choices
@@ -247,12 +238,12 @@ public class ClientFX extends Application{
 				connect.setVisible(false);
 				nameInput.setVisible(false);
 				testGame.setVisible(false);
-				door1.setVisible(true);
-				door2.setVisible(true);
-				door3.setVisible(true);
-				door4.setVisible(true);
-				door5.setVisible(true);
-				door6.setVisible(true);
+//				door1.setVisible(true);
+//				door2.setVisible(true);
+//				door3.setVisible(true);
+//				door4.setVisible(true);
+//				door5.setVisible(true);
+//				door6.setVisible(true);
 
 				conn.startConn(this.clientName);
 				/**COMMENTING OUT THIS THREAD FOR NOW UNTIL IT IS BETTER OPTIMIZED, FOR NOW NO DYNAMIC UI ELEMENTS ON THE CLIENT SIDE**/
@@ -307,7 +298,7 @@ public class ClientFX extends Application{
 
 		dropMenu = new MenuButton("Puzzles");
 		dropMenu.setVisible(false);
-		dropMenu.getItems().addAll(door1, door2, door3, door4, door5, door6, door7, door8, door9, door10);
+		dropMenu.getItems().addAll(door1, door2, door3, door4, door5, door6, door7, door8, door9, door10, door11, door12, door13, door14);
 
 		HBox Doors = new HBox(10, Score, dropMenu);
 		//HBox Doors = new HBox(10, Score, door1, door2, door3, door4, door5, door6, testGame);
@@ -467,6 +458,63 @@ public class ClientFX extends Application{
 			catch(Exception e) {
 			}
 		});
+
+		door11.setOnAction(event -> {
+
+			try {
+				//door1.setVisible(false); Comment this out once program is done
+				DoorScene11 = new Scene(createDoor11(), 900, 375); //We create the scene
+				sceneList.add(DoorScene11); //We add the scene to an arrayList of Scenes so we can access it later
+				primaryStage.setScene(DoorScene11); //We display the scene
+				primaryStage.setTitle("Steph Curry!");
+
+			}
+			catch(Exception e) {
+			}
+		});
+
+		door12.setOnAction(event -> {
+
+			try {
+				//door1.setVisible(false); Comment this out once program is done
+				DoorScene12 = new Scene(createDoor12(), 900, 375); //We create the scene
+				sceneList.add(DoorScene12); //We add the scene to an arrayList of Scenes so we can access it later
+				primaryStage.setScene(DoorScene12); //We display the scene
+				primaryStage.setTitle("Roger Federer!");
+
+			}
+			catch(Exception e) {
+			}
+		});
+
+		door13.setOnAction(event -> {
+
+			try {
+				//door1.setVisible(false); Comment this out once program is done
+				DoorScene13 = new Scene(createDoor13(), 900, 375); //We create the scene
+				sceneList.add(DoorScene13); //We add the scene to an arrayList of Scenes so we can access it later
+				primaryStage.setScene(DoorScene13); //We display the scene
+				primaryStage.setTitle("Peanut Time!");
+
+			}
+			catch(Exception e) {
+			}
+		});
+
+		door14.setOnAction(event -> {
+
+			try {
+				DoorScene14 = new Scene(createDoor14(), 900, 500);
+				sceneList.add(DoorScene14);
+				primaryStage.setScene(DoorScene14);
+				primaryStage.setTitle("Savage Moose Time!");
+			}
+			catch(Exception e) {
+			}
+
+
+		});
+
 
 		/**This is where I organize the layout and design of the UI**/
 
@@ -1104,6 +1152,10 @@ public class ClientFX extends Application{
 			door8.setDisable(false);
 			door9.setDisable(false);
 			door10.setDisable(false);
+			door11.setDisable(false);
+			door12.setDisable(false);
+			door13.setDisable(false);
+			door14.setDisable(false);
 			dropMenu.setVisible(false);
 			conn.score = 0;
 
@@ -1137,6 +1189,18 @@ public class ClientFX extends Application{
 		}
 		if(whichDoor == 6) {
 			door6.setDisable(true);
+		}
+		if(whichDoor == 11) {
+			door11.setDisable(true);
+		}
+		if(whichDoor == 12) {
+			door12.setDisable(true);
+		}
+		if(whichDoor == 13) {
+			door13.setDisable(true);
+		}
+		if(whichDoor == 14) {
+			door14.setDisable(true);
 		}
 	}
 
@@ -2054,6 +2118,150 @@ public class ClientFX extends Application{
 		return background;
 	}
 
+	private Parent createDoor11() {
+		BorderPane stephGameplay = new BorderPane();
+		Background myBackground = createMyBackground("pictures/stephCurry.gif");
+
+		Text morseCode = new Text("How many NBA Titles has Steph Won?");
+		morseCode.setFill(Color.GOLD);
+		morseCode.setScaleX(2);
+		morseCode.setScaleY(2);
+
+		VBox playerAction = setUpActions("3", 11);
+		stephGameplay.setPadding(new Insets(100));
+		stephGameplay.setAlignment(morseCode, Pos.CENTER);
+		stephGameplay.setCenter(morseCode);
+		stephGameplay.setAlignment(playerAction, Pos.CENTER);
+		stephGameplay.setBottom(playerAction);
+		stephGameplay.setBackground(myBackground);
+
+		VBox timerTextHolder = new VBox(timerText11);
+
+		//Padding so it's not hugging the border of the window
+		timerTextHolder.setPadding(new Insets(15));
+		timerText11.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+		timerText11.setFill(WHITE);
+		stephGameplay.setRight(timerTextHolder);
+
+		//I have my timer
+		timerTextHolder.setAlignment(BOTTOM_RIGHT);
+
+		return stephGameplay;
+	}
+
+	private Parent createDoor12() {
+		BorderPane rogerGameplay = new BorderPane();
+		Background myBackground = createMyBackground("pictures/rogerFederer.gif");
+
+		Text morseCode = new Text("How many Grand Slam Titles has Federer Won?");
+		morseCode.setFill(Color.GOLD);
+		morseCode.setScaleX(2);
+		morseCode.setScaleY(2);
+
+		VBox playerAction = setUpActions("20", 12);
+		rogerGameplay.setPadding(new Insets(100));
+		rogerGameplay.setAlignment(morseCode, Pos.CENTER);
+		rogerGameplay.setCenter(morseCode);
+		rogerGameplay.setAlignment(playerAction, Pos.CENTER);
+		rogerGameplay.setBottom(playerAction);
+		rogerGameplay.setBackground(myBackground);
+
+		VBox timerTextHolder = new VBox(timerText12);
+
+		//Padding so it's not hugging the border of the window
+		timerTextHolder.setPadding(new Insets(15));
+		timerText12.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+		timerText12.setFill(WHITE);
+		rogerGameplay.setRight(timerTextHolder);
+
+		//I have my timer
+		timerTextHolder.setAlignment(BOTTOM_RIGHT);
+
+		return rogerGameplay;
+	}
+
+	private Parent createDoor13() {
+		BorderPane dogGameplay = new BorderPane();
+		Background myBackground = createMyBackground("pictures/cockerSpaniel.gif");
+
+		Text morseCode = new Text("When did we get Peanut? Enter your answer in the format month space year.");
+		morseCode.setFill(Color.GOLD);
+		morseCode.setScaleX(1.5);
+		morseCode.setScaleY(1.5);
+
+		VBox playerAction = setUpActions("JANUARY 2006", 13);
+		dogGameplay.setPadding(new Insets(100));
+		dogGameplay.setAlignment(morseCode, Pos.CENTER);
+		dogGameplay.setCenter(morseCode);
+		dogGameplay.setAlignment(playerAction, Pos.CENTER);
+		dogGameplay.setBottom(playerAction);
+		dogGameplay.setBackground(myBackground);
+
+		VBox timerTextHolder = new VBox(timerText13);
+
+		//Padding so it's not hugging the border of the window
+		timerTextHolder.setPadding(new Insets(15));
+		timerText13.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+		timerText13.setFill(WHITE);
+		dogGameplay.setRight(timerTextHolder);
+
+		//I have my timer
+		timerTextHolder.setAlignment(BOTTOM_RIGHT);
+
+		return dogGameplay;
+	}
+
+	private Parent createDoor14() {
+		BorderPane dogGameplay = new BorderPane();
+		Background myBackground = createMyBackground("pictures/dancingMoose.gif");
+
+		Text morseCode = new Text("What song is this moose dancing too?");
+		morseCode.setFill(Color.BLACK);
+		morseCode.setScaleX(1.5);
+		morseCode.setScaleY(1.5);
+
+		makeItJingle = new AudioClip(this.getClass().getResource("sounds/makeItJingle.m4a").toString());
+
+		Button playMusic = new Button("Play Music");
+		Button stopMusic = new Button("Stop Music");
+
+		playMusic.setOnAction(event -> {
+			makeItJingle.play();
+		});
+
+		stopMusic.setOnAction(event -> {
+			makeItJingle.stop();
+		});
+
+		HBox playOrStopMusic = new HBox();
+		playOrStopMusic.getChildren().addAll(playMusic, stopMusic);
+
+		VBox playerAction = setUpActions("MAKE IT JINGLE", 14);
+		dogGameplay.setPadding(new Insets(100));
+		dogGameplay.setAlignment(morseCode, Pos.CENTER);
+		dogGameplay.setCenter(morseCode);
+		dogGameplay.setAlignment(playerAction, Pos.CENTER);
+		dogGameplay.setBottom(playerAction);
+		dogGameplay.setBackground(myBackground);
+		dogGameplay.setAlignment(playOrStopMusic, Pos.CENTER);
+		dogGameplay.setLeft(playOrStopMusic);
+
+		VBox timerTextHolder = new VBox(timerText14);
+
+		//Padding so it's not hugging the border of the window
+		timerTextHolder.setPadding(new Insets(15));
+		timerText14.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+		timerText14.setFill(WHITE);
+		dogGameplay.setRight(timerTextHolder);
+
+		//I have my timer
+		timerTextHolder.setAlignment(BOTTOM_RIGHT);
+
+		return dogGameplay;
+	}
+
+
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		launch(args);
@@ -2083,8 +2291,12 @@ public class ClientFX extends Application{
 		Scene scene6 = new Scene(createDoor6(), 900, 500);
 		Scene scene7 = new Scene(createDoor7(), 900, 500);
 		Scene scene8 = new Scene(createDoor8(), 900, 500);
-
+	//	Scene scene9 = new Scene(createDoor9(), 900, 500);
 		Scene scene10 = new Scene(createDoor10(), 900, 500);
+		Scene scene11 = new Scene(createDoor11(), 900, 500);
+		Scene scene12 = new Scene(createDoor12(), 900, 500);
+		Scene scene13 = new Scene(createDoor13(), 900, 500);
+		Scene scene14 = new Scene(createDoor14(), 900, 500);
 
 
 		Scene finalScene = startUpScene;
@@ -2096,9 +2308,12 @@ public class ClientFX extends Application{
 		sceneList.add(scene6);
 		sceneList.add(scene7);
 		sceneList.add(scene8);
-
+		//sceneList.add(scene9);
 		sceneList.add(scene10);
-
+		sceneList.add(scene11);
+		sceneList.add(scene12);
+		sceneList.add(scene13);
+		sceneList.add(scene14);
 		sceneList.add(finalScene);
 
 		primaryStage.setScene(startUpScene);
@@ -2118,6 +2333,7 @@ public class ClientFX extends Application{
 			conn.closeConn();
 		}
 		catch(Exception e){
+			e.printStackTrace();
 			System.out.println("No connection to a server was ever made");
 		}
 	}
@@ -2177,6 +2393,11 @@ public class ClientFX extends Application{
 					timerText8.setText(conn.mins + ":" + String.format("%02d", conn.seconds));
 					timerText9.setText(conn.mins + ":" + String.format("%02d", conn.seconds));
 					timerText10.setText(conn.mins + ":" + String.format("%02d", conn.seconds));
+					timerText11.setText(conn.mins + ":" + String.format("%02d", conn.seconds));
+					timerText12.setText(conn.mins + ":" + String.format("%02d", conn.seconds));
+					timerText13.setText(conn.mins + ":" + String.format("%02d", conn.seconds));
+					timerText14.setText(conn.mins + ":" + String.format("%02d", conn.seconds));
+
 
 
 					this.sleep(1000);

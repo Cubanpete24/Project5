@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e839f9f5-77cf-4b8f-98df-339808d35141" name="Default Changelist" comment="">
+    <list default="true" id="dd9b7e60-1b37-430b-8c36-2665416ba118" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Client/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$10.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$1sudokuThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$1sudokuThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$7.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$buttonThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX$buttonThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/ClientFX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/META-INF/Client.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Puzzle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/green.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/mathPuzzle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/red.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/red.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/ClientFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/ClientFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/META-INF/Server.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/production/Server/production/Server/production/Server/production/Server/production/Server/production/Server/sample.fxml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,66 +38,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ServerConnection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="160" selection-start-line="160" selection-end-line="160" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ServerFX.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2771">
-              <caret line="174" column="11" selection-start-line="174" selection-start-column="11" selection-end-line="174" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>superClients</find>
-      <find>start</find>
-      <find>onButton</find>
-      <find>test</find>
-      <find>buttonThread</find>
-      <find>timer.app</find>
-      <find>Timer</find>
-      <find>messages</find>
-      <find>updatePlayerList</find>
-      <find>updatePl</find>
-      <find>superclients</find>
-      <find>send</find>
-      <find>Platform</find>
-      <find>playerList</find>
-      <find>winner</find>
-      <find>Says</find>
-      <find>add</find>
-      <find>clients</find>
-    </findStrings>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/Timer.java" />
-        <option value="$PROJECT_DIR$/src/ServerFX.java" />
-        <option value="$PROJECT_DIR$/src/ServerConnection.java" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="951" />
+    <option name="width" value="978" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -86,7 +55,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -103,16 +72,15 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557380444890" />
-    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/Project2" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="C:/Java/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib/javafx.web.jar!/" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -145,58 +113,28 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e839f9f5-77cf-4b8f-98df-339808d35141" name="Default Changelist" comment="" />
-      <created>1557000331667</created>
+      <changelist id="dd9b7e60-1b37-430b-8c36-2665416ba118" name="Default Changelist" comment="" />
+      <created>1557669391670</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1557000331667</updated>
+      <updated>1557669391670</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="761" y="0" width="782" height="831" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15222672" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28808865" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Designer" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Learn" order="6" />
-      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3268206" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32970026" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30636606" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Designer" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Learn" order="6" />
-      <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32970026" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32904148" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -213,61 +151,13 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout-to-restore>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Timer.java" />
-    <entry file="file://$PROJECT_DIR$/src/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServerConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="160" selection-start-line="160" selection-end-line="160" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServerFX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2771">
-          <caret line="174" column="11" selection-start-line="174" selection-start-column="11" selection-end-line="174" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
+    </layout>
   </component>
   <component name="masterDetails">
     <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>openjfx-11.0</last-edited>
+          <last-edited>javafx-swt</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -279,32 +169,6 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>Server</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
